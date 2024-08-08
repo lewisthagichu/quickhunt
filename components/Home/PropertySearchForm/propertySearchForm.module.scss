@@ -1,0 +1,104 @@
+.container {
+    z-index: 1;
+    padding: 0 var(--container-padding);  
+    display: flex;
+    justify-content: center;
+    width: 100%;      
+    
+    .form {
+        width: 75%;
+        padding: calc(var(--gap) * .2) calc(var(--gap) * .6);
+        background-color: var(--color-white);
+        border-radius: var(--border-radius);
+        display: grid;
+        grid-template-columns: repeat(3, 1fr) auto;
+
+        .col {
+            display: flex;
+            gap: calc(var(--gap) * .6);
+
+            .icon {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: calc(var(--gap) * .4);
+                border: 1px solid rgba(0, 0,0, 0.2);
+                border-radius: 50%;
+
+            }
+
+            .data {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+
+                label {
+                    font-size: .7em;
+                }
+
+                input, select {
+                    font-size: 1em;
+                }                
+            }            
+        }
+
+        .btn {
+            display: flex;
+            align-items: center;            
+            
+            button {
+                padding:  0 12px;
+                width: max-content;
+                height: var(--btn-height);
+                border-radius: var(--border-radius);
+                border: none;
+                outline: 0;
+                background-color: yellowgreen;
+                cursor: pointer;
+
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .container {
+        .form {
+            width: 100%;
+            .col {
+                .icon {
+                    display: none;
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding: 0 var(--mobile-padding);
+
+        .form {
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(4,1fr) auto;
+            border-radius: 0;
+            padding: 0;
+
+            .col {
+                padding: calc(var(--mobile-padding) * .8) var(--mobile-padding);
+                border-bottom: 1px solid rgba(0, 0,0, 0.2);
+
+                .data {
+                    gap: calc(var(--mobile-padding) * .2); 
+                }
+
+            }
+
+            .btn {
+                justify-content: center;
+            }
+        }
+    }
+    
+}

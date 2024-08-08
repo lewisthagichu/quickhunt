@@ -3,6 +3,7 @@ import styles from './hero.module.scss';
 // import heroImg from '@/public/images/hero.webp';
 import heroImg2 from '@/public/images/hero2.webp';
 import { inter } from '@/public/font/font';
+import PropertySearchForm from '../PropertySearchForm/PropertySearchForm';
 
 function Hero() {
   return (
@@ -19,6 +20,7 @@ function Hero() {
 
         <p>Explore, discover and move in.</p>
       </div>
+      <PropertySearchForm />
     </div>
   );
 }
