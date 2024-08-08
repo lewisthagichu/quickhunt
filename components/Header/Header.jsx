@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { AiOutlineMessage } from 'react-icons/ai';
 import { IoIosNotifications, IoMdPerson, IoIosMenu } from 'react-icons/io';
 import Sidebar from './Sidebar/Sidebar';
+import { inter } from '@/public/font/font';
 
 function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,7 +14,7 @@ function Navbar() {
   };
 
   return (
-    <header className={styles.container}>
+    <header className={`${styles.container} ${inter.className}`}>
       <div className={styles.nav}>
         <div onClick={toggleSidebar} className={`${styles.burger}`}>
           <IoIosMenu />

@@ -135,6 +135,7 @@
         width: 100%;
         .close {
             left: var(--mobile-padding);
+            top: calc(var(--nav-bar-height-mobile) * .15);
         }
 
     }

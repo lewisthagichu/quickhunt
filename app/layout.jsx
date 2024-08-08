@@ -1,6 +1,5 @@
 import './globals.css';
 import Header from '@/components/Header/Header';
-import { inter } from '@/public/font/font';
 
 export const metadata = {
   title: 'HappyHome',
@@ -11,7 +10,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>
+      <body>
         <Header />
         <main>{children}</main>
       </body>

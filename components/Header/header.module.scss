@@ -46,7 +46,8 @@
                 width: 3em;
                 height: 1.5em;
                 font-size: 2.2em;
-            }           
+            }
+           
         }
 
         .signup {
@@ -60,17 +61,13 @@
                 width: 1.2em;
             }         
         }
-    }
-
-    
-    
-
-    
+    }      
 }
 
 @media screen and (max-width: 992px) {
     .container {
         .nav {
+            height: var(--nav-bar-height-mobile);
             padding: 0 var(--mobile-padding);
 
             .logo {
