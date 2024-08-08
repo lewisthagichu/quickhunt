@@ -1,7 +1,8 @@
-import Link from 'next/link';
+'use client';
 import styles from './sidebar.module.scss';
-import { IoMdClose } from 'react-icons/io';
 import { useState } from 'react';
+import { IoMdClose } from 'react-icons/io';
+import Link from 'next/link';
 
 function Sidebar({ isOpen, toggleSidebar }) {
   const [active, setActive] = useState(false);
@@ -28,16 +29,18 @@ function Sidebar({ isOpen, toggleSidebar }) {
               <Link href="#">Properties</Link>
               <span onClick={toggleActive}></span>
 
-              <div className={styles.subMenu}>
-                <ul>
-                  <li>
-                    <Link href="#">Add Property</Link>
-                  </li>
-                  <li>
-                    <Link href="#">View Properties</Link>
-                  </li>
-                </ul>
-              </div>
+              {active && (
+                <div className={styles.subMenu}>
+                  <ul>
+                    <li>
+                      <Link href="/add-property">Add Property</Link>
+                    </li>
+                    <li>
+                      <Link href="/view-properties">View Properties</Link>
+                    </li>
+                  </ul>
+                </div>
+              )}
             </li>
             <li>
               <Link href="#">About</Link>

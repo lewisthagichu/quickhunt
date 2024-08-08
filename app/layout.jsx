@@ -1,8 +1,6 @@
 import './globals.css';
-import { Poppins } from 'next/font/google';
 import Header from '@/components/Header/Header';
-
-const poppins = Poppins({ subsets: ['latin'], weight: ['400', '700'] });
+import { inter } from '@/public/font/font';
 
 export const metadata = {
   title: 'HappyHome',
@@ -13,7 +11,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={poppins.className}>
+      <body className={inter.className}>
         <Header />
         <main>{children}</main>
       </body>
