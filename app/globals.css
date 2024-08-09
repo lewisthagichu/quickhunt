@@ -19,6 +19,7 @@
   --mobile-padding: calc(var(--container-padding) / 2);
 
   --title-size: clamp(5em, 7.5vw, 7.5em);
+  --regular-title-size: calc(var(--title-size)* 0.3);
   --copy-size-l: 0.9em;
   --copy-size-m: 0.8em;
   --copy-size-s: 0.725em;
