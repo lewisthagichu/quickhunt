@@ -47,16 +47,9 @@
             align-items: center;            
             
             button {
-                padding:  0 12px;
                 width: max-content;
-                height: var(--btn-height);
-                font-size: .8em;
-                border-radius: var(--border-radius);
-                border: none;
-                outline: 0;
                 background-color: yellowgreen;
                 cursor: pointer;
-
             }
         }
     }

@@ -57,7 +57,7 @@ function PropertySearchForm() {
         </div>
 
         <div className={styles.btn}>
-          <button>Search property</button>
+          <button className="btn">Search property</button>
         </div>
       </form>
     </div>
