@@ -15,6 +15,7 @@ function PropertyCard({ property }) {
           sizes="(max-width: 768px) 100vw, 33vw"
           alt="Picture of the property"
         />
+        <h3>KES 2400/mo</h3>
       </div>
 
       <div className={styles.textContainer}>
@@ -42,13 +43,12 @@ function PropertyCard({ property }) {
           </p>
         </div>
 
-        <div className={styles.border}></div>
-
         <div className={styles.bottomDetails}>
           <div className={styles.owner}>
             <IoMdPerson />
             <span>Lewis</span>
           </div>
+          <div className={styles.border}></div>
           <Link
             href={`/properties/${property._id}`}
             className={`${styles.btn} btn`}
