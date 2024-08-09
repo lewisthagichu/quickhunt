@@ -11,7 +11,7 @@
         margin-bottom: 2rem;
 
         span {
-            color: yellowgreen;
+            // color: yellowgreen;
         }
     }
 
@@ -20,6 +20,22 @@
         width: 100%;
         grid-template-columns: repeat(3, 1fr);
         gap: 2rem;
+    }
+}
+
+.bigBtn {
+    width: 100%;
+    padding: 0 var(--container-padding);
+    margin: 2.5rem 0;
+    
+    .btn {
+        display: block;
+        margin: 0 auto;
+        max-width: 512px;
+        padding: 1rem 1.5rem;
+        font-size: 1em;
+        background-color: var(--color-dark);
+        color: var(--color-white);
     }
 }
 
