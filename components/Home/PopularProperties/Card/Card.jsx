@@ -1,13 +1,17 @@
+'use client';
 import styles from './card.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoMdPerson } from 'react-icons/io';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
-function Card({ property, i }) {
+function Card({ property, cardIndex }) {
   const { owner, name, rates, location, images } = property;
   return (
-    <div className={styles.container}>
+    <div
+      className={styles.container}
+      style={{ translate: `${-100 * cardIndex}%` }}
+    >
       <div className={styles.imageContainer}>
         <Image
           src={`/images/properties/${images[0]}`}
