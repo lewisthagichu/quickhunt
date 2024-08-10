@@ -26,10 +26,12 @@
 .bigBtn {
     width: 100%;
     padding: 0 var(--container-padding);
-    margin: 2.5rem 0;
+    margin: 3rem 0;
     
     .btn {
-        display: block;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         margin: 0 auto;
         max-width: 512px;
         padding: 1rem 1.5rem;

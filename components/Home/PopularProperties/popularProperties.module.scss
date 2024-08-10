@@ -25,6 +25,7 @@
             transform: translateY(-50%);
             display: flex;
             gap: 2rem;
+            z-index: 3;
 
             button {
                 background-color: var(--color-dark);

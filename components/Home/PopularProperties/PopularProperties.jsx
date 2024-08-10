@@ -7,7 +7,7 @@ import properties from '@/properties.json';
 import Card from './Card/Card';
 
 function PopularProperties() {
-  const popularProperties = properties.slice(0, 6);
+  const popularProperties = properties.slice(3, 9);
   const [cardIndex, setCardIndex] = useState(0);
 
   function showNextCard() {
