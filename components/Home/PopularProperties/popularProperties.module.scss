@@ -1,0 +1,96 @@
+.container {
+    padding: 2rem var(--container-padding);
+    padding-right: 0;
+    background-color: var(--color-white);
+    color: var(--color-dark);
+
+    h2 {
+        text-align: center;
+        margin: 0 auto;
+        font-size: var(--regular-title-size);
+        font-weight: 700;
+        margin-bottom: 2rem;
+
+        // span {
+        //     color: yellowgreen;
+        // }
+    }
+
+    .title {
+        position: relative;
+
+        .btns {
+            position: absolute;
+            top: 50%;
+            right: var(--container-padding);
+            transform: translateY(-50%);
+            display: flex;
+            gap: 2rem;
+
+            button {
+                background-color: var(--color-dark);
+                color: var(--color-white);
+                transition: all 100ms ease-in-out;
+                cursor: pointer;
+
+
+                &:hover {
+                    background-color: yellowgreen;
+                    color: var(--color-dark);
+                }
+                
+                svg {
+                    cursor: pointer;
+                }
+            }
+
+
+        }
+    }
+
+    .cards {
+        display: grid;
+        width: 100%;
+        grid-template-columns: repeat(4, 31%);
+        gap: 2rem;
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .cards {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding: 2rem var(--mobile-padding);
+
+        .title {
+            .btns {
+                right: 0px;
+
+                button {
+                    background-color: transparent;
+                    color: var(--color-dark);
+                    padding: 0;
+                    
+                    svg {
+                        display: inline-block;
+                        font-size: 1.4em;
+                    }
+                }
+            }
+        }
+
+        h2{
+            text-align: left;
+        }
+    }
+    
+}
