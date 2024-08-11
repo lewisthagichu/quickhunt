@@ -1,7 +1,6 @@
 import styles from './recentProperties.module.scss';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
 import properties from '@/properties.json';
-import { inter } from '@/public/font/font';
 import Link from 'next/link';
 
 function RecentProperties() {
@@ -9,7 +8,7 @@ function RecentProperties() {
 
   return (
     <>
-      <section className={`${styles.container} ${inter.className}`}>
+      <section className={styles.container}>
         <h2>
           Recent <span>Properties</span>
         </h2>

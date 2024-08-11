@@ -1,11 +1,11 @@
 .container {
     position: relative;
-    min-width: 33.34%;
-    width: 33.33%;
+    min-width: 50%;
     padding-right: 2rem;
     border-radius: 1rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.05), 0 1px 2px 0 rgba(0, 0, 0, 0.03);
-    transition: translate 300ms ease-in-out;
+    transition: translate 300ms ease-in-out;  
+    
 
     .imageContainer {
         position: relative;
@@ -33,10 +33,18 @@
     }
 
     .textContainer {
+        position: absolute;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        right: 3.5rem;
         padding: 1.5rem;
+        background-color: var(--color-white);
+        color: var(--color-dark);
+        border-radius: 1rem;
+       
 
         .bio {
-           margin-bottom: 2rem;
+           margin-bottom: 2rem;          
             
             .location {
                 opacity: .5;
@@ -45,26 +53,17 @@
             
             h3 {
                 font-size: 1.2em;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
-        .amenities {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
+        .middle {
             margin-bottom: 1.5rem;
-            opacity: .5;            
-        }
-
-        .border {
-            border: 1px solid rgba(0, 0, 0, .05);
-            margin-bottom: 1.5rem;
-        }
-
-        .bottomDetails {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
 
             .owner {
                 display: flex;
@@ -76,20 +75,57 @@
                 }
             }
 
+            .amenities {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 1.5rem;
+                opacity: .5;   
+            }
+
+        }        
+
+        .border {
+            border: 1px solid rgba(0, 0, 0, .05);
+            margin-bottom: 1.5rem;
+        }
+
+        .bottomDetails {
+            display: flex;
+            justify-content: center;            
+
             .btn {
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                // padding-left: 15px;
+                // padding-right: 15px;
+
+                svg {
+                    transform: rotate(45deg);
+                }
             }
         }
     }
 }
 
+@media screen and (max-width: 1280px) {
+    .container {
+        .imageContainer {
+            aspect-ratio: 16 / 12;
+        }
+    }
+    
+}
+
 @media screen and (max-width: 992px) {
     .container {
+        .imageContainer {
+            aspect-ratio: 16 / 18;
+        }
         .textContainer {
             .amenities {
-              span {
+              svg {
                 display: none;
               }
             }
@@ -97,9 +133,8 @@
             .bottomDetails {
                 flex-direction: column;
 
-                .owner {
-                    margin-bottom: 1.5rem;
-                    margin: 0 auto;
+                svg {
+                    font-size: 1.5em;
                 }
             }
         }
@@ -110,26 +145,37 @@
     .container {
         min-width: 100%;
         width: 100%;
-        padding-right: 0;
+        padding-right: 0;      
         
+        .imageContainer {
+            aspect-ratio: 16 / 12;
+        }
     }
     
 }
 
 @media screen and (max-width: 540px) {
     .container {
+        .imageContainer {
+            aspect-ratio: 4 / 5;
+        }
         .textContainer {
-            .amenities {
-              span {
-                display: inline;
-              }
-            }
+            right: 1.5rem;
+            .middle {
+                .amenities{
+                    gap: 0;
+                    p {
+                        padding: 0 .75rem;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        border-right: 1px solid rgba(0, 0, 0, .3);
 
-            .bottomDetails {
-                .owner {
-                    margin-bottom: 1.5rem;
+                        &:last-of-type {
+                            border-right: none;
+                        }
+                    }
                 }
-                
             }
         }
     }    

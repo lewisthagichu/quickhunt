@@ -21,7 +21,7 @@
         .btns {
             position: absolute;
             top: 50%;
-            right: var(--container-padding);
+            right: 0;
             transform: translateY(-50%);
             display: flex;
             gap: 2rem;
@@ -71,8 +71,6 @@
 
         .title {
             .btns {
-                right: 0px;
-
                 button {
                     background-color: transparent;
                     color: var(--color-dark);

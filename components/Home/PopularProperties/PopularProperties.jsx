@@ -26,7 +26,7 @@ function PopularProperties() {
   }
 
   return (
-    <section className={`${styles.container} ${inter.className}`}>
+    <section className={styles.container}>
       <div className={styles.title}>
         <h2>
           Popular <span>Properties</span>
