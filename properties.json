@@ -8,7 +8,7 @@
       "location": {
         "street": "120 Tremont Street",
         "city": "Boston",
-        "state": "MA",
+        "county": "MA",
         "zipcode": "02108"
       },
       "beds": 2,
@@ -53,7 +53,7 @@
       "location": {
         "street": "45 Main Street",
         "city": "New York",
-        "state": "NY",
+        "county": "NY",
         "zipcode": "10001"
       },
       "beds": 1,
@@ -97,7 +97,7 @@
       "location": {
         "street": "500 Lux Lane",
         "city": "Los Angeles",
-        "state": "CA",
+        "county": "CA",
         "zipcode": "90001"
       },
       "beds": 3,
@@ -143,7 +143,7 @@
       "location": {
         "street": "123 Countryside Lane",
         "city": "Austin",
-        "state": "TX",
+        "county": "TX",
         "zipcode": "78701"
       },
       "beds": 1,
@@ -177,7 +177,7 @@
       "location": {
         "street": "75 Urban Avenue",
         "city": "Chicago",
-        "state": "IL",
+        "county": "IL",
         "zipcode": "60601"
       },
       "beds": 1,
@@ -213,7 +213,7 @@
       "location": {
         "street": "456 Oceanfront Drive",
         "city": "Miami",
-        "state": "FL",
+        "county": "FL",
         "zipcode": "33101"
       },
       "beds": 4,
@@ -249,7 +249,7 @@
       "location": {
         "street": "789 Forest Lane",
         "city": "Denver",
-        "state": "CO",
+        "county": "CO",
         "zipcode": "80201"
       },
       "beds": 2,
@@ -284,7 +284,7 @@
       "location": {
         "street": "321 Mountain Road",
         "city": "Aspen",
-        "state": "CO",
+        "county": "CO",
         "zipcode": "81611"
       },
       "beds": 3,
@@ -319,7 +319,7 @@
       "location": {
         "street": "600 Summit Drive",
         "city": "Boulder",
-        "state": "CO",
+        "county": "CO",
         "zipcode": "80301"
       },
       "beds": 4,
@@ -355,7 +355,7 @@
       "location": {
         "street": "123 History Lane",
         "city": "Philadelphia",
-        "state": "PA",
+        "county": "PA",
         "zipcode": "19101"
       },
       "beds": 2,

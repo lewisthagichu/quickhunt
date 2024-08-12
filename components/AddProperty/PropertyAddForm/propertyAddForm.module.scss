@@ -1,0 +1,146 @@
+.container {
+    background-color: var(--color-gray);
+    color: var(--color-dark);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+
+
+    h2 {
+        font-size: var(--regular-title-size);
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
+    .row {
+        margin-bottom: 1.5rem;
+
+        & > label,
+        &.summary label {
+            display: block;
+            font-weight: 700;
+            margin-bottom: .5rem;
+        }
+
+        & > input, &.summary input, textarea, select {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            margin-bottom: .5rem;
+            border-radius: .5rem;
+            border: 1px solid rgba(0, 0, 0, .2);
+            color: var(--color-dark);
+        }
+
+        .textarea, select {
+            margin-bottom: 0;
+        }
+
+        &.summary {
+            display: flex;
+            flex-wrap: wrap;
+            
+            .col {
+                width: calc(100% / 3);
+                padding-right: .5rem;
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+
+        .amenities {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: .5rem;
+
+            .amenity {
+                input {
+                    margin-right: .5rem;
+                    height: 1.3rem;
+                    width: 1.3rem;
+                    border: 1px solid var(--color-dark)
+                }
+            }
+        }
+
+        .rates {
+            display: flex;
+
+            .rate {
+                display: flex; 
+                justify-content: space-between;   
+                align-items: center;
+                padding-right: .5rem;
+
+                label {
+                    margin-right: .5rem;
+                }
+
+                input {
+                    padding: 1rem 1.5rem;
+                    margin-bottom: .5rem;
+                    border-radius: .5rem;
+                    border: 1px solid rgba(0, 0, 0, .2);
+                    color: var(--color-dark);
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+
+    .bigBtn {
+        width: 100%;
+        padding: 0 var(--container-padding);
+        margin: 3rem 0;
+        
+        .btn {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 512px;
+            padding: 1rem 1.5rem;
+            font-size: 1em;
+            background-color: var(--color-dark);
+            color: var(--color-white);
+        }
+    }
+
+    
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        .row {
+            .amenities {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: 540px){
+    .container {
+        .row {
+            &.summary {                
+                .col {
+                    width: 100%;
+                    padding-right: 0;
+                }
+            }
+
+            .rates {
+                flex-direction: column;
+                .rate {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+    
+}

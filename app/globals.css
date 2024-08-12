@@ -98,7 +98,10 @@ select {
   border: none;
   background-color: transparent;
   /* overflow: scroll; */
+}
 
+textarea {
+  resize: none;
 }
 
 /* button */
