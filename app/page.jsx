@@ -1,7 +1,8 @@
+import { inter } from '@/public/font/font';
 import Hero from '@/components/Home/Hero/Hero';
 import PopularProperties from '@/components/Home/PopularProperties/PopularProperties';
 import RecentProperties from '@/components/Home/RecentProperties/RecentProperties';
-import { inter } from '@/public/font/font';
+import Footer from '@/components/Common/Footer/Footer';
 
 export default function Home() {
   return (
@@ -9,6 +10,7 @@ export default function Home() {
       <Hero />
       <PopularProperties />
       <RecentProperties />
+      <Footer />
     </div>
   );
 }

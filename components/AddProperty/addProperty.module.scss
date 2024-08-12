@@ -1,0 +1,17 @@
+.container {
+    background-color: var(--color-gray);
+    padding: calc(var(--nav-bar-height)) var(--container-padding) 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .wrapper {
+        max-width: 1536px;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        padding: calc(var(--nav-bar-height-mobile) + 4rem) var(--mobile-padding) 0;
+    }    
+}
