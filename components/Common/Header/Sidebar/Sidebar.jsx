@@ -23,7 +23,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
           </div>
           <ul>
             <li>
-              <Link href="#">Home</Link>
+              <Link href="/">Home</Link>
             </li>
             <li className={`${styles.sub} ${active ? styles.active : ''}`}>
               <Link href="#">Properties</Link>
@@ -33,20 +33,20 @@ function Sidebar({ isOpen, toggleSidebar }) {
                 <div className={styles.subMenu}>
                   <ul>
                     <li>
-                      <Link href="/add-property">Add Property</Link>
+                      <Link href="/properties/add">Add Property</Link>
                     </li>
                     <li>
-                      <Link href="/view-properties">View Properties</Link>
+                      <Link href="/properties">View Properties</Link>
                     </li>
                   </ul>
                 </div>
               )}
             </li>
             <li>
-              <Link href="#">About</Link>
+              <Link href="/about">About Us</Link>
             </li>
             <li>
-              <Link href="#">Contact</Link>
+              <Link href="/contact">Contact</Link>
             </li>
           </ul>
         </div>

@@ -137,10 +137,10 @@ function Footer() {
         <div className={styles.right}>
           <div className={styles.links}>
             <h3>Company</h3>
-            <Link href="#">About Us</Link>
-            <Link href="#">Properties</Link>
-            <Link href="#">FAQ</Link>
-            <Link href="#">Contact</Link>
+            <Link href="about">About Us</Link>
+            <Link href="/properties">Properties</Link>
+            <Link href="/contact#faq">FAQ</Link>
+            <Link href="/contact">Contact</Link>
           </div>
           <div className={styles.links}>
             <h3>Socials</h3>
