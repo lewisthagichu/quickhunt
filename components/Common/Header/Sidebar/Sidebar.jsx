@@ -23,30 +23,40 @@ function Sidebar({ isOpen, toggleSidebar }) {
           </div>
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link onClick={toggleSidebar} href="/">
+                Home
+              </Link>
             </li>
             <li className={`${styles.sub} ${active ? styles.active : ''}`}>
-              <Link href="#">Properties</Link>
+              <div className={styles.link}>Properties</div>
               <span onClick={toggleActive}></span>
 
               {active && (
                 <div className={styles.subMenu}>
                   <ul>
                     <li>
-                      <Link href="/properties/add">Add Property</Link>
+                      <Link onClick={toggleSidebar} href="/properties/add">
+                        Add Property
+                      </Link>
                     </li>
                     <li>
-                      <Link href="/properties">View Properties</Link>
+                      <Link onClick={toggleSidebar} href="/properties">
+                        View Properties
+                      </Link>
                     </li>
                   </ul>
                 </div>
               )}
             </li>
             <li>
-              <Link href="/about">About Us</Link>
+              <Link onClick={toggleSidebar} href="/about">
+                About Us
+              </Link>
             </li>
             <li>
-              <Link href="/contact">Contact</Link>
+              <Link onClick={toggleSidebar} href="/contact">
+                Contact
+              </Link>
             </li>
           </ul>
         </div>
