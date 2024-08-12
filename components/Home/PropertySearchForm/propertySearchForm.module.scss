@@ -3,7 +3,9 @@
     padding: 0 var(--container-padding);  
     display: flex;
     justify-content: center;
-    width: 100%;      
+    width: 100%;  
+    margin: 0 auto;
+    max-width: 1536px;    
     
     .form {
         width: 75%;
