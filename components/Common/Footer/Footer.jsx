@@ -1,9 +1,10 @@
 import styles from './footer.module.scss';
 import Link from 'next/link';
+import { inter } from '@/public/font/font';
 
 function Footer() {
   return (
-    <section className={styles.container}>
+    <section className={`${styles.container} ${inter.className}`}>
       <div className={styles.content}>
         <div className={styles.left}>
           <div className={styles.logo}>

@@ -1,5 +1,6 @@
+import Footer from '@/components/Common/Footer/Footer';
 import './globals.css';
-import Header from '@/components/Header/Header';
+import Header from '@/components/Common/Header/Header';
 
 export const metadata = {
   title: 'HappyHome',
@@ -13,6 +14,7 @@ export default function RootLayout({ children }) {
       <body>
         <Header />
         <main>{children}</main>
+        <Footer />
       </body>
     </html>
   );
