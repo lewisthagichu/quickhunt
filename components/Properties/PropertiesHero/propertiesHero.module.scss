@@ -1,0 +1,11 @@
+.container {
+    background-color: var(--color-gray);
+    padding: calc(var(--nav-bar-height) + 4rem) 0 4rem;
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        top: var(--nav-bar-height-mobile);
+        padding: calc(var(--nav-bar-height-mobile) + 4rem) 0 4rem;
+    }    
+}
