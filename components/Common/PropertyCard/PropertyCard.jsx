@@ -19,12 +19,12 @@ function PropertyCard({ property }) {
       </div>
 
       <div className={styles.textContainer}>
-        <div className={styles.bio}>
+        <div className={styles.top}>
           <div className={styles.location}>
             <FaMapMarker />
             <span>
               {' '}
-              {location.city} {location.county}
+              {location.city} {location.state}
             </span>
           </div>
           <h3>{name}</h3>
@@ -32,18 +32,20 @@ function PropertyCard({ property }) {
 
         <div className={styles.amenities}>
           <p>
-            <FaBed /> {property.beds} <span>Beds</span>
+            <FaBed /> <span>{property.beds}</span> <span>Beds</span>
           </p>
           <p>
-            <FaBath /> {property.baths} <span>Baths</span>
+            <FaBath />
+            <span> {property.baths}</span> <span>Baths</span>
           </p>
           <p>
             <FaRulerCombined />
-            {property.square_feet} <span>sqft</span>
+            <span> {property.square_feet} </span>
+            <span>sqft</span>
           </p>
         </div>
 
-        <div className={styles.bottomDetails}>
+        <div className={styles.bottom}>
           <div className={styles.owner}>
             <IoMdPerson />
             <span>Lewis</span>
@@ -53,7 +55,7 @@ function PropertyCard({ property }) {
             href={`/properties/${property._id}`}
             className={`${styles.btn} btn`}
           >
-            Details
+            View
           </Link>
         </div>
       </div>

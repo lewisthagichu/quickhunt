@@ -3,13 +3,7 @@ import styles from './card.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import { IoMdPerson } from 'react-icons/io';
-import {
-  FaBed,
-  FaBath,
-  FaRulerCombined,
-  FaMapMarker,
-  FaArrowUp,
-} from 'react-icons/fa';
+import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
 function Card({ property, cardIndex }) {
   const { owner, name, rates, location, images } = property;
@@ -29,7 +23,7 @@ function Card({ property, cardIndex }) {
       </div>
 
       <div className={styles.textContainer}>
-        <div className={styles.bio}>
+        <div className={styles.top}>
           <div className={styles.location}>
             <FaMapMarker />
             <span>
@@ -47,25 +41,26 @@ function Card({ property, cardIndex }) {
 
           <div className={styles.amenities}>
             <p>
-              <FaBed /> {property.beds} <span>Beds</span>
+              <FaBed /> <span>{property.beds}</span> <span>Beds</span>
             </p>
             <p>
-              <FaBath /> {property.baths} <span>Baths</span>
+              <FaBath />
+              <span> {property.baths} </span> <span>Baths</span>
             </p>
             <p>
               <FaRulerCombined />
-              {property.square_feet} <span>sqft</span>
+              <span> {property.square_feet} </span>
+              <span>sqft</span>
             </p>
           </div>
         </div>
 
         <div className={styles.border}></div>
-        <div className={styles.bottomDetails}>
+        <div className={styles.bottom}>
           <Link
             href={`/properties/${property._id}`}
             className={`${styles.btn} btn`}
           >
-            {/* <FaArrowUp /> */}
             View
           </Link>
         </div>

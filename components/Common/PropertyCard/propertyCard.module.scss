@@ -32,7 +32,7 @@
     .textContainer {
         padding: 1.5rem;
 
-        .bio {
+        .top {
            margin-bottom: 2rem;
             
             .location {
@@ -42,6 +42,10 @@
             
             h3 {
                 font-size: 1.2em;
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
         }
 
@@ -58,10 +62,9 @@
             margin-bottom: 1.5rem;
         }
 
-        .bottomDetails {
+        .bottom {
             display: flex;
             justify-content: space-between;
-            margin-bottom: 1.5rem;
 
             .owner {
                 display: flex;
@@ -77,6 +80,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                min-width: 6em;
             }
         }
     }
@@ -86,17 +90,17 @@
     .container {
         .textContainer {
             .amenities {
-              span {
+              svg {
                 display: none;
               }
             }
 
-            .bottomDetails {
+            .bottom {
                 flex-direction: column;
 
                 .owner {
-                    margin-bottom: 1.5rem;
                     margin: 0 auto;
+                    margin-bottom: 1.5rem;
                 }
             }
         }
@@ -107,12 +111,12 @@
     .container {
         .textContainer {
             .amenities {
-              span {
+              svg {
                 display: inline;
               }
             }
 
-            .bottomDetails {
+            .bottom {
                 .owner {
                     margin-bottom: 1.5rem;
                 }
