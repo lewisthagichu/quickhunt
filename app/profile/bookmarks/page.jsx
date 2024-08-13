@@ -1,7 +1,7 @@
-import React from 'react';
+import Bookmarks from '@/components/Profile/Bookmarks/Bookmarks';
 
 function BookmarksPage() {
-  return <div>BookmarksPage</div>;
+  return <Bookmarks />;
 }
 
 export default BookmarksPage;
