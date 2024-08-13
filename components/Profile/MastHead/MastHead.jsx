@@ -18,12 +18,12 @@ function MastHead() {
       <nav className={styles.subnav}>
         <ul>
           <li>
-            <Link className={styles.active} href="properties/1">
+            <Link className={styles.active} href="/profile/listings">
               Listings
             </Link>
           </li>
           <li>
-            <Link href="properties/bookmarks">
+            <Link href="/profile/bookmarks">
               <span>Bookmarks</span>
             </Link>
           </li>

@@ -1,7 +1,7 @@
-import React from 'react';
+import Listings from '@/components/Profile/Listings/Listings';
 
 function ListingsPage() {
-  return <div>ListingsPage</div>;
+  return <Listings />;
 }
 
 export default ListingsPage;
