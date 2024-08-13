@@ -14,8 +14,8 @@ function RecentProperties() {
         </h2>
         <div className={styles.cards}>
           {recentProperties.map((property, i) => (
-            <div className={styles.item}>
-              <PropertyCard key={i} property={property} />
+            <div key={`r_${i}`} className={styles.item}>
+              <PropertyCard property={property} />
             </div>
           ))}
         </div>

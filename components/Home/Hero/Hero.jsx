@@ -2,7 +2,7 @@ import Image from 'next/image';
 import styles from './hero.module.scss';
 // import heroImg from '@/public/images/hero.webp';
 import heroImg2 from '@/public/images/hero2.webp';
-import PropertySearchForm from '../PropertySearchForm/PropertySearchForm';
+import PropertySearchForm from '../../Common/PropertySearchForm/PropertySearchForm';
 
 function Hero() {
   return (

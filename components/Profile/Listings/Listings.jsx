@@ -8,8 +8,8 @@ function Listings() {
     <section className={styles.container}>
       <div className={styles.cards}>
         {listings.map((property, index) => (
-          <div className={styles.item}>
-            <ListingCard key={index} property={property} />
+          <div key={`l_${index}`} className={styles.item}>
+            <ListingCard property={property} />
           </div>
         ))}
       </div>

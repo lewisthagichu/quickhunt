@@ -5,6 +5,8 @@
         width: 100%;
         display: flex;
         gap: 2rem;
+        max-width: 1563px;
+        margin: 0 auto;
 
         .item {
             width: calc((100% - 4rem) / 3);

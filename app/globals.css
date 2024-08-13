@@ -31,7 +31,7 @@
   --btn-height-small: 2.625em;
   --btn-shadow-distance: 1.25em;
 
-  --nav-bar-height: calc(var(--btn-height) + (var(--gap) * 1.2));
+  --nav-bar-height: calc(var(--btn-height) + (var(--gap) * .6));
   --nav-bar-height-mobile: calc(var(--btn-height) + (var(--gap) * 0.6));
   --card-width: calc(var(--title-size) * 2.25);
 }

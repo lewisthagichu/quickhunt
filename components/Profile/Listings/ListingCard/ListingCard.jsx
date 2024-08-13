@@ -19,7 +19,7 @@ function ListingCard({ property }) {
       </div>
 
       <div className={styles.textContainer}>
-        <div className={styles.bio}>
+        <div className={styles.top}>
           <div className={styles.location}>
             <FaMapMarker />
             <span>
@@ -27,28 +27,27 @@ function ListingCard({ property }) {
               {location.city} {location.county}
             </span>
           </div>
-          <h3>
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Molestiae,
-            eos.
-          </h3>
+          <h3>{name}</h3>
         </div>
 
         <div className={styles.amenities}>
           <p>
-            <FaBed /> {property.beds} <span>Beds</span>
+            <FaBed /> <span>{property.beds}</span> <span>Beds</span>
           </p>
           <p>
-            <FaBath /> {property.baths} <span>Baths</span>
+            <FaBath />
+            <span> {property.baths}</span> <span>Baths</span>
           </p>
           <p>
             <FaRulerCombined />
-            {property.square_feet} <span>sqft</span>
+            <span> {property.square_feet} </span>
+            <span>sqft</span>
           </p>
         </div>
 
         <div className={styles.border}></div>
 
-        <div className={styles.bottomDetails}>
+        <div className={styles.bottom}>
           <Link
             href={`/properties/${property._id}/edit`}
             className={`${styles.btn} ${styles.edit} btn`}

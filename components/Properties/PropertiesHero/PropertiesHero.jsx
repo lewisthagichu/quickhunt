@@ -1,5 +1,5 @@
 import styles from './propertiesHero.module.scss';
-import PropertySearchForm from '@/components/Home/PropertySearchForm/PropertySearchForm';
+import PropertySearchForm from '@/components/Common/PropertySearchForm/PropertySearchForm';
 
 function PropertiesHero() {
   return (
