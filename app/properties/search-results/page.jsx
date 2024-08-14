@@ -1,17 +1,16 @@
-import React from 'react';
 import { inter } from '@/public/font/font';
 import PropertiesHero from '@/components/Properties/PropertiesHero/PropertiesHero';
-import PropertiesWrapper from '@/components/Properties/Wrapper/PropertiesWrapper';
+import SearchResults from '@/components/Common/SearchResults/SearchResults';
 import Footer from '@/components/Common/Footer/Footer';
 
-function PropertiesPage() {
+function SearchResultsPage() {
   return (
     <div className={inter.className}>
       <PropertiesHero />
-      <PropertiesWrapper />
+      <SearchResults />
       <Footer />
     </div>
   );
 }
 
-export default PropertiesPage;
+export default SearchResultsPage;

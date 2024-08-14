@@ -113,6 +113,7 @@ textarea {
   height: var(--btn-height);
   color: var(--color-dark);
   font-size: .8em;
+  font-weight: 600;
   border-radius: var(--border-radius);
   background-color: yellowgreen;
   text-align: center;
