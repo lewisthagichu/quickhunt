@@ -44,13 +44,63 @@
     .right {
         display: flex;
         align-items: center;
-        gap: calc(var(--gap) * .2);
+        gap: 1rem;
 
-        svg {
-            display: block;
-            height: 1.3em;
-            width: 1.3em;
-        }         
+        .messages {
+            position: relative;
+
+            .btn {
+                background-color: transparent;
+                color: var(--color-dark);
+                border: none;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                cursor: pointer;
+                transition: all 100ms ease-in-out;
+
+                &:hover {
+                    background-color: var(--color-dark);
+                    color: var(--color-white);
+                  }
+                  
+                &:focus {
+                    outline: none; 
+                    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1f2937; 
+                }
+
+                svg {
+                    height: 2.2em;
+                    width: 2.2em;
+                }
+
+            }
+        }   
+        
+        .profile {
+            position: relative;
+
+            .btn {
+                display: flex;
+                background: transparent;
+                border: none;
+                height: 2.2em;
+                width: 2.2em;                
+                color: var(--color-dark);
+                cursor: pointer;
+
+                &:focus {
+                    outline: none; 
+                    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1f2937; 
+                }
+
+                img {
+                    border-radius: 50%;
+                    object-fit: cover;
+                }
+                
+            }
+        }
     }
 }  
 
@@ -61,6 +111,25 @@
         .logo {
             svg{
                 font-size: 2em;
+            }
+        }
+
+        .right {
+            gap: 0.5rem;
+            .messages {
+                .btn {
+                    svg {
+                        height: 2em;
+                        width: 2em;
+                    }
+                }
+            }
+
+            .profile {
+                .btn {
+                    width: 2em;
+                    height: 2em;
+                }
             }
         }
     }  
