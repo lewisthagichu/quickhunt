@@ -18,7 +18,7 @@
     .close {
         position: absolute;
         left: var(--container-padding);
-        top: calc(var(--nav-bar-height) * 0.25);
+        top: calc(var(--nav-bar-height) * 0.23);
         width: calc((var(--copy-size-m)* 2) + 1em);
         height: var(--btn-height-small);
         display: flex;
@@ -129,15 +129,19 @@
     }
 }
 
-
 @media screen and (max-width: 992px) {
     .aside {
         width: 100%;
+    }
+}
+
+
+@media screen and (max-width: 540px) {
+    .aside {
         .close {
             left: var(--mobile-padding);
             top: calc(var(--nav-bar-height-mobile) * .15);
         }
-
     }
 
 }
