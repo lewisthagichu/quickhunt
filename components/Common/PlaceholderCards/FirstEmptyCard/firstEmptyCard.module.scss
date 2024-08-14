@@ -1,0 +1,42 @@
+.container {
+    width: 100%;
+    border-radius: 1rem;
+    border: 2px dashed #e5e5e5;
+    aspect-ratio: 16 / 15;
+    display: flex;
+    align-items: center;
+    flex: 1;
+
+    .content {
+        padding: 1.5rem;
+        margin: 0 auto;
+        width: 80%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+
+        .btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 6em;
+        }
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .container {
+        aspect-ratio: 4 / 5;
+
+        .content {
+            width: 100%;
+
+            h2 {
+                font-size: 1em;
+            }
+        }
+
+    }
+}

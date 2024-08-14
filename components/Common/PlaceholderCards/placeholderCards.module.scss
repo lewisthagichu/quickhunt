@@ -1,0 +1,29 @@
+.cards {
+    width: 100%;
+    display: flex;
+    gap: 2rem;
+    max-width: 1536px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+
+
+    .item {
+        width: calc((100% - 4rem) / 3);
+    }        
+}
+
+@media screen and (max-width: 768px) {
+    .cards {
+        flex-direction: column;
+        
+        .item {
+            width: 100%;
+        }            
+    }    
+}
+
+@media screen and (max-width: 520px){
+    .item.empty {
+        display: none;
+    }    
+}

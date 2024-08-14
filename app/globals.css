@@ -120,9 +120,40 @@ textarea {
   border: none;
 }
 
+/* cards */
+.cardsContainer {
+  padding: 2rem var(--container-padding);
+}
+
+.cardsContainer .cards {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+  max-width: 1536px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.cards .item {
+  width: calc((100% - 4rem) / 3);
+}
+
+@media screen and (max-width: 768px) {
+  .cards {
+    flex-direction: column;
+  }
+
+  .item {
+    width: 100%;
+  }
+  
+}
+
 @media screen and (max-width: 540px) {
   .btn {
     height: var(--btn-height-small);
   }
   
 }
+
+
