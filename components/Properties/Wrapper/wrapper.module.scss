@@ -7,12 +7,17 @@
     align-items: center;
 
     .cards {
-        display: grid;
         width: 100%;
-        grid-template-columns: repeat(3, 1fr);
+        display: flex;
         gap: 2rem;
         max-width: 1536px;
         margin: 0 auto;
+        flex-wrap: wrap;
+
+
+        .item {
+            width: calc((100% - 4rem) / 3);
+        }     
     }
 
 }
@@ -20,8 +25,11 @@
 @media screen and (max-width: 768px) {
     .container {
         .cards {
-            grid-template-columns: 1fr;
-            gap: 1rem;
+            flex-direction: column;
+            
+            .item {
+                width: 100%;
+            }            
         }
     }
     

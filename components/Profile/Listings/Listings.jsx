@@ -1,7 +1,6 @@
 import { inter } from '@/public/font/font';
 import styles from './listings.module.scss';
 import ListingCard from './ListingCard/ListingCard';
-import FirstEmptyCard from '@/components/Common/PlaceholderCards/FirstEmptyCard/FirstEmptyCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
 import properties from '@/properties.json';
 
