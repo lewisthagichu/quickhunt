@@ -5,8 +5,8 @@ import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCa
 import properties from '@/properties.json';
 
 const Listings = () => {
-  // const listings = properties.slice(0, 3);
-  const listings = [];
+  const listings = properties.slice(0, 3);
+  // const listings = [];
   const hasListings = listings.length > 0;
 
   return (
