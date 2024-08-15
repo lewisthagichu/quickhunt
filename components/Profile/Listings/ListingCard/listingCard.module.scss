@@ -79,11 +79,10 @@
                 &.edit {
                     background-color: var(--color-dark);
                     color: var(--color-white);
-                    transition: all 100ms ease-in-out;
+                    transition: background-color 100ms ease-in-out;
 
                     &:hover {
-                        background-color: #ebebeb;
-                        color: var(--color-dark);
+                        background-color: var(--color-dark2);
                     }
                 }
 
@@ -113,9 +112,6 @@
                 flex-direction: column;
                 gap: 1.5rem;
 
-                .btn {
-                    border-radius: var(--border-radius);
-                }
             }
         }
     }    

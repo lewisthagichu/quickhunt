@@ -107,6 +107,11 @@
             font-size: 1em;
             background-color: var(--color-dark);
             color: var(--color-white);
+            transition: background-color 100ms ease-in-out;
+
+            &:hover {
+                background-color: var(--color-dark2);
+            }
         }
     }
 

@@ -22,6 +22,11 @@
             align-items: center;
             justify-content: center;
             min-width: 6em;
+            transition: background-color 100ms ease-in-out;
+
+            &:hover {
+                background-color: var(--color-YG2);
+            }
         }
     }
 }
