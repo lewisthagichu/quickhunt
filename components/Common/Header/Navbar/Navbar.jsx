@@ -12,7 +12,7 @@ function Navbar({ toggleSidebar }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   return (
     <div className={styles.nav}>
-      <div onClick={toggleSidebar} className={`${styles.burger}`}>
+      <div onClick={toggleSidebar} className={styles.burger}>
         <IoIosMenu />
       </div>
 
@@ -55,6 +55,15 @@ function Navbar({ toggleSidebar }) {
           )}
         </div>
       </div>
+
+      {isProfileOpen && (
+        <div
+          onClick={() => {
+            setIsProfileOpen(false);
+          }}
+          className={styles.overlay}
+        ></div>
+      )}
     </div>
   );
 }
