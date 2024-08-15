@@ -6,6 +6,7 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import profileDefault from '@/public/images/profile.png';
+import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar({ toggleSidebar }) {
   const [isProfileOpen, setIsProfileOpen] = useState(false);
@@ -44,11 +45,14 @@ function Navbar({ toggleSidebar }) {
               className={styles.btn}
               aria-expanded="false"
               aria-haspopup="true"
-              //   onClick={() => setIsProfileOpen((prev) => !prev)}
+              onClick={() => setIsProfileOpen((prev) => !prev)}
             >
               <Image src={profileDefault} fill alt="profile avatar" />
             </button>
           </div>
+          {isProfileOpen && (
+            <DropDownMenu setIsProfileOpen={setIsProfileOpen} />
+          )}
         </div>
       </div>
     </div>

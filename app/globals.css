@@ -113,12 +113,18 @@ textarea {
   height: var(--btn-height);
   color: var(--color-dark);
   font-size: .8em;
-  font-weight: 600;
+  font-weight: 500;
   border-radius: var(--border-radius);
   background-color: yellowgreen;
   text-align: center;
   outline: none;
   border: none;
+  opacity: .8;
+  transition: all 100ms ease-in-out;
+}
+
+.btn:hover {
+  opacity: 1;
 }
 
 /* cards */
