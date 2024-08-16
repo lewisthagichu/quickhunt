@@ -33,7 +33,7 @@ function DropDownMenu({ setIsProfileOpen }) {
             className={styles.btn}
             role="menuitem"
             tabIndex="-1"
-            id="user-menu-item-0"
+            id="user-menu-item-1"
           >
             <small>View Profile</small>
           </Link>
@@ -47,7 +47,7 @@ function DropDownMenu({ setIsProfileOpen }) {
             className={styles.btn}
             role="menuitem"
             tabIndex="-1"
-            id="user-menu-item-1"
+            id="user-menu-item-2"
           >
             <small>Add Property</small>
           </Link>
@@ -61,7 +61,7 @@ function DropDownMenu({ setIsProfileOpen }) {
             className={styles.btn}
             role="menuitem"
             tabIndex="-1"
-            id="user-menu-item-2"
+            id="user-menu-item-3"
           >
             <small>Sign Out</small>
           </button>

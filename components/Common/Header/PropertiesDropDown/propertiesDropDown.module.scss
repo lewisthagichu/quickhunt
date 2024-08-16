@@ -1,0 +1,42 @@
+.container {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    width: 40rem;
+    margin-top: 1rem;
+    padding: 3rem;
+    background-color: var(--color-white);
+    transform-origin: top right;
+    border-radius: 0.5rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05); 
+    z-index: 7;
+    
+    &#user-menu:focus {
+        outline: none;
+    }
+
+    .links {
+        display: flex;
+        flex-direction: column;
+        line-height: 1;
+    }
+
+
+    .btn {
+        all: unset;
+        display: block;
+        padding: 1rem 0;
+        color: var(--color-dark);
+        opacity: .7;
+        transition: all 100ms ease-in-out;
+        cursor: pointer;
+
+        &:hover {
+            opacity: 1;
+            font-weight: 600;
+        }
+    }
+    
+}
+

@@ -8,23 +8,57 @@
     width: 100%;
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 
-    .burger {
-        width: calc((var(--copy-size-m)* 2) + 1em);
-        height: var(--btn-height-small);
+    .left {
         display: flex;
-        justify-content: center;
-        align-items: center;
-        
-        svg {
-            cursor: pointer;
-            width: 60%;
-            height: 60%;
+        gap: calc(var(--gap) * 1.5);
+
+        .burger {
+            width: calc((var(--copy-size-m)* 2) + 1em);
+            height: var(--btn-height-small);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            
+            svg {
+                cursor: pointer;
+                width: 60%;
+                height: 60%;
+            }
+    
+            &.active {
+                display: none;
+            }
         }
 
-        &.active {
-            display: none;
+        .links {
+            display: flex;
+            align-items: center;
+            gap: var(--gap);
+            
+            a {
+                color: var(--color-dark);
+            }
+
+            .properties {
+                position: relative;
+                .arrow {
+                    position: absolute;
+                    top: 55%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 1em;
+                    width: 1em;
+                    cursor: pointer;
+
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
         }
     }
+
     
     .logo {
         position: absolute;
@@ -44,7 +78,7 @@
     .right {
         display: flex;
         align-items: center;
-        gap: 1rem;
+        gap: 1.5rem;
 
         .messages {
             position: relative;
@@ -52,7 +86,6 @@
             .btn {
                 background-color: transparent;
                 color: var(--color-dark);
-                border: none;
                 border-radius: 50%;
                 display: flex;
                 align-items: center;
@@ -70,8 +103,8 @@
                 }
 
                 svg {
-                    height: 2.2em;
-                    width: 2.2em;
+                    height: 1.8em;
+                    width: 1.8em;
                 }
 
             }
@@ -124,10 +157,18 @@
         width: 100vw;
         height: 100vh;
         background-color: rgba(var(--color-black-rgb), 0.1);
-        // z-index: 1;
-        // backdrop-filter: blur(.2em);
     }
-}  
+} 
+
+@media screen and (max-width: 1280px) {
+    .nav {
+        .left {
+            .links {
+                display: none;
+            }
+        }
+    }
+}
 
 @media screen and (max-width: 540px) {
     .nav {
@@ -141,14 +182,7 @@
 
         .right {
             gap: 0.5rem;
-            .messages {
-                .btn {
-                    svg {
-                        height: 2em;
-                        width: 2em;
-                    }
-                }
-            }
+            
 
             .profile {
                 .btn {
