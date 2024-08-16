@@ -24,18 +24,14 @@
 
   --title-size: clamp(5em, 7.5vw, 7.5em);
   --regular-title-size: calc(var(--title-size)* 0.3);
-  --copy-size-l: 0.9em;
   --copy-size-m: 0.8em;
-  --copy-size-s: 0.725em;
   --border-radius: 100em;
 
   --btn-height: 3em;
   --btn-height-small: 2.625em;
-  --btn-shadow-distance: 1.25em;
 
   --nav-bar-height: calc(var(--btn-height) + (var(--gap) * .6));
   --nav-bar-height-mobile: calc(var(--btn-height) + (var(--gap) * 0.6));
-  --card-width: calc(var(--title-size) * 2.25);
 }
 
 

@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 function Footer() {
   return (
-    <section className={`${styles.container}`}>
+    <section className={styles.container}>
       <div className={styles.content}>
         <div className={styles.left}>
           <div className={styles.logo}>
