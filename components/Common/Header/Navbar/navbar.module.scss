@@ -80,6 +80,24 @@
         .profile {
             position: relative;
 
+            .avatar {
+                position: relative;
+                .arrow {
+                    position: absolute;
+                    top: 80%;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    height: 1em;
+                    width: 1em;
+                    cursor: pointer;
+
+                    svg {
+                        height: 100%;
+                        width: 100%;
+                    }
+                }
+            }
+
             .btn {
                 position: relative;
                 display: flex;

@@ -1,8 +1,8 @@
 'use client';
 import styles from './navbar.module.scss';
 import Logo from './Logo';
-import { IoIosMenu } from 'react-icons/io';
 import { useState } from 'react';
+import { IoIosMenu, IoMdArrowDropdown } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
 import profileDefault from '@/public/images/profile.png';
@@ -49,6 +49,13 @@ function Navbar({ toggleSidebar }) {
             >
               <Image src={profileDefault} fill alt="profile avatar" />
             </button>
+
+            <div
+              className={styles.arrow}
+              onClick={() => setIsProfileOpen((prev) => !prev)}
+            >
+              <IoMdArrowDropdown />
+            </div>
           </div>
           {isProfileOpen && (
             <DropDownMenu setIsProfileOpen={setIsProfileOpen} />
