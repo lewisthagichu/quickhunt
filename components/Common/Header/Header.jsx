@@ -1,12 +1,24 @@
 'use client';
 import styles from './header.module.scss';
 import { inter } from '@/public/font/font';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar/Sidebar';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
+
+  useEffect(() => {
+    if (isOpen) {
+      document.documentElement.style.overflow = 'hidden';
+    } else {
+      document.documentElement.style.overflow = 'auto';
+    }
+
+    return () => {
+      document.documentElement.style.overflow = 'auto';
+    };
+  }, [isOpen]);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);

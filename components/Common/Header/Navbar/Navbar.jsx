@@ -41,10 +41,10 @@ function Navbar({ toggleSidebar }) {
           </li>
 
           <li>
-            <Link href="/">About Us</Link>
+            <Link href="/about">About Us</Link>
           </li>
           <li>
-            <Link href="/">Contact</Link>
+            <Link href="/contact">Contact</Link>
           </li>
         </ul>
       </div>

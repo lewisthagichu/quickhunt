@@ -6,11 +6,11 @@
     .wrapper {
         max-width: 1536px;
         margin: 0 auto;
-        padding: var(--mobile-padding) 0;
+        padding: 8rem 0;
         
         h1 {
             text-align: center;
-            margin-bottom: var(--mobile-padding);
+            margin-bottom: 8rem;
             font-size: calc(var(--regular-title-size) * 1.5);
         }
 
@@ -100,7 +100,7 @@
         .wrapper {
             padding: var(--container-padding) 0;
             h1 {
-                display: none;
+                // display: none;
             }
 
             h2 {
