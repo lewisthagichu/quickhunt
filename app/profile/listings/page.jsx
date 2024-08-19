@@ -1,7 +1,5 @@
 import Listings from '@/components/Profile/Listings/Listings';
 
-function ListingsPage() {
+export default function ListingsPage() {
   return <Listings />;
 }
-
-export default ListingsPage;

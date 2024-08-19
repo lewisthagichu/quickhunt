@@ -1,7 +1,7 @@
 import styles from './addProperty.module.scss';
 import PropertyAddForm from './PropertyAddForm/PropertyAddForm';
 
-function AddProperty() {
+export default function AddProperty() {
   return (
     <section className={styles.container}>
       <div className={styles.wrapper}>
@@ -10,5 +10,3 @@ function AddProperty() {
     </section>
   );
 }
-
-export default AddProperty;

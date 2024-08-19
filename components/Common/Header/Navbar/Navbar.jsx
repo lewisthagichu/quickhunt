@@ -4,7 +4,7 @@ import { useState } from 'react';
 import { IoIosMenu, IoMdArrowDropdown } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
-import Logo from './Logo';
+import Logo from './Logo/Logo';
 import profileDefault from '@/public/images/profile.png';
 import PropertiesDropDown from '../PropertiesDropDown/PropertiesDropDown';
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
@@ -80,7 +80,12 @@ function Navbar({ toggleSidebar }) {
               aria-haspopup="true"
               onClick={() => setIsProfileOpen((prev) => !prev)}
             >
-              <Image src={profileDefault} fill alt="profile avatar" />
+              <Image
+                src={profileDefault}
+                sizes="10vw"
+                fill
+                alt="profile avatar"
+              />
             </button>
 
             <div

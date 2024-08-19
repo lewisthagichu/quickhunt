@@ -1,12 +1,12 @@
 .container{
-  background-color: var(--color-gray);
+  background-color: var(--color-white);
   color: var(--color-dark);  
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 
   .content {
-    padding: var(--section-padding);
+    padding: 8rem var(--section-padding);
     display: flex;
     justify-content: space-between;
 

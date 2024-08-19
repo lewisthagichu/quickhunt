@@ -1,7 +1,7 @@
 import MastHead from '@/components/Profile/MastHead/MastHead';
 import Footer from '@/components/Common/Footer/Footer';
 
-function ProfileLayout({ children }) {
+export default function ProfileLayout({ children }) {
   return (
     <>
       <MastHead />
@@ -10,5 +10,3 @@ function ProfileLayout({ children }) {
     </>
   );
 }
-
-export default ProfileLayout;

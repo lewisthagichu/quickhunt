@@ -1,7 +1,7 @@
 import styles from './footer.module.scss';
 import Link from 'next/link';
 
-function Footer() {
+export default function Footer() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
@@ -166,5 +166,3 @@ function Footer() {
     </section>
   );
 }
-
-export default Footer;

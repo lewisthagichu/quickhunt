@@ -1,4 +1,4 @@
-import styles from './navbar.module.scss';
+import styles from './logo.module.scss';
 import Link from 'next/link';
 
 function Logo() {

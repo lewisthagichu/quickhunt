@@ -1,0 +1,22 @@
+.logo {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);   
+    overflow: hidden;     
+    
+    svg {
+        width: 3em;
+        height: 1.5em;
+        font-size: 2.2em;
+    }
+   
+}
+
+@media screen and (max-width: 540px) {
+    .logo {
+        svg{
+            font-size: 2em;
+        }
+    }
+}
