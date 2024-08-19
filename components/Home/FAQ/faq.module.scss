@@ -1,0 +1,23 @@
+.container {
+    padding: 4rem var(--container-padding);
+    background-color: var(--color-white);
+
+    h2 {
+        text-align: center;
+        margin: 0 auto;
+        font-size: var(--regular-title-size);
+        font-weight: 700;
+        margin-bottom: 2rem;
+    }
+    
+    .accordion {
+        max-width: 1280px;
+        margin: 0 auto;
+    }       
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding: 4rem var(--mobile-padding);
+    }    
+}

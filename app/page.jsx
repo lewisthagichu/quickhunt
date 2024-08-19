@@ -4,6 +4,7 @@ import Propositon from '@/components/Home/Proposition/Propositon';
 import PopularProperties from '@/components/Home/PopularProperties/PopularProperties';
 import RecentProperties from '@/components/Home/RecentProperties/RecentProperties';
 import Footer from '@/components/Common/Footer/Footer';
+import FAQ from '@/components/Home/FAQ/FAQ';
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       <Propositon />
       <PopularProperties />
       <RecentProperties />
+      <FAQ />
       <Footer />
     </div>
   );

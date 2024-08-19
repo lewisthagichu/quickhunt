@@ -1,0 +1,36 @@
+.item {
+    border-bottom: 1px solid rgba(0, 0, 0, .2);
+    overflow: hidden;
+    padding: 1rem 1.5rem;
+    
+    &:first-of-type {
+        border-top: 1px solid rgba(0, 0, 0, .2);
+    }
+
+    .top {
+        display: flex;
+        justify-content: space-between;
+
+        p {
+            font-size: .8em;
+        }
+
+        .caret {
+            cursor: pointer;
+        }
+    }
+
+    .bottom {
+        height: 0;
+        
+        .answer {
+            padding-top: 1rem;
+            font-weight: 500;
+        }
+
+        &.active {
+            height: auto;
+        }
+    }
+
+}
