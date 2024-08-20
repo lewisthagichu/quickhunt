@@ -1,15 +1,14 @@
-import Image from 'next/image';
 import styles from './hero.module.scss';
-// import heroImg from '@/public/images/hero.webp';
-import heroImg2 from '@/public/images/hero2.webp';
+import Image from 'next/image';
+import heroImg from '@/public/images/hero2.webp';
 import PropertySearchForm from '../../Common/PropertySearchForm/PropertySearchForm';
 
 function Hero() {
   return (
-    <div className={styles.container}>
+    <section className={styles.container}>
       <div className={styles.imageContainer}>
         <div className={styles.image}>
-          <Image src={heroImg2} fill alt="image" placeholder="blur" />
+          <Image src={heroImg} fill alt="image" placeholder="blur" />
         </div>
       </div>
       <div className={styles.textContainer}>
@@ -20,7 +19,7 @@ function Hero() {
         <p>Explore, discover and move in.</p>
       </div>
       <PropertySearchForm />
-    </div>
+    </section>
   );
 }
 

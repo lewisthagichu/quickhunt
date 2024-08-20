@@ -158,9 +158,7 @@ export default function Footer() {
       </div>
       <div className={styles.bottom}>
         <p>
-          <span className="btn-text">
-            © 2024 Lewis Thagichu. All rights reserved
-          </span>
+          <span>© 2024 Lewis Thagichu. All rights reserved</span>
         </p>
       </div>
     </section>
