@@ -39,7 +39,7 @@
                 }
 
                 &:not(:disabled):hover {
-                    background-color: yellowgreen;
+                    background-color: var(--color-YG);
                     color: var(--color-dark);
                 }
                 
