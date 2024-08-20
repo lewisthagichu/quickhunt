@@ -7,15 +7,7 @@ export default function AboutHero() {
   return (
     <section className={styles.container}>
       <div className={styles.imageContainer}>
-        <div className={styles.image}>
-          <Image
-            src={heroImg}
-            sizes="50vw"
-            fill
-            alt="image"
-            placeholder="blur"
-          />
-        </div>
+        <Image src={heroImg} sizes="50vw" fill alt="image" placeholder="blur" />
       </div>
 
       <div className={styles.clipBack}></div>
