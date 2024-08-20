@@ -1,4 +1,4 @@
-import styles from './aboutHero.module.scss';
+import styles from './AboutHero.module.scss';
 import Image from 'next/image';
 import heroImg from '@/public/images/hero.webp';
 import Link from 'next/link';
