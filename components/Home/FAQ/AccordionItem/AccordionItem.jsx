@@ -1,5 +1,5 @@
 'use client';
-import styles from './accordionItem.module.scss';
+import styles from './AccordionItem.module.scss';
 import { useState } from 'react';
 import { IoIosArrowDown } from 'react-icons/io';
 
@@ -11,9 +11,9 @@ function AccordionItem({ faq }) {
   };
   return (
     <div className={styles.item}>
-      <div className={styles.top}>
+      <div onClick={toggleOpen} className={styles.top}>
         <p className={styles.question}>{faq.question}</p>
-        <div onClick={toggleOpen} className={styles.caret}>
+        <div className={`${styles.caret} ${isOpen ? styles.active : ''}`}>
           <IoIosArrowDown />
         </div>
       </div>

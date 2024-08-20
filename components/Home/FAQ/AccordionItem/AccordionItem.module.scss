@@ -1,7 +1,6 @@
 .item {
     border-bottom: 1px solid rgba(0, 0, 0, .2);
     overflow: hidden;
-    padding: 1rem 1.5rem;
     
     &:first-of-type {
         border-top: 1px solid rgba(0, 0, 0, .2);
@@ -10,13 +9,28 @@
     .top {
         display: flex;
         justify-content: space-between;
+        cursor: pointer;
+        transition: all 100ms ease-in-out;
+        padding: 1rem 1.5rem 0;
+
+        &:hover {
+            background-color: var(--color-gray);
+        }
 
         p {
             font-size: .8em;
         }
 
-        .caret {
-            cursor: pointer;
+        .caret{
+            svg {
+                transition: all 100ms ease-in-out;
+            }
+            
+            &.active {
+                svg {
+                    transform: rotate(-180deg);
+                }            
+            }        
         }
     }
 
@@ -24,7 +38,7 @@
         height: 0;
         
         .answer {
-            padding-top: 1rem;
+            padding: 1rem 1.5rem;
             font-weight: 500;
         }
 
