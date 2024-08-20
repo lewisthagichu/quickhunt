@@ -1,5 +1,5 @@
 .container {
-    padding: 8rem var(--container-padding) 3rem;
+    padding: 8rem var(--container-padding) 0;
     background-color: var(--color-gray);
 
     .quote  {
@@ -129,6 +129,6 @@
 
 @media screen and (max-width: 540px) {
     .container {
-        padding: 8rem var(--mobile-padding) 3rem;
+        padding: 8rem var(--mobile-padding) 0;
     }    
 }

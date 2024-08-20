@@ -1,4 +1,4 @@
-import styles from './proposition.module.scss';
+import styles from './Proposition.module.scss';
 
 const withoutPoints = [
   'Tedious property searches',
