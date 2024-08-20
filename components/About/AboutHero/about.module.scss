@@ -142,12 +142,13 @@
 
 @media screen and (max-width: 540px) {
     .container {
-        .imageContainer,
-        .clipBack,
-        .clipMiddle,
-        .clipTop {
-            height: 70%;
-        }
+        height: 70vh;
+        // .imageContainer,
+        // .clipBack,
+        // .clipMiddle,
+        // .clipTop {
+        //     height: 70%;
+        // }
         .clipTop {
             .textContainer {
                 padding-top: calc(var(--nav-bar-height) + 8vh);

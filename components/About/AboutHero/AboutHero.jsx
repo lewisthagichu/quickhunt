@@ -41,7 +41,7 @@ export default function AboutHero() {
             <Link href="/properties" className={`btn ${styles.btn}`}>
               Explore listings
             </Link>
-            <Link href="/about#ourvalues" className={`btn ${styles.btn}`}>
+            <Link href="/about#mission" className={`btn ${styles.btn}`}>
               Learn more
             </Link>
           </div>
