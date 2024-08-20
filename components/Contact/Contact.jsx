@@ -1,4 +1,4 @@
-import styles from './contact.module.scss';
+import styles from './Contact.module.scss';
 import { FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 function Contact() {
