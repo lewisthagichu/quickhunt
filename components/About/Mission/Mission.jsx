@@ -4,9 +4,8 @@ export default function Mission() {
   return (
     <section id="mission" className={styles.container}>
       <div className={styles.wrapper}>
-        <div className={styles.headline}>
-          <h2>How We Help</h2>
-        </div>
+        <h2 className={styles.headline}>How We Help</h2>
+
         <div className={styles.content}>
           <p>
             Our goal is to make finding and renting your ideal property
