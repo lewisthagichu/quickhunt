@@ -49,7 +49,7 @@ function Sidebar({ isOpen, toggleSidebar }) {
               )}
             </li>
             <li>
-              <Link onClick={toggleSidebar} href="/about">
+              <Link onClick={toggleSidebar} href="/about-us">
                 About Us
               </Link>
             </li>

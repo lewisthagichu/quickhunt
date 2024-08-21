@@ -33,8 +33,8 @@ export default function AboutHero() {
             <Link href="/properties" className={`btn ${styles.btn}`}>
               Explore listings
             </Link>
-            <Link href="/about#mission" className={`btn ${styles.btn}`}>
-              Learn more
+            <Link href="/contact" className={`btn ${styles.btn}`}>
+              Contact Us
             </Link>
           </div>
         </div>

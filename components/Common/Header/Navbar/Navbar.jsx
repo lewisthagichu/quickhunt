@@ -41,7 +41,7 @@ function Navbar({ toggleSidebar }) {
           </li>
 
           <li>
-            <Link href="/about">About Us</Link>
+            <Link href="/about-us">About Us</Link>
           </li>
           <li>
             <Link href="/contact">Contact</Link>
