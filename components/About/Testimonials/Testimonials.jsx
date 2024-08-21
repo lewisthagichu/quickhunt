@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import styles from './testimonials.module.scss';
+import styles from './Testimonials.module.scss';
 import profileDefault from '@/public/images/profile.png';
 import { FaStar } from 'react-icons/fa';
 import { ratingsCount, testimonials } from './data';

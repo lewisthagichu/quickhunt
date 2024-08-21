@@ -1,4 +1,4 @@
-import styles from './values.module.scss';
+import styles from './Values.module.scss';
 import { BsPatchCheck } from 'react-icons/bs';
 import { IoAccessibilityOutline } from 'react-icons/io5';
 import { FaRegHandshake } from 'react-icons/fa';

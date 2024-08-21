@@ -7,11 +7,11 @@ export default function CallToAction() {
     <section className={styles.container}>
       <div className={styles.join}>
         <Link className={`btn ${styles.joinBtn}`} href="#">
-          Join Us
+          Get Started
           <FaArrowRight />
         </Link>
       </div>
-      <h2>Ready to Get Started?</h2>
+
       <div className={styles.content}>
         <div className={styles.box}>
           <h3>For Renters</h3>

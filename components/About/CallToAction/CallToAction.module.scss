@@ -1,10 +1,36 @@
 .container {
     padding: 10vh var(--container-padding);
 
-    h2 {
-        text-align: center;
-        font-size: var(--regular-title-size);
-        margin-bottom: 1em;
+    .join {
+        display: flex;
+        justify-content: center;
+        margin: 2em 0;
+        
+        .joinBtn {
+            width: max-content;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-YG-top);
+            color: var(--color-white);
+            min-width: 12em;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: all 100ms ease-in-out;
+
+            svg {
+                transition: all 100ms ease-in-out;
+                margin-left: .5rem;
+            }
+
+            &:hover svg {
+                transform: rotate(-45deg);
+            }
+
+            &:hover {
+                background-color: var(--color-YG-middle);
+            }
+        }
     }
 
     .content {
@@ -13,6 +39,7 @@
         display: flex;
         justify-content: center;
         gap: var(--gap);
+        display: none;
 
         .box {
             width: 50%;
@@ -64,41 +91,11 @@
         }
     } 
     
-    .join {
-        display: flex;
-        justify-content: center;
-        margin: 2em 0;
-        
-        .joinBtn {
-            width: max-content;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: var(--color-YG-top);
-            color: var(--color-white);
-            min-width: 12em;
-            cursor: pointer;
-            transition: all 100ms ease-in-out;
-
-            svg {
-                transition: all 100ms ease-in-out;
-                margin-left: .5rem;
-            }
-
-            &:hover svg {
-                transform: rotate(-45deg);
-            }
-        }
-
-        
-
-
-        
-    }
+    
 
 }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 540px) {
     .container {
         padding: 6vh var(--mobile-padding);
 
