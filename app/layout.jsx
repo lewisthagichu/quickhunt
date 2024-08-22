@@ -1,5 +1,6 @@
 import './globals.css';
 import Header from '@/components/Common/Header/Header';
+import 'photoswipe/dist/photoswipe.css';
 
 export const metadata = {
   title: 'HappyHome',
