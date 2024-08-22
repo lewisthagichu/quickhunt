@@ -1,8 +1,7 @@
 'use client';
 import styles from './propertyHero.module.scss';
 import { FaMapMarker } from 'react-icons/fa';
-import { Gallery, Item } from 'react-photoswipe-gallery';
-import Image from 'next/image';
+import { Gallery } from 'react-photoswipe-gallery';
 import RenderImageItem from './RenderImageItem';
 import properties from '@/properties.json';
 
@@ -14,6 +13,9 @@ function PropertyHero() {
     <section className={styles.container}>
       <div className={styles.wrapper}>
         <div className={styles.textContainer}>
+          <div>
+            <small>Apartment</small>
+          </div>
           <div className={styles.left}>
             <h3 className={styles.name}>Charming Cottage Getaway</h3>
             <h3 className={styles.price}>KSh 100,000/mo</h3>
