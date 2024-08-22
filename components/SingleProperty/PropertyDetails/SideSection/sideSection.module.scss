@@ -1,0 +1,39 @@
+.container {
+    width: 30%;
+    padding: 2rem;
+    background-color: var(--color-gray);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+
+    h3 {
+        font-size: 1em;
+        margin-bottom: 1.5rem;
+        text-align: center;
+    }
+
+    .sellerInfo {
+        .info {
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            p {
+                font-size: .8em;
+                font-weight: 700;
+    
+                span {
+                    font-weight: 400;
+                }
+            }
+        }
+
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container {
+        margin-top: 2rem;
+        width: 100%;  
+    }    
+}

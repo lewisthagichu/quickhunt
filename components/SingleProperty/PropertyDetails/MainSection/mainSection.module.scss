@@ -1,0 +1,52 @@
+.container {
+   display: flex;
+   flex-direction: column;
+   gap: 4rem; 
+   width: 70%;
+
+    h3 {
+    font-size: 1em;
+    margin-bottom: 1rem;
+    }  
+
+   .overview {
+      .list {
+        display: flex;
+        gap: 3rem;
+        opacity: .7;
+      }
+   }
+
+   .amenities {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        font-size: .8em;
+
+        svg {
+            display: inline-block;
+            margin-right: .5rem;
+            fill: #16A34A;
+        }
+    }
+   }
+}
+
+@media screen and (max-width: 768px) {
+    .container{
+        width: 100%;
+    }
+    
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        gap: 2rem;
+        .amenities {
+            ul {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+    
+}
