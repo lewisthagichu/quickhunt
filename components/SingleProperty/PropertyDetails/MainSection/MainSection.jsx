@@ -1,3 +1,4 @@
+import PropertyMap from '../PropertyMap/PropertyMap';
 import styles from './mainSection.module.scss';
 import { FaBed, FaBath, FaRulerCombined, FaCheck } from 'react-icons/fa';
 
@@ -44,6 +45,8 @@ export default function MainSection({ property }) {
           ))}
         </ul>
       </div>
+
+      <PropertyMap property={property} />
     </div>
   );
 }

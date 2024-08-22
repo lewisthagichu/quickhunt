@@ -10,12 +10,15 @@
   },
   "dependencies": {
     "lenis": "^1.1.9",
+    "mapbox-gl": "^3.6.0",
+    "maplibre-gl": "^4.6.0",
     "next": "14.2.5",
     "photoswipe": "^5.4.4",
+    "radar-sdk-js": "^4.4.1",
     "react": "^18",
     "react-dom": "^18",
-    "react-geocode": "^1.0.0-alpha.1",
     "react-icons": "^5.2.1",
+    "react-map-gl": "^7.1.7",
     "react-photoswipe-gallery": "^3.0.2",
     "react-share": "^5.1.0",
     "sass": "^1.77.8"
