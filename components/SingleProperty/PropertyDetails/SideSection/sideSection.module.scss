@@ -1,11 +1,8 @@
 .container {
-    width: 30%;
-    padding: 2rem;
-    background-color: var(--color-gray);
+    width: 30%;    
     border-radius: 1rem;
     display: flex;
     flex-direction: column;
-    gap: 2rem;
 
     h3 {
         font-size: 1em;
@@ -14,6 +11,11 @@
     }
 
     .sellerInfo {
+        padding: 2rem;
+        padding-bottom: 0;
+        background-color: var(--color-gray);
+        border-radius: 1rem 1rem 0 0;
+
         .info {
             display: flex;
             flex-direction: column;

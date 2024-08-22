@@ -29,11 +29,6 @@ export default function PropertyMap({ property }) {
           const { latitude, longitude } = result.addresses[0];
 
           setCoordinates({ lat: latitude, lng: longitude });
-          setViewport((prev) => ({
-            ...prev,
-            latitude,
-            longitude,
-          }));
         } else {
           setGeocodeError(true);
           console.error('No addresses found.');
