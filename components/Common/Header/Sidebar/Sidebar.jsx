@@ -28,8 +28,10 @@ function Sidebar({ isOpen, toggleSidebar }) {
               </Link>
             </li>
             <li className={`${styles.sub} ${active ? styles.active : ''}`}>
-              <div className={styles.link}>Properties</div>
-              <span onClick={toggleActive}></span>
+              <div onClick={toggleActive} className={styles.link}>
+                Properties
+              </div>
+              <span></span>
 
               {active && (
                 <div className={styles.subMenu}>
