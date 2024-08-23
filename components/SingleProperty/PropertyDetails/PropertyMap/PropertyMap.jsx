@@ -52,11 +52,17 @@ export default function PropertyMap({ property }) {
   }
 
   if (geocodeError) {
-    return <div className={styles.error}>No location data found</div>;
+    return (
+      <div className={styles.container}>
+        <h3>Map location</h3>
+        <div className={styles.error}>No location data found</div>
+      </div>
+    );
   }
 
   return (
     <div className={styles.container}>
+      <h3>Map location</h3>
       <Map
         mapboxAccessToken={process.env.NEXT_PUBLIC_MAPBOX_TOKEN}
         mapLib={import('mapbox-gl')}
