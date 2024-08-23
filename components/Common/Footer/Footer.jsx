@@ -141,29 +141,51 @@ export default function Footer() {
         <div className={styles.right}>
           <div className={styles.links}>
             <h3>Company</h3>
-            <Link href="about">About Us</Link>
-            <Link href="/properties">Properties</Link>
-            <Link href="/contact#faq">FAQ</Link>
-            <Link href="/contact">Contact</Link>
+            <Link href="about">
+              <span className="link-underline">About Us</span>
+            </Link>
+            <Link href="/properties">
+              <span className="link-underline">Properties</span>
+            </Link>
+            <Link href="/contact#faq">
+              <span className="link-underline">FAQ</span>
+            </Link>
+            <Link href="/contact">
+              <span className="link-underline">Contact</span>
+            </Link>
           </div>
           <div className={styles.links}>
             <h3>Socials</h3>
-            <a href="https://github.com/lewisthagichu">Github</a>
-            <a href="https://dev.to/thagichucodes">DEV</a>
-            <a href="https://www.linkedin.com/in/lewis-thagichu/">Linkedin</a>
-            <a href="https://x.com/thagichucodes">Twitter</a>
+            <a href="https://github.com/lewisthagichu">
+              <span className="link-underline">Github</span>
+            </a>
+            <a href="https://dev.to/thagichucodes">
+              <span className="link-underline">DEV</span>
+            </a>
+            <a href="https://www.linkedin.com/in/lewis-thagichu/">
+              <span className="link-underline">Linkedin</span>
+            </a>
+            <a href="https://x.com/thagichucodes">
+              <span className="link-underline">Twitter</span>
+            </a>
           </div>
           <div className={styles.links}>
             <h3>Legal</h3>
-            <a href="#">Terms</a>
-            <a href="#">Privacy</a>
-            <a href="#">Licences</a>
+            <a href="#">
+              <span className="link-underline">Term</span>
+            </a>
+            <a href="#">
+              <span className="link-underline">Privacy</span>
+            </a>
+            <a href="#">
+              <span className="link-underline">Licences</span>
+            </a>
           </div>
         </div>
       </div>
       <div className={styles.bottom}>
         <p>
-          <span>© 2024 Lewis Thagichu. All rights reserved</span>
+          <span>© 2024 QuickHunt. All rights reserved</span>
         </p>
       </div>
     </section>

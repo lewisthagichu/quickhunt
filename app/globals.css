@@ -76,8 +76,6 @@ html {
   font-size: 62.5%;
 }
 
-
-
 h1, h2, h3, h4, h5, h6 {
   margin: 0;
 }
@@ -167,4 +165,31 @@ textarea {
   
 }
 
+.link-underline {
+  position: relative;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-dark);
+  transform: scaleX(0) rotate(0.001deg);
+  transform-origin: right center;
+  transition: transform var(--animation-primary), background-color var(--animation-primary), opacity var(--animation-primary) 0.05s;
+  opacity: 1;
+}
+
+.link-underline:hover::after {
+  transform-origin: left center;
+  transform: scaleX(1) rotate(0.001deg);
+  opacity: 1;
+  /* transform: scaleX(1);
+  transform-origin: bottom left; */
+}
 
