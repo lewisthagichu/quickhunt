@@ -2,15 +2,13 @@
 import styles from './propertiesDropDown.module.scss';
 import Link from 'next/link';
 
-function PropertiesDropDown({ setIsPropertiesOpen }) {
+export default function PropertiesDropDown({ setIsPropertiesOpen }) {
   return (
-    <div id="properties menu" role="menu" className={styles.container}>
+    <div id="properties-menu" role="menu" className={styles.container}>
       <ul className={styles.links}>
         <li>
           <Link
-            onClick={() => {
-              setIsPropertiesOpen(false);
-            }}
+            onClick={() => setIsPropertiesOpen(false)}
             href="/properties"
             className={styles.btn}
             role="menuitem"
@@ -34,5 +32,3 @@ function PropertiesDropDown({ setIsPropertiesOpen }) {
     </div>
   );
 }
-
-export default PropertiesDropDown;

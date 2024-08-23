@@ -1,6 +1,7 @@
 'use client';
 import styles from './navbar.module.scss';
 import { useState } from 'react';
+import { useGlobalContext } from '@/context/GlobalContext';
 import { IoIosMenu, IoMdArrowDropdown } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -25,16 +26,17 @@ function Navbar({ toggleSidebar }) {
             <Link href="/">Home</Link>
           </li>
 
-          <li
-            onClick={() => setIsPropertiesOpen((prev) => !prev)}
-            className={styles.properties}
-          >
-            <span>Properties</span>
+          <li className={styles.properties}>
+            <span onClick={() => setIsPropertiesOpen((prev) => !prev)}>
+              Properties
+            </span>
 
-            <div className={styles.arrow}>
+            <div
+              onClick={() => setIsPropertiesOpen((prev) => !prev)}
+              className={styles.arrow}
+            >
               <IoMdArrowDropdown />
             </div>
-
             {isPropertiesOpen && (
               <PropertiesDropDown setIsPropertiesOpen={setIsPropertiesOpen} />
             )}

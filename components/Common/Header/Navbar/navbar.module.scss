@@ -41,6 +41,11 @@
 
             .properties {
                 position: relative;
+                
+                span {
+                    cursor: pointer;
+                }
+                
                 .arrow {
                     position: absolute;
                     top: 55%;
