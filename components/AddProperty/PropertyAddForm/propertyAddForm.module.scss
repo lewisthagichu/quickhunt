@@ -4,6 +4,7 @@
     padding: 2.5rem 2rem;
     border-radius: 1rem;
     box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    max-width: 100%;
 
 
     h2 {
@@ -66,12 +67,13 @@
 
         .rates {
             display: flex;
+            flex-wrap: wrap;
 
             .rate {
                 display: flex; 
-                justify-content: space-between;   
                 align-items: center;
-                padding-right: .5rem;
+                gap: 3rem;
+                flex: 1;
 
                 label {
                     margin-right: .5rem;
@@ -144,8 +146,10 @@
 
             .rates {
                 flex-direction: column;
+                justify-content: flex-start;
                 .rate {
-                    padding-right: 0;
+                    gap: 0;
+                    justify-content: space-between;
                 }
             }
         }
