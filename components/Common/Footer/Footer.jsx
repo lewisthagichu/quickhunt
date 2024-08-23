@@ -1,5 +1,7 @@
+import Image from 'next/image';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
+import logo from '@/public/images/logo2.jpeg';
 
 export default function Footer() {
   return (
@@ -7,7 +9,10 @@ export default function Footer() {
       <div className={styles.content}>
         <div className={styles.left}>
           <div className={styles.logo}>
-            <svg
+            <div className={styles.logoContainer}>
+              <Image src={logo} alt="logo" fill />
+            </div>
+            {/* <svg
               version="1.0"
               xmlns="http://www.w3.org/2000/svg"
               width="255.000000pt"
@@ -129,7 +134,7 @@ export default function Footer() {
 6 25 19 0 20 2 8 10 -18 12 -21 12 -42 -1z"
                 />
               </g>
-            </svg>
+            </svg> */}
           </div>
           <p>Explore, discover, move in.</p>
         </div>

@@ -11,6 +11,12 @@
     display: flex;
     justify-content: space-between;
 
+    .logoContainer {
+        position: relative;
+        width: 10em;
+        aspect-ratio: 125 / 46;
+    }
+
     svg {
         width: 3em;
         height: 1.5em;
