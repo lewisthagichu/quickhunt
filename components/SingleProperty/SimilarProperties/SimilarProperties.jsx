@@ -1,5 +1,61 @@
+'use client';
 import styles from './similarProperties.module.scss';
+import { useState } from 'react';
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
+import CardSimilarProperties from './CardSimilar/CardSimilarProperties';
+import properties from '@/properties.json';
+import Link from 'next/link';
 
 export default function SimilarProperties() {
-  return <section className={styles.container}>SimilarProperties</section>;
+  const similarProperties = properties.slice(3, 9);
+  const [cardIndex, setCardIndex] = useState(0);
+
+  function showNextCard() {
+    setCardIndex((index) => {
+      if (index === similarProperties.length - 3)
+        return similarProperties.length - 3;
+      return index + 1;
+    });
+  }
+
+  function showPrevCard() {
+    setCardIndex((index) => {
+      if (index === 0) return 0;
+      return index - 1;
+    });
+  }
+
+  return (
+    <section className={styles.container}>
+      <div className={styles.title}>
+        <h2>
+          Similar <span>Properties</span>
+        </h2>
+        <div className={styles.btns}>
+          <button
+            disabled={cardIndex === 0}
+            onClick={showPrevCard}
+            className="btn"
+          >
+            <FaArrowLeft />
+          </button>
+          <button
+            disabled={cardIndex === similarProperties.length - 3}
+            onClick={showNextCard}
+            className="btn"
+          >
+            <FaArrowRight />
+          </button>
+        </div>
+      </div>
+
+      <div className={styles.cards}>
+        {similarProperties.map((property, i) => (
+          <div key={`s_${i}`} className={styles.item}>
+            <CardSimilarProperties cardIndex={cardIndex} property={property} />
+          </div>
+        ))}
+      </div>
+    </section>
+  );
 }
