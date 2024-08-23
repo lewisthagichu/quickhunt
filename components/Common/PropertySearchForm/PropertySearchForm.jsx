@@ -28,14 +28,16 @@ function PropertySearchForm() {
           <div className={styles.data}>
             <label htmlFor="property-type">Select Type</label>
             <select name="property-type" id="property-type">
-              <option value="All">All</option>
-              <option value="Apartment">Apartment</option>
-              <option value="studio">Studio</option>
-              <option value="one-bedroom">One Bedroom</option>
-              <option value="two-bedroom">Two Bedroom</option>
-              <option value="three-bedroom">Three Bedroom</option>
-              <option value="loft">Loft</option>
-              <option value="Room">Room</option>
+              <option value="all">All</option>
+              <option value="Studio">Apartment</option>
+              <option value="Studio">Studio</option>
+              <option value="One bedroom">One bedroom</option>
+              <option value="Two bedroom">Two bedroom</option>
+              <option value="Three bedroom">Three bedroom</option>
+              <option value="4+">Four bedroom+</option>
+              <option value="loft">Commercial</option>
+              <option value="House">House</option>
+              <option value="Student housing">Student housing</option>
               <option value="Other">Other</option>
             </select>
           </div>

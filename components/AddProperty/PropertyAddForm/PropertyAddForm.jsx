@@ -47,11 +47,13 @@ function PropertyAddForm() {
           required
           // value={fields.type}
         >
+          <option value="Studio">Apartment</option>
           <option value="Studio">Studio</option>
           <option value="One bedroom">One bedroom</option>
           <option value="Two bedroom">Two bedroom</option>
           <option value="Three bedroom">Three bedroom</option>
-          <option value="loft">Loft</option>
+          <option value="4+">Four bedroom+</option>
+          <option value="loft">Commercial</option>
           <option value="House">House</option>
           <option value="Student housing">Student housing</option>
           <option value="Other">Other</option>
