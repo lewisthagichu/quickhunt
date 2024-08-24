@@ -1,7 +1,9 @@
 'use client';
 import styles from './navbar.module.scss';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { usePathname } from 'next/navigation';
 import { useGlobalContext } from '@/context/GlobalContext';
+import { segments } from '../data';
 import { IoIosMenu, IoMdArrowDropdown } from 'react-icons/io';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -11,8 +13,21 @@ import PropertiesDropDown from '../PropertiesDropDown/PropertiesDropDown';
 import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar({ toggleSidebar }) {
+  const pathname = usePathname();
+  const [isHovered, setIsHovered] = useState(false);
+
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovered(false);
+  };
+
+  useEffect(() => {}, [pathname]);
 
   return (
     <div className={styles.nav}>
@@ -23,11 +38,32 @@ function Navbar({ toggleSidebar }) {
 
         <ul className={styles.links}>
           <li>
-            <Link href="/">Home</Link>
+            <Link href="/">
+              <span
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${styles.notif} ${
+                  pathname === segments.home && !isHovered ? styles.active : ''
+                }`}
+              >
+                Home
+              </span>
+            </Link>
           </li>
 
-          <li className={styles.properties}>
-            <span onClick={() => setIsPropertiesOpen((prev) => !prev)}>
+          <li
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={styles.properties}
+          >
+            <span
+              className={`${styles.notif} ${
+                segments.properties.test(pathname) && !isHovered
+                  ? styles.active
+                  : ''
+              }`}
+              onClick={() => setIsPropertiesOpen((prev) => !prev)}
+            >
               Properties
             </span>
 
@@ -43,10 +79,32 @@ function Navbar({ toggleSidebar }) {
           </li>
 
           <li>
-            <Link href="/about-us">About Us</Link>
+            <Link href="/about-us">
+              <span
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${styles.notif} ${
+                  pathname === segments.about && !isHovered ? styles.active : ''
+                }`}
+              >
+                About Us
+              </span>
+            </Link>
           </li>
           <li>
-            <Link href="/contact">Contact</Link>
+            <Link href="/contact">
+              <span
+                onMouseEnter={handleMouseEnter}
+                onMouseLeave={handleMouseLeave}
+                className={`${styles.notif} ${
+                  pathname === segments.contact && !isHovered
+                    ? styles.active
+                    : ''
+                }`}
+              >
+                Contact
+              </span>
+            </Link>
           </li>
         </ul>
       </div>
@@ -55,7 +113,14 @@ function Navbar({ toggleSidebar }) {
 
       <div className={styles.right}>
         <Link href="/messages" className={styles.messages}>
-          <div type="button" className={styles.btn}>
+          <div
+            type="button"
+            onMouseEnter={handleMouseEnter}
+            onMouseLeave={handleMouseLeave}
+            className={`${styles.notif} ${styles.btn} ${
+              pathname === segments.messages && !isHovered ? styles.active : ''
+            }`}
+          >
             <svg
               fill="none"
               viewBox="0 0 24 24"
