@@ -41,7 +41,7 @@
 
             .properties {
                 position: relative;
-                transition: color 500ms ease-in-out;
+                transition: color 10ms ease-in-out;
                 
                 & > span {
                     cursor: pointer;                    
@@ -59,7 +59,7 @@
                     svg {
                         height: 100%;
                         width: 100%;
-                        transition: fill 500ms ease-in-out;               
+                        transition: fill 200ms ease-in-out;               
                     }
                 }
 
@@ -89,7 +89,7 @@
                 display: flex;
                 align-items: center;
                 cursor: pointer;
-                transition: all 500ms ease-in-out;
+                transition: all 200ms ease-in-out;
 
                 &:hover {
                     background-color: var(--color-dark);
@@ -143,15 +143,14 @@
                 img {
                     border-radius: 50%;
                     object-fit: cover;
-                }
-                
+                }                
             }
         }
     }
 
     .notif {
         position: relative;
-        transition: color 500ms ease-in-out;
+        transition: color 200ms ease-in-out;
         
         &:hover {
             color: var(--color-YG);
@@ -162,13 +161,13 @@
             position: absolute;
             top: 100%;
             left: 50%;
-            transform: translate(-50%, 100%) rotate(0.001deg);
+            transform: translate(-50%, 100%);
             opacity: 0;
             width: 6px;
             height: 6px;
             background-color: var(--color-YG);
             border-radius: 50%;
-            transition: all 500ms ease-in-out;
+            transition: all 200ms ease-in-out;
             pointer-events: none;
         }
         

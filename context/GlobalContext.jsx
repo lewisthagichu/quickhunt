@@ -7,9 +7,14 @@ const GlobalContext = createContext();
 // Create context provider
 export function GlobalContextProvider({ children }) {
   const [unreadCount, setUnreadCount] = useState(0);
+  const [headerStyle, setHeaderStyle] = useState({
+    background: 'transparent',
+  });
 
   return (
-    <GlobalContext.Provider value={{ unreadCount, setUnreadCount }}>
+    <GlobalContext.Provider
+      value={{ unreadCount, setUnreadCount, headerStyle, setHeaderStyle }}
+    >
       {children}
     </GlobalContext.Provider>
   );
