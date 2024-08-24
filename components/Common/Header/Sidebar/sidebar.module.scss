@@ -88,6 +88,13 @@
                 ul {
                     a {
                         font-size: calc(var(--title-size) * .15);
+                        opacity: .7;
+                        transition: all 200ms ease-in;
+
+                        &:hover {
+                            opacity: 1;
+                            font-weight: 500;
+                        }
                     }
                 }
     
