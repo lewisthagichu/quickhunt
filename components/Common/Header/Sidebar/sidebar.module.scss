@@ -66,18 +66,17 @@
                 cursor: pointer;
             }        
 
-            span {                
+            span:not(.notif) {                
                 position: absolute;
                 top: 0;
                 right: 0;
+                cursor: pointer;
 
                 &::after{
                     content: '+';
                     transition: .5s;
                     font-size: calc(var(--title-size) * .3);
-                }
-
-                
+                }                
             }           
 
             .subMenu {
@@ -94,7 +93,7 @@
     
             }
 
-            &.active span::after {
+            &.active span:not(.notif)::after {
                 content: '-';
                 transition: all .5s;
             }
@@ -107,6 +106,30 @@
 
     }
 
+    .notif {
+        position: relative;
+        transition: color 500ms ease-in-out;        
+
+        &::before {
+            content:"";
+            position: absolute;
+            top: 50%;
+            left: -1rem;
+            transform: translateY(-50%);
+            opacity: 0;
+            width: 6px;
+            height: 6px;
+            background-color: var(--color-YG);
+            border-radius: 50%;
+            transition: all 500ms ease-in-out;
+            pointer-events: none;
+        }
+        
+        &.active::before,
+        &:hover::before {
+            opacity: 1;
+        }
+    }
 
 }
 
