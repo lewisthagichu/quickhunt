@@ -33,16 +33,19 @@ export default function Footer() {
           </div>
           <div className={styles.links}>
             <h3>Socials</h3>
-            <a href="https://github.com/lewisthagichu">
+            <a href="https://github.com/lewisthagichu" target="_blank">
               <span className="link-underline">Github</span>
             </a>
-            <a href="https://dev.to/thagichucodes">
+            <a href="https://dev.to/thagichucodes" target="_blank">
               <span className="link-underline">DEV</span>
             </a>
-            <a href="https://www.linkedin.com/in/lewis-thagichu/">
+            <a
+              href="https://www.linkedin.com/in/lewis-thagichu/"
+              target="_blank"
+            >
               <span className="link-underline">Linkedin</span>
             </a>
-            <a href="https://x.com/thagichucodes">
+            <a href="https://x.com/thagichucodes" target="_blank">
               <span className="link-underline">Twitter</span>
             </a>
           </div>
