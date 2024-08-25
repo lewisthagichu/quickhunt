@@ -4,7 +4,7 @@ import { GlobalContextProvider } from '@/context/GlobalContext';
 import 'photoswipe/dist/photoswipe.css';
 
 export const metadata = {
-  title: 'HappyHome',
+  title: 'QuickHunt',
   description:
     'A platform designed to streamline the process of finding rental properties. Developed by Lewis Thagichu',
 };

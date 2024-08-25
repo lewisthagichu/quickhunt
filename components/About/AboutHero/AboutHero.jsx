@@ -46,10 +46,10 @@ export default function AboutHero() {
           </div>
 
           <p>
-            At BomaBora Properties, we aim to simplify the rental process by
-            bridging the gap between property owners and potential tenants. We
-            believe that finding a home or renting a property should be easy,
-            transparent, and stress-free.
+            At QuickHunt, we aim to simplify the rental process by bridging the
+            gap between property owners and potential tenants. We believe that
+            finding a home or renting a property should be easy, transparent,
+            and stress-free.
           </p>
 
           <div className={styles.btns}>

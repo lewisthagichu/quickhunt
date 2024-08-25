@@ -9,7 +9,7 @@ export default function WhyUs() {
 
         <div className={styles.cards}>
           <div className={styles.card}>
-            <h6>Without BomaBora</h6>
+            <h6>Without QuickHunt</h6>
             <ul>
               {withoutPoints.map((point, i) => (
                 <li key={`wo_${i}`}>
@@ -21,7 +21,7 @@ export default function WhyUs() {
           </div>
 
           <div className={styles.card}>
-            <h6>With BomaBora</h6>
+            <h6>With QuickHunt</h6>
             <ul>
               {withPoints.map((point, i) => (
                 <li key={`w_${i}`}>

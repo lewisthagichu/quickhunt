@@ -19,7 +19,7 @@ export default function Mission() {
             interest you, and communicate with the owners. To property owners,
             we offer an easy listing process that allows you to manage your
             properties and have access to a large number of potential tenants.
-            At BomaBora, we bring homes and people together, making your next
+            At QuickHunt, we bring homes and people together, making your next
             move the best one yet.
           </p>
         </div>
