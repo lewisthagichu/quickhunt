@@ -1,9 +1,17 @@
+'use client';
 import Image from 'next/image';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
 import logo from '@/public/images/logo2.jpeg';
+import { FaArrowUp } from 'react-icons/fa';
 
 export default function Footer() {
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  };
   return (
     <section className={styles.container}>
       <div className={styles.content}>
@@ -67,6 +75,9 @@ export default function Footer() {
         <p>
           <span>© 2024 QuickHunt. All rights reserved</span>
         </p>
+        <button onClick={scrollToTop}>
+          <FaArrowUp />
+        </button>
       </div>
     </section>
   );
