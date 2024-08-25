@@ -4,7 +4,7 @@ import { faqs } from './data';
 
 function FAQ() {
   return (
-    <section id="FAQ" className={styles.container}>
+    <section id="faq" className={styles.container}>
       <h2>Frequently asked questions</h2>
       <div className={styles.accordion}>
         {faqs.map((faq, i) => (

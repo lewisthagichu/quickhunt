@@ -18,13 +18,13 @@ export default function Footer() {
         <div className={styles.right}>
           <div className={styles.links}>
             <h3>Company</h3>
-            <Link href="about">
+            <Link href="about-us">
               <span className="link-underline">About Us</span>
             </Link>
             <Link href="/properties">
               <span className="link-underline">Properties</span>
             </Link>
-            <Link href="/contact#faq">
+            <Link href="/#faq">
               <span className="link-underline">FAQ</span>
             </Link>
             <Link href="/contact">
