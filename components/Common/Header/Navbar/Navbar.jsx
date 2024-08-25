@@ -14,8 +14,10 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar({ toggleSidebar }) {
   const pathname = usePathname();
-  const [isHovered, setIsHovered] = useState(false);
+  const { headerStyle, setHeaderStyle } = useGlobalContext();
+  const { background, color } = headerStyle;
 
+  const [isHovered, setIsHovered] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
 
@@ -40,6 +42,7 @@ function Navbar({ toggleSidebar }) {
           <li>
             <Link href="/">
               <span
+                style={{ color }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className={`${styles.notif} ${
@@ -81,6 +84,7 @@ function Navbar({ toggleSidebar }) {
           <li>
             <Link href="/about-us">
               <span
+                style={{ color }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className={`${styles.notif} ${
@@ -94,6 +98,7 @@ function Navbar({ toggleSidebar }) {
           <li>
             <Link href="/contact">
               <span
+                style={{ color }}
                 onMouseEnter={handleMouseEnter}
                 onMouseLeave={handleMouseLeave}
                 className={`${styles.notif} ${
@@ -125,7 +130,7 @@ function Navbar({ toggleSidebar }) {
               fill="none"
               viewBox="0 0 24 24"
               strokeWidth="1.5"
-              stroke="currentColor"
+              stroke={color}
               aria-hidden="true"
             >
               <path

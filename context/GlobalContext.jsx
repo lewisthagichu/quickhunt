@@ -9,6 +9,7 @@ export function GlobalContextProvider({ children }) {
   const [unreadCount, setUnreadCount] = useState(0);
   const [headerStyle, setHeaderStyle] = useState({
     background: 'transparent',
+    color: '#ffffff',
   });
 
   return (

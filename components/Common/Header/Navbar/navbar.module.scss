@@ -59,17 +59,17 @@
                     svg {
                         height: 100%;
                         width: 100%;
-                        transition: fill 200ms ease-in-out;               
+                        // transition: fill 200ms ease-in-out;               
                     }
                 }
 
-                &:hover .arrow svg{
-                    fill: var(--color-YG);
-                }
+                // &:hover .arrow svg{
+                //     fill: var(--color-YG);
+                // }
 
-                &:hover {
-                    color: var(--color-YG);
-                }
+                // &:hover {
+                //     color: var(--color-YG);
+                // }
             }
         }
     }
@@ -94,7 +94,12 @@
                 &:hover {
                     background-color: var(--color-dark);
                     color: var(--color-white);
-                  }
+
+                }
+
+                &:hover svg {
+                    stroke: var(--color-white);
+                }
                   
                 &:focus {
                     outline: none; 
@@ -104,6 +109,7 @@
                 svg {
                     height: 1.8em;
                     width: 1.8em;
+                    transition: all 200ms ease-in-out;
                 }
 
             }
@@ -150,11 +156,6 @@
 
     .notif {
         position: relative;
-        transition: color 200ms ease-in-out;
-        
-        &:hover {
-            color: var(--color-YG);
-        }
 
         &::before {
             content:"";

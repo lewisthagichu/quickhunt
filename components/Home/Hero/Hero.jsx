@@ -20,8 +20,10 @@ function Hero() {
       trigger: container.current,
       start: 'bottom 65vh',
       end: 'bottom top',
-      onEnter: () => setHeaderStyle({ background: '#ffffff' }),
-      onLeaveBack: () => setHeaderStyle({ background: 'transparent' }),
+      onEnter: () =>
+        setHeaderStyle({ background: '#ffffff', color: '#1c1d20' }),
+      onLeaveBack: () =>
+        setHeaderStyle({ background: 'transparent', color: '#ffffff' }),
       scrub: true,
     });
   }, []);

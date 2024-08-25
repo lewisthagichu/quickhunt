@@ -5,18 +5,21 @@
     transform: translate(-50%, -50%);   
     overflow: hidden;     
     
-    svg {
-        width: 3em;
-        height: 1.5em;
-        font-size: 2.2em;
+    .imageContainer {
+        width: 9em;
+        aspect-ratio: 125 / 46;
+
+        img {
+            object-fit: cover;
+        }
     }
    
 }
 
 @media screen and (max-width: 540px) {
     .logo {
-        svg{
-            font-size: 2em;
+        .imageContainer {
+            width: 7em;
         }
     }
 }

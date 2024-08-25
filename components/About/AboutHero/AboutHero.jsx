@@ -1,11 +1,34 @@
+'use client';
 import styles from './AboutHero.module.scss';
 import Image from 'next/image';
 import heroImg from '@/public/images/hero.webp';
 import Link from 'next/link';
+import gsap from 'gsap';
+import { useRef } from 'react';
+import { useGSAP } from '@gsap/react';
+import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
+import { useGlobalContext } from '@/context/GlobalContext';
 
 export default function AboutHero() {
+  const container = useRef(null);
+  const { setHeaderStyle } = useGlobalContext();
+
+  useGSAP(() => {
+    gsap.registerPlugin(ScrollTrigger);
+
+    ScrollTrigger.create({
+      trigger: container.current,
+      start: 'bottom 65vh',
+      end: 'bottom top',
+      onEnter: () =>
+        setHeaderStyle({ background: '#ffffff', color: '#1c1d20' }),
+      onLeaveBack: () =>
+        setHeaderStyle({ background: 'transparent', color: '#ffffff' }),
+      scrub: true,
+    });
+  }, []);
   return (
-    <section className={styles.container}>
+    <section ref={container} className={styles.container}>
       <div className={styles.imageContainer}>
         <Image src={heroImg} sizes="50vw" fill alt="image" placeholder="blur" />
       </div>

@@ -3,12 +3,15 @@ import styles from './header.module.scss';
 import { inter } from '@/public/font/font';
 import { useState, useEffect } from 'react';
 import { useGlobalContext } from '@/context/GlobalContext';
+import { usePathname } from 'next/navigation';
 import Navbar from './Navbar/Navbar';
 import Sidebar from './Sidebar/Sidebar';
 
 function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const { headerStyle } = useGlobalContext();
+  const pathname = usePathname();
+
+  const { headerStyle, setHeaderStyle } = useGlobalContext();
   const { background, color } = headerStyle;
 
   useEffect(() => {
@@ -24,6 +27,13 @@ function Header() {
   }, [isOpen]);
 
   useEffect(() => {}, [headerStyle]);
+  useEffect(() => {
+    if (pathname === '/' || pathname === '/about-us') {
+      setHeaderStyle({ background: 'transparent', color: '#ffffff' });
+    } else {
+      setHeaderStyle({ background: '#ffffff', color: '#1c1d20' });
+    }
+  }, [pathname]);
 
   const toggleSidebar = () => {
     setIsOpen(!isOpen);
