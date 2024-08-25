@@ -7,8 +7,10 @@ import RecentProperties from '@/components/Home/RecentProperties/RecentPropertie
 import BigBtn from '@/components/Common/BigBtn/BigBtn';
 import FAQ from '@/components/Home/FAQ/FAQ';
 import Footer from '@/components/Common/Footer/Footer';
+import connectDB from '@/config/connectDB';
 
-export default function Home() {
+export default async function Home() {
+  await connectDB();
   return (
     <div className={inter.className}>
       <Hero />
