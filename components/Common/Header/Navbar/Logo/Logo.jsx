@@ -8,7 +8,7 @@ function Logo() {
     <div className={styles.logo}>
       <Link href="/">
         <div className={styles.imageContainer}>
-          <Image src={logo} fill alt="logo" />
+          <Image src={logo} sizes="50vw" fill alt="logo" />
         </div>
       </Link>
     </div>
