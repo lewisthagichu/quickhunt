@@ -1,6 +1,6 @@
 import { Schema, model, models } from 'mongoose';
 
-const PropertySchema = new mongoose.Schema(
+const PropertySchema = new Schema(
   {
     owner: {
       type: Schema.Types.ObjectId,
