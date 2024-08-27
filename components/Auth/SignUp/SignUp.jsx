@@ -3,6 +3,7 @@ import styles from '../Login/login.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/public/images/logoHeader.png';
+import GoogleSignInError from './GoogleErrorMessage';
 import { inter } from '@/public/font/font';
 import { FcGoogle } from 'react-icons/fc';
 import { signIn } from 'next-auth/react';
@@ -68,6 +69,10 @@ export default function SignUp() {
             <span>
               <Link href="/signin">Login to your account</Link>
             </span>
+          </div>
+
+          <div className={styles.error}>
+            <GoogleSignInError />
           </div>
         </div>
       </div>
