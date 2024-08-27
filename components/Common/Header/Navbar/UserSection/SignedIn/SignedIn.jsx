@@ -1,3 +1,4 @@
+'use client';
 import styles from './signedIn.module.scss';
 import { useState } from 'react';
 import { useGlobalContext } from '@/context/GlobalContext';

@@ -1,11 +1,16 @@
+'use client';
 import styles from '../Login/login.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/public/images/logoHeader.png';
 import { inter } from '@/public/font/font';
 import { FcGoogle } from 'react-icons/fc';
+import { signIn } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 
 export default function SignUp() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/';
   return (
     <section className={`${styles.container} ${inter.className}`}>
       <div className={styles.wrapper}>
@@ -50,7 +55,10 @@ export default function SignUp() {
             <button type="submit">Sign up</button>
           </form>
 
-          <button className={styles.googleBtn}>
+          <button
+            onClick={() => signIn('google', { callbackUrl })}
+            className={styles.googleBtn}
+          >
             <FcGoogle />
             <span>Sign in with Google</span>
           </button>

@@ -3,6 +3,7 @@ import styles from './dropDownMenu.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import profileDefault from '@/public/images/profile.png';
+import { signOut } from 'next-auth/react';
 
 function DropDownMenu({ setIsProfileOpen }) {
   return (
@@ -63,7 +64,7 @@ function DropDownMenu({ setIsProfileOpen }) {
             tabIndex="-1"
             id="user-menu-item-3"
           >
-            <small>Sign Out</small>
+            <small onClick={() => signOut()}>Sign Out</small>
           </button>
         </li>
       </ul>
