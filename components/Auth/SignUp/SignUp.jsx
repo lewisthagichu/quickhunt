@@ -66,7 +66,7 @@ export default function SignUp() {
           <div className={styles.link}>
             Already have an account?{' '}
             <span>
-              <Link href="#">Login to your account?</Link>
+              <Link href="/signin">Login to your account</Link>
             </span>
           </div>
         </div>

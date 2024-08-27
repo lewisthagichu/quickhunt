@@ -1,11 +1,16 @@
+'use client';
 import styles from './login.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import logo from '@/public/images/logoHeader.png';
 import { inter } from '@/public/font/font';
 import { FcGoogle } from 'react-icons/fc';
+import { signIn } from 'next-auth/react';
+import { useSearchParams } from 'next/navigation';
 
 export default function Login() {
+  const searchParams = useSearchParams();
+  const callbackUrl = searchParams.get('callbackUrl') || '/';
   return (
     <section className={`${styles.container} ${inter.className}`}>
       <div className={styles.wrapper}>
@@ -42,7 +47,10 @@ export default function Login() {
             <button type="submit">Login</button>
           </form>
 
-          <button className={styles.googleBtn}>
+          <button
+            onClick={() => signIn('google', { callbackUrl })}
+            className={styles.googleBtn}
+          >
             <FcGoogle />
             <span>Login with Google</span>
           </button>
@@ -50,7 +58,7 @@ export default function Login() {
           <div className={styles.link}>
             Don't have an account?{' '}
             <span>
-              <Link href="#">Sign up</Link>
+              <Link href="/signup">Sign up</Link>
             </span>
           </div>
         </div>
