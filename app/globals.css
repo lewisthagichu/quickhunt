@@ -37,8 +37,8 @@
   --btn-height: 3em;
   --btn-height-small: 2.625em;
 
-  --nav-bar-height: calc(var(--btn-height) + (var(--gap) * .6));
-  --nav-bar-height-mobile: calc(var(--btn-height) + (var(--gap) * 0.6));
+  --nav-bar-height: calc(var(--btn-height) + (var(--gap) * .4));
+  --nav-bar-height-mobile: calc(var(--btn-height) + (var(--gap) * 0.4));
 }
 
 

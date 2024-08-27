@@ -6,7 +6,8 @@
     overflow: hidden;     
     
     .imageContainer {
-        width: 9em;
+        position: relative;
+        width: 8.5em;
         aspect-ratio: 125 / 46;
 
         img {
