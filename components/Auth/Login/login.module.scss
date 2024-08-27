@@ -1,0 +1,106 @@
+.container {
+    padding: var(--container-padding);
+    min-height: 100vh;
+    z-index: 100;
+    position: relative;
+    background-color: var(--color-white);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    .wrapper {
+        max-width: 448px;
+        margin: 0 auto;
+
+        .logo {
+            position: relative;
+            width: 9em;
+            aspect-ratio: 125 / 46;
+            margin: 0 auto;                    
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        .content {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;  
+            font-size: .85em;   
+            margin-top: 1rem;               
+            
+            .form {
+                display: flex;
+                flex-direction: column;
+                gap: 1.5rem; 
+
+                .row {
+                    display: flex;
+                    flex-direction: column;
+                    gap: .75rem;
+
+                    label {
+                        opacity: .8;
+                        font-size: .875em;
+                    }
+
+                    input {
+                        padding: .8rem;
+                        line-height: 1.8rem;
+                        border: 1px solid rgba(0, 0, 0, .3);
+                        border-radius: .5rem;
+
+                        &:focus {
+                            border-color: var(--color-YG);
+                            outline: none;
+                          }                          
+                    }
+                }
+
+                button {
+                    background-color: var(--color-dark);
+                    color: var(--color-white);
+                    border: 1px solid var(--color-white);
+                    padding: 1rem 1.6rem;
+                    border-radius: 1rem;
+                    transition: all 100ms ease-in;
+                    cursor: pointer;
+                    
+
+                    &:hover {
+                        background-color: var(--color-white);
+                        color: var(--color-dark);
+                        border: 1px solid var(--color-dark);
+                    }
+                }
+            }
+
+        }
+
+        .googleBtn {
+            padding: 1rem 1.6rem;
+            border-radius: 1rem;
+            border: none;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background-color: var(--color-white);
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            gap: .5rem;
+            transition: all 100ms ease-in;
+            cursor: pointer;
+            
+
+            &:hover {
+                background-color: var(--color-gray);
+            }
+        }
+
+        a {
+            color: var(--color-YG);
+            font-size: .875em;
+        }
+    }
+}
