@@ -1,0 +1,46 @@
+.signedOut {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+
+    button {
+        height: var(--btn-height-small);
+        color: var(--color-dark);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: 6em;
+        transition: all 100ms ease-in;
+        cursor: pointer;
+    }
+
+    .login {
+        background-color: transparent;
+
+        &:hover {
+            background-color: var(--color-dark);
+            color: var(--color-white);
+        }
+    }
+    
+    .signUp {
+        background-color: var(--color-dark);
+        color: var(--color-white);
+        
+
+        &:hover {
+            background-color: transparent;
+            color: var(--color-dark);
+            border: 1px solid var(--color-dark);
+        }
+    }    
+}
+
+@media screen and (max-width: 540px) {    
+    .signedOut {
+        .login {
+            display: none;
+        }
+    }
+    
+}

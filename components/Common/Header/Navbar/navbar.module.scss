@@ -72,115 +72,7 @@
                 // }
             }
         }
-    }
-
-    .right {
-        display: flex;
-        align-items: center;
-        gap: 1.5rem;
-
-        .messages {
-            position: relative;
-
-            .btn {
-                background-color: transparent;
-                color: var(--color-dark);
-                border-radius: 50%;
-                display: flex;
-                align-items: center;
-                cursor: pointer;
-                transition: all 200ms ease-in-out;
-
-                &:hover {
-                    background-color: var(--color-dark);
-                    color: var(--color-white);
-
-                }
-
-                &:hover svg {
-                    stroke: var(--color-white);
-                }
-                  
-                &:focus {
-                    outline: none; 
-                    box-shadow: 0 0 0 2px #ffffff, 0 0 0 4px #1f2937; 
-                }
-
-                svg {
-                    height: 1.8em;
-                    width: 1.8em;
-                    transition: all 200ms ease-in-out;
-                }
-
-            }
-        }   
-        
-        .profile {
-            position: relative;
-
-            .avatar {
-                position: relative;
-                .arrow {
-                    position: absolute;
-                    top: 80%;
-                    left: 50%;
-                    transform: translateX(-50%);
-                    height: 1em;
-                    width: 1em;
-                    cursor: pointer;
-
-                    svg {
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-            }
-
-            .btn {
-                position: relative;
-                display: flex;
-                background: transparent;
-                border: none;
-                height: 2.2em;
-                width: 2.2em;                
-                color: var(--color-dark);
-                cursor: pointer;
-                
-                img {
-                    border-radius: 50%;
-                    object-fit: cover;
-                }                
-            }
-        }
-    }
-
-    .register {
-        display: flex;
-        align-items: center;
-        gap: 2rem;
-
-        a {
-            color: var(--color-dark);
-            font-size: .8em;
-            height: var(--btn-height-small);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .signUp {
-            background-color: var(--color-dark);
-            color: var(--color-white);
-            min-width: 6em;
-            transition: all 100ms ease-in-out;
-
-            &:hover {
-                background-color: transparent;
-                color: var(--color-dark);
-                border: 1px solid var(--color-dark);
-            }
-        }
-    }
+    }    
 
     .notif {
         position: relative;
@@ -229,23 +121,6 @@
 @media screen and (max-width: 540px) {
     .nav {
         padding: 0 var(--mobile-padding);
-
-        .right {
-            gap: 0.5rem;            
-
-            .profile {
-                .btn {
-                    width: 2em;
-                    height: 2em;
-                }
-            }
-        }
-
-        .register {
-            .signIn {
-                display: none;
-            }
-        }
     }  
     
 }
