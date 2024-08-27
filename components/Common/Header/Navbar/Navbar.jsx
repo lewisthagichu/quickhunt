@@ -14,12 +14,13 @@ import DropDownMenu from '../DropDownMenu/DropDownMenu';
 
 function Navbar({ toggleSidebar }) {
   const pathname = usePathname();
-  const { headerStyle, setHeaderStyle } = useGlobalContext();
-  const { background, color } = headerStyle;
+  const { headerStyle } = useGlobalContext();
+  const { color } = headerStyle;
 
   const [isHovered, setIsHovered] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const [isPropertiesOpen, setIsPropertiesOpen] = useState(false);
+  const [session, setSession] = useState(false);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
@@ -116,62 +117,79 @@ function Navbar({ toggleSidebar }) {
 
       <Logo />
 
-      <div className={styles.right}>
-        <Link href="/messages" className={styles.messages}>
-          <div
-            type="button"
-            onMouseEnter={handleMouseEnter}
-            onMouseLeave={handleMouseLeave}
-            className={`${styles.notif} ${styles.btn} ${
-              pathname === segments.messages && !isHovered ? styles.active : ''
-            }`}
-          >
-            <svg
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke={color}
-              aria-hidden="true"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
-              />
-            </svg>
-          </div>
-          {/* <UnreadMessagesCount session={session} /> */}
-        </Link>
-
-        <div className={styles.profile}>
-          <div className={styles.avatar}>
-            <button
-              type="button"
-              className={styles.btn}
-              aria-expanded="false"
-              aria-haspopup="true"
-              onClick={() => setIsProfileOpen((prev) => !prev)}
-            >
-              <Image
-                src={profileDefault}
-                sizes="10vw"
-                fill
-                alt="profile avatar"
-              />
-            </button>
-
+      {session && (
+        <div className={styles.right}>
+          <Link href="/messages" className={styles.messages}>
             <div
-              className={styles.arrow}
-              onClick={() => setIsProfileOpen((prev) => !prev)}
+              type="button"
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              className={`${styles.notif} ${styles.btn} ${
+                pathname === segments.messages && !isHovered
+                  ? styles.active
+                  : ''
+              }`}
             >
-              <IoMdArrowDropdown />
+              <svg
+                fill="none"
+                viewBox="0 0 24 24"
+                strokeWidth="1.5"
+                stroke={color}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M14.857 17.082a23.848 23.848 0 005.454-1.31A8.967 8.967 0 0118 9.75v-.7V9A6 6 0 006 9v.75a8.967 8.967 0 01-2.312 6.022c1.733.64 3.56 1.085 5.455 1.31m5.714 0a24.255 24.255 0 01-5.714 0m5.714 0a3 3 0 11-5.714 0"
+                />
+              </svg>
             </div>
+            {/* <UnreadMessagesCount session={session} /> */}
+          </Link>
+
+          <div className={styles.profile}>
+            <div className={styles.avatar}>
+              <button
+                type="button"
+                className={styles.btn}
+                aria-expanded="false"
+                aria-haspopup="true"
+                onClick={() => setIsProfileOpen((prev) => !prev)}
+              >
+                <Image
+                  src={profileDefault}
+                  sizes="10vw"
+                  fill
+                  alt="profile avatar"
+                />
+              </button>
+
+              <div
+                className={styles.arrow}
+                onClick={() => setIsProfileOpen((prev) => !prev)}
+              >
+                <IoMdArrowDropdown />
+              </div>
+            </div>
+            {isProfileOpen && (
+              <DropDownMenu setIsProfileOpen={setIsProfileOpen} />
+            )}
           </div>
-          {isProfileOpen && (
-            <DropDownMenu setIsProfileOpen={setIsProfileOpen} />
-          )}
         </div>
-      </div>
+      )}
+
+      {!session && (
+        <div className={styles.register}>
+          <Link className={styles.signIn} href="/sign-in">
+            <span style={{ color }} className="link-underline">
+              Login
+            </span>
+          </Link>
+          <Link href="/sign-up" className={`btn ${styles.signUp}`}>
+            Sign up
+          </Link>
+        </div>
+      )}
 
       {/* overlays */}
       {isPropertiesOpen && (
