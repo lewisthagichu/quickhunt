@@ -1,19 +1,52 @@
+'use client';
 import { inter } from '@/public/font/font';
+import { useSession } from 'next-auth/react';
+import { useState, useEffect } from 'react';
 import styles from './listings.module.scss';
 import ListingCard from './ListingCard/ListingCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import properties from '@/test.json';
+import Spinner from '@/components/Spinner';
 
 const Listings = () => {
-  const listings = properties.slice(0, 3);
-  // const listings = [];
-  const hasListings = listings.length > 0;
+  const { data: session } = useSession();
+  const [properties, setProperties] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-  return (
+  useEffect(() => {
+    const fetchProperties = async (userID) => {
+      if (!userID) {
+        return;
+      }
+
+      try {
+        const res = await fetch(`/api/properties/user/${userID}`);
+
+        if (res.status === 200) {
+          const data = await res.json();
+          setProperties(data);
+        }
+      } catch (error) {
+        console.log(error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    // Fetch properties when session is available
+    if (session?.user?.id) {
+      fetchProperties(session.user.id);
+    }
+  }, [session]);
+
+  const noListings = !loading && properties.length === 0;
+
+  return loading ? (
+    <Spinner />
+  ) : (
     <section className={` ${inter.className} ${styles.container}`}>
-      {hasListings ? (
+      {!noListings ? (
         <div className={styles.cards}>
-          {listings.map((property, index) => (
+          {properties.map((property, index) => (
             <div key={property.id || `l_${index}`} className={styles.item}>
               <ListingCard property={property} />
             </div>
@@ -22,7 +55,7 @@ const Listings = () => {
       ) : (
         <PlaceholderCards
           heading="Upload your first listing"
-          cta="Showcase your rental to interested hunters."
+          cta="Showcase your rentals to interested hunters."
           link="/properties/add"
           linkText="Upload your first listing"
         />
