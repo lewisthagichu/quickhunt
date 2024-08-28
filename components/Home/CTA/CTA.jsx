@@ -15,7 +15,7 @@ export default function CTA() {
         <div className={styles.box}>
           <h3>For Owners</h3>
           <p>List your property and connect with potential tenants.</p>
-          <Link className={`btn ${styles.btn}`} href="/properties">
+          <Link className={`btn ${styles.btn}`} href="/properties/add">
             Add property
           </Link>
         </div>
