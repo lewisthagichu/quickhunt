@@ -25,7 +25,7 @@ function PropertyCard({ property }) {
             <FaMapMarker />
             <span>
               {' '}
-              {location.city} {location.state}
+              {location.street}, {location.city}
             </span>
           </div>
           <h3>{name}</h3>

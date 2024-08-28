@@ -27,7 +27,7 @@ function PropertyHero() {
             <FaMapMarker />
             <span>
               {' '}
-              {location.street} {location.city}
+              {location.street}, {location.city}
             </span>
           </div>
         </div>
