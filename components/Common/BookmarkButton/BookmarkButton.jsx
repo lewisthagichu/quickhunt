@@ -75,7 +75,13 @@ export default function BookmarkButton({ property }) {
   };
 
   if (loading) {
-    return <p>...</p>;
+    return (
+      <div className={`${styles.loadingBubbles}`}>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    );
   }
 
   return isBookmarked ? (
