@@ -7,15 +7,15 @@
         justify-content: center;
 
         .avatar {
-            width: var(--btn-height);
-            height: var(--btn-height);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-color: #00241B;
-            color: var(--color-white);
-            border-radius: 50%;
-            font-size: var(--regular-title-size);
+            position: relative;
+            width: 6em;
+            height: 6em;
+            
+            img {
+                border-radius: 50%;
+                object-fit: cover;
+            }
+           
         }
 
         .content {
@@ -71,6 +71,10 @@
         padding-right: var(--mobile-padding);
 
         .profile {
+            .avatar {
+                width: 4em;
+                height: 4em;
+            }
             .content {
                 margin-left: 2rem;
             }
