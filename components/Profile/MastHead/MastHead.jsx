@@ -3,20 +3,24 @@ import styles from './mastHead.module.scss';
 import { inter } from '@/public/font/font';
 import { useEffect } from 'react';
 import { useSession } from 'next-auth/react';
+import { usePathname } from 'next/navigation';
 import Image from 'next/image';
 import Link from 'next/link';
-
 import profileDefault from '@/public/images/profile.png';
 
 export default function MastHead() {
   const { data: session } = useSession();
+  const pathname = usePathname();
+
   const { name, image, createdAt } = session?.user;
   const date = new Date(createdAt).toLocaleDateString('en-US', {
     year: 'numeric',
     month: 'short',
   });
 
-  useEffect(() => {}, [session]);
+  useEffect(() => {}, [session, pathname]);
+
+  const showBookmarks = pathname === '/profile/bookmarks';
 
   return (
     <section className={`${styles.container} ${inter.className}`}>
@@ -38,12 +42,18 @@ export default function MastHead() {
       <nav className={styles.subnav}>
         <ul>
           <li>
-            <Link className={styles.active} href="/profile/listings">
+            <Link
+              className={`${!showBookmarks && styles.active}`}
+              href="/profile/listings"
+            >
               Listings
             </Link>
           </li>
           <li>
-            <Link href="/profile/bookmarks">
+            <Link
+              className={`${showBookmarks && styles.active}`}
+              href="/profile/bookmarks"
+            >
               <span>Bookmarks</span>
             </Link>
           </li>
