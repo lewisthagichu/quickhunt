@@ -6,10 +6,9 @@ export default async function RecentProperties() {
   const { properties } = await fetchProperties();
 
   const recentProperties = properties
-    .sort(() => Math.random() - Math.random())
+    ?.sort(() => Math.random() - Math.random())
     .slice(0, 3);
 
-  console.log(recentProperties);
   return (
     <section className={styles.container}>
       <h2>

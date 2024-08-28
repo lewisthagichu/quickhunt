@@ -19,7 +19,7 @@ export default function CardSimilarProperties({ property, cardIndex }) {
           sizes="(max-width: 768px) 100vw, 33vw"
           alt="Picture of the property"
         />
-        <h3>KES {getRateDisplay(property)}</h3>
+        <h3>KSh {getRateDisplay(property)}</h3>
       </div>
 
       <div className={styles.textContainer}>

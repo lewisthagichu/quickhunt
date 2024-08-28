@@ -4,10 +4,8 @@ import { FaMapMarker } from 'react-icons/fa';
 import { Gallery } from 'react-photoswipe-gallery';
 import getRateDisplay from '@/utils/getRateDisplay';
 import RenderImageItem from './RenderImageItem';
-import properties from '@/test.json';
 
-function PropertyHero() {
-  const property = properties[3];
+export default function PropertyHero({ property }) {
   const { images, location } = property;
   const smallImages = images.length > 1 ? images.slice(1) : [];
 
@@ -32,7 +30,7 @@ function PropertyHero() {
           </div>
         </div>
 
-        <Gallery id="my-gallery">
+        <Gallery>
           <div className={styles.imagesContainer}>
             <div className={styles.largeContainer}>
               <RenderImageItem image={images[0]} />
@@ -53,5 +51,3 @@ function PropertyHero() {
     </section>
   );
 }
-
-export default PropertyHero;

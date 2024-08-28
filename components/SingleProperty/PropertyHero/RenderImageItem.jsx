@@ -4,7 +4,7 @@ import Image from 'next/image';
 export default function RenderImageItem({ image, sizes = '100vw' }) {
   return (
     <Item
-      original={`/assets/images${image}`}
+      original={`/assets/images/${image}`}
       thumbnail={`/assets/images/${image}`}
       width="1280"
       height="720"

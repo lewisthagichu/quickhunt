@@ -2,11 +2,11 @@ import styles from './placeholderCards.module.scss';
 import FirstEmptyCard from './FirstEmptyCard/FirstEmptyCard';
 import EmptyCard from './EmptyCard/EmptyCard';
 
-const PlaceholderCards = ({ heading, cta, link, linkText }) => {
+const PlaceholderCards = ({ heading, cta, link, linkText, divStyle = '' }) => {
   const emptyCards = Array(5).fill(null);
 
   return (
-    <div className={styles.cards}>
+    <div className={`${styles.cards} ${divStyle}`}>
       <div className={styles.item}>
         <FirstEmptyCard
           heading={heading}
