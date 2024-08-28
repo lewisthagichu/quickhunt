@@ -1,5 +1,7 @@
 import './globals.css';
 import 'photoswipe/dist/photoswipe.css';
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer } from 'react-toastify';
 import { GlobalContextProvider } from '@/context/GlobalContext';
 import getServerUser from '@/lib/getSessionUser';
 import AuthProvider from '@/context/AuthProvider';
@@ -20,6 +22,7 @@ export default async function RootLayout({ children }) {
           <body>
             <Header />
             <main>{children}</main>
+            <ToastContainer />
           </body>
         </html>
       </AuthProvider>
