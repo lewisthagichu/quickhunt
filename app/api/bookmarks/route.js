@@ -12,7 +12,7 @@ export const GET = async (request) => {
 
     const session = await getSessionUser();
 
-    if (!session || !session.user) {
+    if (!session || !session.user.id) {
       return new Response('User ID is required', {
         status: 401,
       });
