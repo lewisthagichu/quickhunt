@@ -16,7 +16,6 @@
                 display: flex;
                 justify-content: space-between;
                 gap: 1rem;
-                // flex: 1;
     
                 .name {
                     white-space: nowrap;
@@ -37,9 +36,7 @@
             .location {
                 opacity: .5;
                 font-size: .8em;
-            }
-
-            
+            }            
         }
 
         .imagesContainer {
@@ -53,6 +50,8 @@
                 position: relative;
                 width: 100%;
                 aspect-ratio: 16 / 9;
+
+                
             }
 
             .smallImages {

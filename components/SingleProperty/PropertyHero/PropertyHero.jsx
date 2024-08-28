@@ -4,6 +4,7 @@ import { FaMapMarker } from 'react-icons/fa';
 import { Gallery } from 'react-photoswipe-gallery';
 import getRateDisplay from '@/utils/getRateDisplay';
 import RenderImageItem from './RenderImageItem';
+import BookmarkButton from '@/components/Common/BookmarkButton/BookmarkButton';
 
 export default function PropertyHero({ property }) {
   const { images, location } = property;
@@ -34,6 +35,7 @@ export default function PropertyHero({ property }) {
           <div className={styles.imagesContainer}>
             <div className={styles.largeContainer}>
               <RenderImageItem image={images[0]} />
+              <BookmarkButton property={property} />
             </div>
 
             {smallImages.length > 0 && (
