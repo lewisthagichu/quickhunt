@@ -2,7 +2,7 @@ import { inter } from '@/public/font/font';
 import styles from './listings.module.scss';
 import ListingCard from './ListingCard/ListingCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 
 const Listings = () => {
   const listings = properties.slice(0, 3);

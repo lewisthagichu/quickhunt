@@ -1,5 +1,5 @@
-import PropertyMap from '../PropertyMap/PropertyMap';
 import styles from './mainSection.module.scss';
+import PropertyMap from '../PropertyMap/PropertyMap';
 import { FaBed, FaBath, FaRulerCombined, FaCheck } from 'react-icons/fa';
 
 export default function MainSection({ property }) {
@@ -25,14 +25,7 @@ export default function MainSection({ property }) {
 
       <div className={styles.description}>
         <h3>Description</h3>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Illum magnam
-          sed maxime quis fugit asperiores ad velit aliquam nulla nihil
-          provident cumque tempore saepe, corporis ipsam vitae optio pariatur ut
-          quod recusandae reiciendis. Nemo quibusdam consequatur necessitatibus
-          excepturi voluptas ipsa libero pariatur neque, perspiciatis, sunt
-          aspernatur similique, tempore earum consectetur.
-        </p>
+        <p>{property.description}</p>
       </div>
 
       <div className={styles.amenities}>

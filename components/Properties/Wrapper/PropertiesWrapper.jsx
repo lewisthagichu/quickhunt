@@ -1,8 +1,8 @@
-import Pagination from '@/components/Common/Pagination/Pagination';
 import styles from './wrapper.module.scss';
-import properties from '@/properties.json';
+import Pagination from '@/components/Common/Pagination/Pagination';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
+import properties from '@/test.json';
 
 function PropertiesWrapper() {
   // const properties = [];

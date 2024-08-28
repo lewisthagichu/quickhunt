@@ -2,11 +2,13 @@
 import styles from './propertyHero.module.scss';
 import { FaMapMarker } from 'react-icons/fa';
 import { Gallery } from 'react-photoswipe-gallery';
+import getRateDisplay from '@/utils/getRateDisplay';
 import RenderImageItem from './RenderImageItem';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 
 function PropertyHero() {
-  const { images } = properties[0];
+  const property = properties[3];
+  const { images, location } = property;
   const smallImages = images.length > 1 ? images.slice(1) : [];
 
   return (
@@ -14,29 +16,32 @@ function PropertyHero() {
       <div className={styles.wrapper}>
         <div className={styles.textContainer}>
           <div>
-            <small>Apartment</small>
+            <small>{property.type}</small>
           </div>
           <div className={styles.left}>
-            <h3 className={styles.name}>Charming Cottage Getaway</h3>
-            <h3 className={styles.price}>KSh 100,000/mo</h3>
+            <h3 className={styles.name}>{property.name}</h3>
+            <h3 className={styles.price}>KSh {getRateDisplay(property)}</h3>
           </div>
 
           <div className={styles.location}>
             <FaMapMarker />
-            <span> Kileleshwa, Nairobi</span>
+            <span>
+              {' '}
+              {location.street} {location.city}
+            </span>
           </div>
         </div>
 
         <Gallery id="my-gallery">
           <div className={styles.imagesContainer}>
             <div className={styles.largeContainer}>
-              <RenderImageItem image={images[1]} />
+              <RenderImageItem image={images[0]} />
             </div>
 
             {smallImages.length > 0 && (
               <div className={styles.smallImages}>
                 {smallImages.map((image, i) => (
-                  <div key={`s_${i}`} className={styles.smallContainer}>
+                  <div key={`_${i}`} className={styles.smallContainer}>
                     <RenderImageItem image={image} sizes="50vw" />
                   </div>
                 ))}

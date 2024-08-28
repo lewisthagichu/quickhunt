@@ -2,7 +2,7 @@ import { inter } from '@/public/font/font';
 import styles from './bookmarks.module.scss';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 
 function Bookmarks() {
   // const bookmarks = properties.slice(3, 6);

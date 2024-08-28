@@ -4,8 +4,8 @@ import Image from 'next/image';
 export default function RenderImageItem({ image, sizes = '100vw' }) {
   return (
     <Item
-      original={`/images/properties/${image}`}
-      thumbnail={`/images/properties/${image}`}
+      original={`/assets/images${image}`}
+      thumbnail={`/assets/images/${image}`}
       width="1280"
       height="720"
     >
@@ -13,7 +13,7 @@ export default function RenderImageItem({ image, sizes = '100vw' }) {
         <Image
           ref={ref}
           onClick={open}
-          src={`/images/properties/${image}`}
+          src={`/assets/images/${image}`}
           alt="image"
           fill
           sizes={sizes}

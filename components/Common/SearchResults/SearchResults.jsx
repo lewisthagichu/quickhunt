@@ -2,7 +2,7 @@ import styles from './searchResults.module.scss';
 import PropertyCard from '../PropertyCard/PropertyCard';
 import PlaceholderCards from '../PlaceholderCards/PlaceholderCards';
 import Pagination from '../Pagination/Pagination';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 import Link from 'next/link';
 import { FaArrowAltCircleLeft } from 'react-icons/fa';
 

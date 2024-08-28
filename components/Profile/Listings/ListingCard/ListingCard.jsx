@@ -1,21 +1,22 @@
 import styles from './listingCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
-import { IoMdPerson } from 'react-icons/io';
+import getRateDisplay from '@/utils/getRateDisplay';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
 function ListingCard({ property }) {
-  const { owner, name, rates, location, images } = property;
+  const { name, location, images } = property;
+
   return (
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <Image
-          src={`/images/properties/${images[0]}`}
+          src={`/assets/images/${images[0]}`}
           fill={true}
           sizes="(max-width: 768px) 100vw, 33vw"
           alt="Picture of the property"
         />
-        <h3>KES 2400/mo</h3>
+        <h3>KSh {getRateDisplay(property)}</h3>
       </div>
 
       <div className={styles.textContainer}>

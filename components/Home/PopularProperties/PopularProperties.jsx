@@ -1,9 +1,8 @@
 'use client';
 import styles from './popularProperties.module.scss';
-import { inter } from '@/public/font/font';
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 import Card from './Card/Card';
 
 function PopularProperties() {

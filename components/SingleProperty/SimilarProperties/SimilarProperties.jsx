@@ -3,8 +3,7 @@ import styles from './similarProperties.module.scss';
 import { useState } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import CardSimilarProperties from './CardSimilar/CardSimilarProperties';
-import properties from '@/properties.json';
-import Link from 'next/link';
+import properties from '@/test.json';
 
 export default function SimilarProperties() {
   const similarProperties = properties.slice(3, 9);

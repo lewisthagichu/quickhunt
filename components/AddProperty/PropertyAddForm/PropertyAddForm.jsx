@@ -385,7 +385,7 @@ function PropertyAddForm() {
         />
       </div>
       <div className={styles.row}>
-        <label htmlFor="seller_phone">Seller Phone*</label>
+        <label htmlFor="seller_phone">Seller Phone</label>
         <input
           type="tel"
           id="seller_phone"

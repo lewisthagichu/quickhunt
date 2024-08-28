@@ -1,6 +1,6 @@
 import styles from './recentProperties.module.scss';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
-import properties from '@/properties.json';
+import properties from '@/test.json';
 
 function RecentProperties() {
   const recentProperties = properties.slice(0, 3);
