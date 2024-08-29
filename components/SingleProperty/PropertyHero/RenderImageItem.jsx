@@ -1,7 +1,11 @@
 import { Item } from 'react-photoswipe-gallery';
 import Image from 'next/image';
 
-export default function RenderImageItem({ image, sizes = '100vw' }) {
+export default function RenderImageItem({
+  image,
+  sizes = '100vw',
+  priority = true,
+}) {
   return (
     <Item
       original={`/assets/images/${image}`}
@@ -17,7 +21,7 @@ export default function RenderImageItem({ image, sizes = '100vw' }) {
           alt="image"
           fill
           sizes={sizes}
-          priority={true}
+          priority={priority}
         />
       )}
     </Item>

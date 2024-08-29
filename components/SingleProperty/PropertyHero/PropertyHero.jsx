@@ -42,7 +42,11 @@ export default function PropertyHero({ property }) {
               <div className={styles.smallImages}>
                 {smallImages.map((image, i) => (
                   <div key={`_${i}`} className={styles.smallContainer}>
-                    <RenderImageItem image={image} sizes="50vw" />
+                    <RenderImageItem
+                      image={image}
+                      sizes="50vw"
+                      priority={false}
+                    />
                   </div>
                 ))}
               </div>
