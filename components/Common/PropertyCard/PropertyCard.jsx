@@ -2,7 +2,6 @@ import styles from './propertyCard.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import getRateDisplay from '@/utils/getRateDisplay';
-import BookmarkButton from '../BookmarkButton/BookmarkButton';
 import { IoMdPerson } from 'react-icons/io';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
@@ -18,7 +17,6 @@ function PropertyCard({ property }) {
           alt="Picture of the property"
         />
         <h3>KSh {getRateDisplay(property)}</h3>
-        <BookmarkButton property={property} />
       </div>
 
       <div className={styles.textContainer}>

@@ -2,7 +2,6 @@ import styles from './cardSimilarProperties.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import getRateDisplay from '@/utils/getRateDisplay';
-import BookmarkButton from '@/components/Common/BookmarkButton/BookmarkButton';
 import { IoMdPerson } from 'react-icons/io';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
@@ -21,7 +20,6 @@ export default function CardSimilarProperties({ property, cardIndex }) {
           alt="Picture of the property"
         />
         <h3>KSh {getRateDisplay(property)}</h3>
-        <BookmarkButton property={property} />
       </div>
 
       <div className={styles.textContainer}>
