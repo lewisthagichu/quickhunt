@@ -39,7 +39,7 @@ export const POST = async (request) => {
       });
     }
 
-    const { userId } = session;
+    const { userID } = session;
 
     const formData = await request.formData();
 
@@ -54,8 +54,8 @@ export const POST = async (request) => {
       description: formData.get('description'),
       location: {
         street: formData.get('location.street'),
-        city: formData.get('location.city'),
-        state: formData.get('location.state'),
+        town: formData.get('location.town'),
+        county: formData.get('location.county'),
         zipcode: formData.get('location.zipcode'),
       },
       beds: formData.get('beds'),
@@ -72,7 +72,7 @@ export const POST = async (request) => {
         email: formData.get('seller_info.email'),
         phone: formData.get('seller_info.phone'),
       },
-      owner: userId,
+      owner: userID,
     };
 
     // Upload image(s) to Cloudinary

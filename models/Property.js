@@ -22,7 +22,7 @@ const PropertySchema = new Schema(
       street: {
         type: String,
       },
-      city: {
+      town: {
         type: String,
         required: true,
       },

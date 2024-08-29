@@ -29,7 +29,7 @@ export const POST = async (request) => {
         { name: locationPattern },
         { description: locationPattern },
         { 'location.street': locationPattern },
-        { 'location.city': locationPattern },
+        { 'location.town': locationPattern },
         { 'location.county': locationPattern },
         { 'location.zipcode': locationPattern },
         { type }, // Match the exact type

@@ -26,7 +26,7 @@ export default function PropertyHero({ property }) {
             <FaMapMarker />
             <span>
               {' '}
-              {location.street}, {location.city}
+              {location.street}, {location.town}
             </span>
           </div>
         </div>

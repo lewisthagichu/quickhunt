@@ -28,7 +28,7 @@ export default function CardSimilarProperties({ property, cardIndex }) {
             <FaMapMarker />
             <span>
               {' '}
-              {location.city} {location.state}
+              {location.street} {location.town}
             </span>
           </div>
           <h3>{name}</h3>

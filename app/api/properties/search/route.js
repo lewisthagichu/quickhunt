@@ -32,7 +32,7 @@ export const GET = async (request) => {
             { name: locationPattern },
             { description: locationPattern },
             { 'location.street': locationPattern },
-            { 'location.city': locationPattern },
+            { 'location.town': locationPattern },
             { 'location.county': locationPattern },
             { 'location.zipcode': locationPattern },
           ],

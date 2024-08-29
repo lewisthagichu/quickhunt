@@ -1,15 +1,16 @@
 'use client';
 import styles from './propertyAddForm.module.scss';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function PropertyAddForm() {
-  const [fields, setFields] = useState({
+  const [mounted, setMounted] = useState();
+  const [formData, setFormData] = useState({
     type: '',
     name: '',
     description: '',
     location: {
       street: '',
-      city: '',
+      town: '',
       county: '',
       zipcode: '',
     },
@@ -30,6 +31,30 @@ function PropertyAddForm() {
     images: [],
   });
 
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  function handleChange(e) {
+    const { name, value } = e.target;
+
+    if (name.includes('.')) {
+      const [outerKey, innerKey] = name.split('.');
+      setFormData((prev) => ({
+        ...prev,
+        [outerKey]: {
+          ...prev[outerKey],
+          [innerKey]: value,
+        },
+      }));
+    } else {
+      setFormData((prev) => ({
+        ...prev,
+        [name]: value,
+      }));
+    }
+  }
+
   return (
     <form
       className={styles.container}
@@ -45,15 +70,16 @@ function PropertyAddForm() {
           id="type"
           name="type"
           required
-          // value={fields.type}
+          value={formData.type}
+          onChange={handleChange}
         >
-          <option value="Studio">Apartment</option>
+          <option value="Apartment">Apartment</option>
           <option value="Studio">Studio</option>
           <option value="One bedroom">One bedroom</option>
           <option value="Two bedroom">Two bedroom</option>
           <option value="Three bedroom">Three bedroom</option>
-          <option value="4+">Four bedroom+</option>
-          <option value="loft">Commercial</option>
+          <option value="Four bedroom+">Four bedroom+</option>
+          <option value="Commercial">Commercial</option>
           <option value="House">House</option>
           <option value="Student housing">Student housing</option>
           <option value="Other">Other</option>
@@ -65,9 +91,10 @@ function PropertyAddForm() {
           type="text"
           id="name"
           name="name"
-          placeholder="eg. Beautiful Apartment In Kileleshwa"
+          placeholder="eg. Spacious 2 bedroom Apartment"
           required
-          // value={fields.name}
+          value={formData.name}
+          onChange={handleChange}
         />
       </div>
       <div className={styles.row}>
@@ -77,7 +104,8 @@ function PropertyAddForm() {
           name="description"
           rows="6"
           placeholder="Add a description of your property"
-          // value={fields.description}
+          value={formData.description}
+          onChange={handleChange}
         ></textarea>
       </div>
 
@@ -88,15 +116,17 @@ function PropertyAddForm() {
           id="street"
           name="location.street"
           placeholder="Street"
-          // value={fields.location.street}
+          value={formData.location.street}
+          onChange={handleChange}
         />
         <input
           type="text"
-          id="city"
-          name="location.city"
-          placeholder="City"
+          id="town"
+          name="location.town"
+          placeholder="Town"
           required
-          // value={fields.location.city}
+          value={formData.location.town}
+          onChange={handleChange}
         />
         <input
           type="text"
@@ -104,14 +134,16 @@ function PropertyAddForm() {
           name="location.county"
           placeholder="County"
           required
-          // value={fields.location.county}
+          value={formData.location.county}
+          onChange={handleChange}
         />
         <input
           type="text"
           id="zipcode"
           name="location.zipcode"
           placeholder="Zipcode"
-          // value={fields.location.zipcode}
+          value={formData.location.zipcode}
+          onChange={handleChange}
         />
       </div>
 
@@ -123,7 +155,7 @@ function PropertyAddForm() {
             id="beds"
             name="beds"
             required
-            // value={fields.beds}
+            // value={formData.beds}
           />
         </div>
         <div className={styles.col}>
@@ -133,7 +165,7 @@ function PropertyAddForm() {
             id="baths"
             name="baths"
             required
-            // value={fields.baths}
+            // value={formData.baths}
           />
         </div>
         <div className={styles.col}>
@@ -143,7 +175,7 @@ function PropertyAddForm() {
             id="square_feet"
             name="square_feet"
             required
-            // value={fields.square_feet}
+            // value={formData.square_feet}
           />
         </div>
       </div>
@@ -158,7 +190,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Wifi"
 
-              // checked={fields.amenities.includes('Wifi')}
+              // checked={formData.amenities.includes('Wifi')}
             />
             <label htmlFor="amenity_wifi">Wifi</label>
           </div>
@@ -169,7 +201,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Full Kitchen"
 
-              // checked={fields.amenities.includes('Full Kitchen')}
+              // checked={formData.amenities.includes('Full Kitchen')}
             />
             <label htmlFor="amenity_kitchen">Full Kitchen</label>
           </div>
@@ -180,7 +212,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Washer & Dryer"
 
-              // checked={fields.amenities.includes('Washer & Dryer')}
+              // checked={formData.amenities.includes('Washer & Dryer')}
             />
             <label htmlFor="amenity_washer_dryer">Washer & Dryer</label>
           </div>
@@ -191,7 +223,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Free Parking"
 
-              // checked={fields.amenities.includes('Free Parking')}
+              // checked={formData.amenities.includes('Free Parking')}
             />
             <label htmlFor="amenity_free_parking">Free Parking</label>
           </div>
@@ -202,7 +234,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Swimming Pool"
 
-              // checked={fields.amenities.includes('Swimming Pool')}
+              // checked={formData.amenities.includes('Swimming Pool')}
             />
             <label htmlFor="amenity_pool">Swimming Pool</label>
           </div>
@@ -213,7 +245,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Playground"
 
-              // checked={fields.amenities.includes('Playground')}
+              // checked={formData.amenities.includes('Playground')}
             />
             <label htmlFor="amenity_hot_tub">Playground</label>
           </div>
@@ -223,7 +255,7 @@ function PropertyAddForm() {
               id="amenity_24_7_security"
               name="amenities"
               value="24/7 Security"
-              // checked={fields.amenities.includes('24/7 Security')}
+              // checked={formData.amenities.includes('24/7 Security')}
             />
             <label htmlFor="amenity_24_7_security">24/7 Security</label>
           </div>
@@ -235,7 +267,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Elevator Access"
 
-              // checked={fields.amenities.includes('Elevator Access')}
+              // checked={formData.amenities.includes('Elevator Access')}
             />
             <label htmlFor="amenity_elevator_access">Elevator Access</label>
           </div>
@@ -246,7 +278,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Dishwasher"
 
-              // checked={fields.amenities.includes('Dishwasher')}
+              // checked={formData.amenities.includes('Dishwasher')}
             />
             <label htmlFor="amenity_dishwasher">Dishwasher</label>
           </div>
@@ -258,7 +290,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Air Conditioning"
 
-              // checked={fields.amenities.includes('Air Conditioning')}
+              // checked={formData.amenities.includes('Air Conditioning')}
             />
             <label htmlFor="amenity_air_conditioning">Air Conditioning</label>
           </div>
@@ -269,7 +301,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Balcony/Patio"
 
-              // checked={fields.amenities.includes('Balcony/Patio')}
+              // checked={formData.amenities.includes('Balcony/Patio')}
             />
             <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
           </div>
@@ -280,7 +312,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Furniture"
 
-              // checked={fields.amenities.includes('Furniture')}
+              // checked={formData.amenities.includes('Furniture')}
             />
             <label htmlFor="amenity_furniture">Furniture</label>
           </div>
@@ -291,7 +323,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Gym/Fitness Center"
 
-              // checked={fields.amenities.includes('Gym/Fitness Center')}
+              // checked={formData.amenities.includes('Gym/Fitness Center')}
             />
             <label htmlFor="amenity_gym_fitness_center">
               Gym/Fitness Center
@@ -304,7 +336,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Wheelchair Accessible"
 
-              // checked={fields.amenities.includes('Wheelchair Accessible')}
+              // checked={formData.amenities.includes('Wheelchair Accessible')}
             />
             <label htmlFor="amenity_wheelchair_accessible">
               Wheelchair Accessible
@@ -317,7 +349,7 @@ function PropertyAddForm() {
               name="amenities"
               value="Garbage Collection"
 
-              // checked={fields.amenities.includes('Garbage Collection')}
+              // checked={formData.amenities.includes('Garbage Collection')}
             />
             <label htmlFor="amenity_garbage_collection">
               Garbage Collection
@@ -336,7 +368,7 @@ function PropertyAddForm() {
               id="weekly_rate"
               name="rates.weekly"
 
-              // value={fields.rates.weekly}
+              // value={formData.rates.weekly}
             />
           </div>
           <div className={styles.rate}>
@@ -346,7 +378,7 @@ function PropertyAddForm() {
               id="monthly_rate"
               name="rates.monthly"
 
-              // value={fields.rates.monthly}
+              // value={formData.rates.monthly}
             />
           </div>
           <div className={styles.rate}>
@@ -356,7 +388,7 @@ function PropertyAddForm() {
               id="nightly_rate"
               name="rates.nightly"
 
-              // value={fields.rates.nightly}
+              // value={formData.rates.nightly}
             />
           </div>
         </div>
@@ -370,7 +402,7 @@ function PropertyAddForm() {
           name="seller_info.name"
           placeholder="Name"
           required
-          // value={fields.seller_info.name}
+          // value={formData.seller_info.name}
         />
       </div>
       <div className={styles.row}>
@@ -381,7 +413,7 @@ function PropertyAddForm() {
           name="seller_info.email"
           placeholder="Email address"
           required
-          // value={fields.seller_info.email}
+          // value={formData.seller_info.email}
         />
       </div>
       <div className={styles.row}>
@@ -391,7 +423,7 @@ function PropertyAddForm() {
           id="seller_phone"
           name="seller_info.phone"
           placeholder="Phone"
-          // value={fields.seller_info.phone}
+          // value={formData.seller_info.phone}
         />
       </div>
 
