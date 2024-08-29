@@ -5,11 +5,11 @@ import getSessionUser from '@/lib/getSessionUser';
 
 // GET /api/properties
 export const GET = async (request) => {
-  const page = request.nextUrl.searchParams.get('page') || 1;
-  const pageSize = request.nextUrl.searchParams.get('pageSize') || 6;
-
   try {
     await connectDB();
+
+    const page = request.nextUrl.searchParams.get('page') || 1;
+    const pageSize = request.nextUrl.searchParams.get('pageSize') || 6;
 
     // Determine number of properties to skip
     const skip = (page - 1) * pageSize;
@@ -17,7 +17,7 @@ export const GET = async (request) => {
     // Retrieve total number of properties in database
     const total = await Property.countDocuments({});
 
-    // Retrieve proeries to retrieve in current page
+    // Retrieve properties to retrieve in current page
     const properties = await Property.find({}).skip(skip).limit(pageSize);
 
     return new Response(JSON.stringify({ properties, total }), { status: 200 });
