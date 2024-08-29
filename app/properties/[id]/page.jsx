@@ -55,7 +55,7 @@ function PropertyPage() {
         <>
           <PropertyHero property={property} />
           <PropertyDetails property={property} />
-          <SimilarProperties />
+          <SimilarProperties property={property} />
           <BigBtn />
           <Footer />
         </>
