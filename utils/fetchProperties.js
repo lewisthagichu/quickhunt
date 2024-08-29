@@ -23,6 +23,28 @@ async function fetchProperties({ showPopular = false } = {}) {
   }
 }
 
+// fetch recent properties
+async function fetchRecentProperties() {
+  try {
+    if (!apiDomain) {
+      return [];
+    }
+
+    const res = await fetch(`${apiDomain}/properties/recent`, {
+      cache: 'no-store',
+    });
+
+    if (!res.ok) {
+      throw new Error("Couldn't fetch recent properties");
+    }
+
+    return res.json();
+  } catch (error) {
+    console.log(error);
+    return [];
+  }
+}
+
 // Fetch single property
 async function fetchProperty(id) {
   try {
@@ -43,4 +65,4 @@ async function fetchProperty(id) {
   }
 }
 
-export { fetchProperties, fetchProperty };
+export { fetchProperties, fetchRecentProperties, fetchProperty };

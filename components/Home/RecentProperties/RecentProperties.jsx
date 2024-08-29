@@ -1,13 +1,9 @@
 import styles from './recentProperties.module.scss';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
-import { fetchProperties } from '@/utils/fetchProperties';
+import { fetchRecentProperties } from '@/utils/fetchProperties';
 
 export default async function RecentProperties() {
-  const { properties } = await fetchProperties();
-
-  const recentProperties = properties
-    ?.sort(() => Math.random() - Math.random())
-    .slice(0, 3);
+  const { properties } = await fetchRecentProperties();
 
   return (
     <section className={styles.container}>
@@ -15,7 +11,7 @@ export default async function RecentProperties() {
         Recent <span>Properties</span>
       </h2>
       <div className={styles.cards}>
-        {recentProperties?.map((property, i) => (
+        {properties?.map((property, i) => (
           <div key={`r_${i}`} className={styles.item}>
             <PropertyCard property={property} />
           </div>
