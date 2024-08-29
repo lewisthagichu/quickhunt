@@ -15,7 +15,7 @@ export default async function RecentProperties() {
         Recent <span>Properties</span>
       </h2>
       <div className={styles.cards}>
-        {recentProperties.map((property, i) => (
+        {recentProperties?.map((property, i) => (
           <div key={`r_${i}`} className={styles.item}>
             <PropertyCard property={property} />
           </div>
