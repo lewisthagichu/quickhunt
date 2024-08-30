@@ -72,8 +72,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                background-color: #ebebeb;
-                background-color: transparent;
                 height: var(--btn-height-small);
                 min-width: 6em;
                 cursor: pointer;
@@ -91,13 +89,12 @@
                 }
 
                 &.delete {
-                    border: 1px solid var(--color-dark);
+                    background-color: #F26969;
+                    color: var(--color-white);
                     transition: all 100ms ease-in-out;
 
                     &:hover {
                         background-color: var(--color-red);
-                        color: var(--color-white);
-                        border: none;
                     }
                 }
             }
