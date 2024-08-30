@@ -1,0 +1,17 @@
+.container {
+    background-color: var(--color-white);
+    margin-top: var(--nav-bar-height);
+    padding: 8rem var(--container-padding);
+    
+    .wrapper {
+        margin: 0 auto;
+        max-width: 768px;
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding-left: var(--mobile-padding);
+        padding-right: var(--mobile-padding);
+    }
+}

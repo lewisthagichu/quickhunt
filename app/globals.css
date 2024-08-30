@@ -88,7 +88,7 @@ h1, h2, h3, h4, h5, h6 {
   display: none;
 }
 
-input {
+input:not([type="checkbox"]) {
   -webkit-appearance: none; 
   -moz-appearance: none;   
   appearance: none;         
@@ -171,8 +171,6 @@ textarea {
   transform-origin: left center;
   transform: scaleX(1) rotate(0.001deg);
   opacity: 1;
-  /* transform: scaleX(1);
-  transform-origin: bottom left; */
 }
 
 /* /properties/:id */
