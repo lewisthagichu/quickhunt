@@ -12,8 +12,6 @@ export const GET = async (request) => {
       { $sample: { size: 3 } },
     ]);
 
-    console.log(properties);
-
     return new Response(JSON.stringify({ properties }), {
       status: 200,
     });
