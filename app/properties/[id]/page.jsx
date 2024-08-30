@@ -12,8 +12,9 @@ import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCa
 import Spinner from '@/components/Spinner';
 
 function PropertyPage() {
-  const [property, setProperty] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [property, setProperty] = useState(null);
+  const [hasproperty, setHasProperty] = useState(false);
 
   const { id } = useParams();
 
@@ -22,7 +23,9 @@ function PropertyPage() {
       if (!id) return;
       try {
         const property = await fetchProperty(id);
+        const hasProperty = property.length > 0;
 
+        setHasProperty(hasProperty);
         setProperty(property);
       } catch (error) {
         console.error('Error fetching property: ', error);
@@ -35,12 +38,19 @@ function PropertyPage() {
     }
   }, [id, property]);
 
-  const noPropertyFound = !property && !loading;
   return loading ? (
     <Spinner />
   ) : (
     <div className={inter.className}>
-      {noPropertyFound ? (
+      {hasproperty ? (
+        <>
+          <PropertyHero property={property} />
+          <PropertyDetails property={property} />
+          <SimilarProperties property={property} />
+          <BigBtn />
+          <Footer />
+        </>
+      ) : (
         <div className="container">
           <PlaceholderCards
             heading="No listing found"
@@ -51,14 +61,6 @@ function PropertyPage() {
           />
           <Footer />
         </div>
-      ) : (
-        <>
-          <PropertyHero property={property} />
-          <PropertyDetails property={property} />
-          <SimilarProperties property={property} />
-          <BigBtn />
-          <Footer />
-        </>
       )}
     </div>
   );
