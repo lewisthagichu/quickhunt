@@ -60,7 +60,7 @@ export const PUT = async (request, { params }) => {
         street: formData.get('location.street'),
         town: formData.get('location.town'),
         county: formData.get('location.county'),
-        zipcode: formData.get('location.zipcode'),
+        postalcode: formData.get('location.postalcode'),
       },
       beds: formData.get('beds'),
       baths: formData.get('baths'),

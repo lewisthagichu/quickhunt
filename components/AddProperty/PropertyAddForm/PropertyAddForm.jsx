@@ -14,7 +14,7 @@ export default function PropertyAddForm() {
       street: '',
       town: '',
       county: '',
-      zipcode: '',
+      postalcode: '',
     },
     beds: '',
     baths: '',
@@ -204,10 +204,10 @@ export default function PropertyAddForm() {
         />
         <input
           type="text"
-          id="zipcode"
-          name="location.zipcode"
-          placeholder="Zipcode"
-          value={formData.location.zipcode}
+          id="postalcode"
+          name="location.postalcode"
+          placeholder="Postalcode"
+          value={formData.location.postalcode}
           onChange={handleChange}
         />
       </div>

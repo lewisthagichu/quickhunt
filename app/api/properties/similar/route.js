@@ -31,7 +31,7 @@ export const POST = async (request) => {
         { 'location.street': locationPattern },
         { 'location.town': locationPattern },
         { 'location.county': locationPattern },
-        { 'location.zipcode': locationPattern },
+        { 'location.postalcode': locationPattern },
         { type }, // Match the exact type
       ],
     };

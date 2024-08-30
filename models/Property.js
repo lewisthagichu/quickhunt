@@ -30,7 +30,7 @@ const PropertySchema = new Schema(
         type: String,
         required: true,
       },
-      zipcode: {
+      postalcode: {
         type: String,
       },
     },

@@ -15,13 +15,13 @@ export default function PropertyMap({ property }) {
   useEffect(() => {
     Radar.initialize(process.env.NEXT_PUBLIC_RADAR_GEOCODING_API_KEY);
 
-    const { street, town, county, zipcode } = property?.location || {};
+    const { street, town, county, postalcode } = property?.location || {};
 
     const fetchCoords = async () => {
       try {
         // Perform forward geocoding
         const result = await Radar.forwardGeocode({
-          query: `${street} ${town} ${county} ${zipcode}`,
+          query: `${street} ${town} ${county} ${postalcode}`,
         });
 
         // Ensure result is valid
