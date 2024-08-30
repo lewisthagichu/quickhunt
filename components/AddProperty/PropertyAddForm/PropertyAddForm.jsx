@@ -1,12 +1,10 @@
 'use client';
 import styles from './propertyAddForm.module.scss';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { toast } from 'react-toastify';
 import Bubbles from '@/components/Common/Bubbles/Bubbles';
-import Spinner from '@/components/Spinner';
 
 export default function PropertyAddForm() {
-  const [mounted, setMounted] = useState(false);
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: '',
@@ -34,10 +32,6 @@ export default function PropertyAddForm() {
     },
     images: [],
   });
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
 
   function handleChange(e) {
     const { name, value } = e.target;
@@ -125,9 +119,7 @@ export default function PropertyAddForm() {
     e.target.submit();
   }
 
-  return !mounted ? (
-    <Spinner />
-  ) : (
+  return (
     <form
       className={styles.container}
       action="/api/properties"
