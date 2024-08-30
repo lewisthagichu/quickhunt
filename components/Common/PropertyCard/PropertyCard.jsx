@@ -11,7 +11,7 @@ function PropertyCard({ property }) {
     <div className={styles.container}>
       <div className={styles.imageContainer}>
         <Image
-          src={`/assets/images/${images[0]}`}
+          src={images[0]}
           fill={true}
           sizes="(max-width: 768px) 100vw, 33vw"
           alt="Picture of the property"

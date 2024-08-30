@@ -80,7 +80,7 @@ function Properties() {
           </div>
         </>
       ) : (
-        <div>No properties available</div>
+        <></>
       )}
     </section>
   );

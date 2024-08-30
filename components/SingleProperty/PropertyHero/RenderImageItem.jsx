@@ -7,17 +7,12 @@ export default function RenderImageItem({
   priority = true,
 }) {
   return (
-    <Item
-      original={`/assets/images/${image}`}
-      thumbnail={`/assets/images/${image}`}
-      width="1280"
-      height="720"
-    >
+    <Item original={image} thumbnail={image} width="1280" height="720">
       {({ ref, open }) => (
         <Image
           ref={ref}
           onClick={open}
-          src={`/assets/images/${image}`}
+          src={image}
           alt="image"
           fill
           sizes={sizes}
