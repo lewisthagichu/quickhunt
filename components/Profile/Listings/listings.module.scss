@@ -4,6 +4,7 @@
     .cards {
         width: 100%;
         display: flex;
+        flex-wrap: wrap;
         gap: 2rem;
         max-width: 1563px;
         margin: 0 auto;
