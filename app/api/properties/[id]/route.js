@@ -91,3 +91,39 @@ export const PUT = async (request, { params }) => {
     return new Response('error: ' + error.message, { status: 500 });
   }
 };
+
+// DELETE /api/properties/:id
+export const DELETE = async (request, { params }) => {
+  try {
+    const propertyID = params.id;
+
+    const session = await getSessionUser();
+
+    // Check for session
+    if (!session || !session.userID) {
+      return new Response('User ID is required', { status: 401 });
+    }
+
+    const { userID } = session;
+
+    await connectDB();
+
+    const property = await Property.findById(propertyID);
+
+    if (!property) return new Response('Property Not Found', { status: 404 });
+
+    // Verify ownership
+    if (property.owner.toString() !== userID) {
+      return new Response('Unauthorized', { status: 401 });
+    }
+
+    await property.deleteOne();
+
+    return new Response('Property Deleted', {
+      status: 200,
+    });
+  } catch (error) {
+    console.log(error);
+    return new Response('Something Went Wrong', { status: 500 });
+  }
+};

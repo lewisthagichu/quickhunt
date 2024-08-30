@@ -4,7 +4,7 @@ import Link from 'next/link';
 import getRateDisplay from '@/utils/getRateDisplay';
 import { FaBed, FaBath, FaRulerCombined, FaMapMarker } from 'react-icons/fa';
 
-function ListingCard({ property }) {
+function ListingCard({ property, handleDeleteProperty }) {
   const { name, location, images } = property;
 
   return (
@@ -56,7 +56,7 @@ function ListingCard({ property }) {
             Edit
           </Link>
           <button
-            href={`/properties/${property._id}`}
+            onClick={() => handleDeleteProperty(property._id)}
             className={`${styles.btn} ${styles.delete} btn`}
           >
             Delete

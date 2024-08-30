@@ -76,6 +76,7 @@
                 background-color: transparent;
                 height: var(--btn-height-small);
                 min-width: 6em;
+                cursor: pointer;
 
                 &.edit {
                     background-color: var(--color-dark);

@@ -2,15 +2,18 @@
 import { inter } from '@/public/font/font';
 import { useSession } from 'next-auth/react';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
 import styles from './listings.module.scss';
 import ListingCard from './ListingCard/ListingCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
 import Spinner from '@/components/Spinner';
 
 const Listings = () => {
-  const { data: session } = useSession();
-  const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [properties, setProperties] = useState([]);
+  const [hasProperties, setHasProperties] = useState(false);
+
+  const { data: session } = useSession();
 
   useEffect(() => {
     const fetchProperties = async (userID) => {
@@ -23,6 +26,7 @@ const Listings = () => {
 
         if (res.status === 200) {
           const data = await res.json();
+          setHasProperties(true);
           setProperties(data);
         }
       } catch (error) {
@@ -38,17 +42,50 @@ const Listings = () => {
     }
   }, [session]);
 
+  const handleDeleteProperty = async (propertyID) => {
+    const confirmed = window.confirm(
+      'Are you sure you want to delete this property?'
+    );
+
+    if (!confirmed) return;
+
+    try {
+      const res = await fetch(`/api/properties/${propertyID}`, {
+        method: 'DELETE',
+      });
+
+      if (res.status === 200) {
+        // Remove the property from state
+        const updatedProperties = properties.filter(
+          (property) => property._id !== propertyID
+        );
+
+        setProperties(updatedProperties);
+
+        toast.success('Property Deleted');
+      } else {
+        throw new Error();
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('Failed to delete property');
+    }
+  };
+
   const noListings = !loading && properties.length === 0;
 
   return loading ? (
     <Spinner />
   ) : (
     <section className={` ${inter.className} ${styles.container}`}>
-      {!noListings ? (
+      {hasProperties ? (
         <div className={styles.cards}>
           {properties.map((property, index) => (
             <div key={property.id || `l_${index}`} className={styles.item}>
-              <ListingCard property={property} />
+              <ListingCard
+                property={property}
+                handleDeleteProperty={handleDeleteProperty}
+              />
             </div>
           ))}
         </div>
