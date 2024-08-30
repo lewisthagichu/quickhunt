@@ -109,7 +109,7 @@
     .container {
         .textContainer {
             .amenities {
-              span {
+              p span:last-of-type {
                 display: none;
               }
             }
@@ -127,7 +127,7 @@
     .container {
         .textContainer {
             .amenities {
-              span {
+              p span:last-of-type {
                 display: inline;
               }
             }

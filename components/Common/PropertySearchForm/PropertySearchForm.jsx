@@ -6,7 +6,7 @@ import { FaLocationDot, FaHouse, FaMoneyBill } from 'react-icons/fa6';
 
 function PropertySearchForm() {
   const [location, setLocation] = useState('');
-  const [budget, setBudget] = useState(0);
+  const [budget, setBudget] = useState('');
   const [propertyType, setPropertyType] = useState('All');
 
   const router = useRouter();
@@ -14,7 +14,7 @@ function PropertySearchForm() {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (location === '' && budget === 10000000000 && propertyType === 'All') {
+    if (location === '' && budget === '' && propertyType === 'All') {
       router.push('/properties');
     } else {
       const query = `?location=${location}&propertyType=${propertyType}&budget=${budget}`;

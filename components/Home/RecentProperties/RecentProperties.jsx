@@ -6,7 +6,7 @@ export default async function RecentProperties() {
   const { properties } = await fetchRecentProperties();
 
   return (
-    properties.length > 0 && (
+    properties?.length > 0 && (
       <section className={styles.container}>
         <h2>
           Recent <span>Properties</span>

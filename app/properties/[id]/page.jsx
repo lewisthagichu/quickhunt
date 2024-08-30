@@ -23,7 +23,7 @@ function PropertyPage() {
       if (!id) return;
       try {
         const property = await fetchProperty(id);
-        const hasProperty = property.length > 0;
+        const hasProperty = property !== null;
 
         setHasProperty(hasProperty);
         setProperty(property);
