@@ -1,9 +1,13 @@
 'use client';
 import styles from './propertyAddForm.module.scss';
 import { useState, useEffect } from 'react';
+import { toast } from 'react-toastify';
+import Bubbles from '@/components/Common/Bubbles/Bubbles';
+import Spinner from '@/components/Spinner';
 
-function PropertyAddForm() {
-  const [mounted, setMounted] = useState();
+export default function PropertyAddForm() {
+  const [mounted, setMounted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     type: '',
     name: '',
@@ -55,12 +59,81 @@ function PropertyAddForm() {
     }
   }
 
-  return (
+  function handleAmenitiesChange(e) {
+    const { checked, value } = e.target;
+
+    // Clone the current array
+    const updatedAmenities = [...formData.amenities];
+
+    if (checked) {
+      // Add value to array
+      updatedAmenities.push(value);
+    } else {
+      const index = updatedAmenities.indexOf(value);
+
+      if (index !== -1) {
+        updatedAmenities.splice(index, 1);
+      }
+    }
+
+    // Update state with updated array
+    setFormData((prev) => ({
+      ...prev,
+      amenities: updatedAmenities,
+    }));
+  }
+
+  function handleImagesChange(e) {
+    const { files } = e.target;
+
+    // Get the current images from the formData
+    const updatedImages = [...formData.images];
+
+    // Ensure that the total number of images doesn't exceed 4
+    if (updatedImages.length + files.length > 4) {
+      toast.error('You can only upload up to 4 images.');
+      return;
+    }
+
+    for (const file of files) {
+      // Ensure that the file is an image
+      if (file.type.startsWith('image/')) {
+        updatedImages.push(file);
+      } else {
+        toast.error('Only image files are allowed.');
+        return;
+      }
+    }
+
+    // Update the state with the new images
+    setFormData((prev) => ({
+      ...prev,
+      images: updatedImages,
+    }));
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault();
+
+    const { weekly, monthly, nightly } = formData.rates;
+
+    if (!weekly && !monthly && !nightly) {
+      toast.error('Please fill in at least one rate.');
+    }
+
+    setLoading(true);
+    e.target.submit();
+  }
+
+  return !mounted ? (
+    <Spinner />
+  ) : (
     <form
       className={styles.container}
       action="/api/properties"
       method="POST"
       encType="multipart/form-data"
+      onSubmit={handleSubmit}
     >
       <h2>Add Property</h2>
 
@@ -155,7 +228,8 @@ function PropertyAddForm() {
             id="beds"
             name="beds"
             required
-            // value={formData.beds}
+            value={formData.beds}
+            onChange={handleChange}
           />
         </div>
         <div className={styles.col}>
@@ -165,7 +239,8 @@ function PropertyAddForm() {
             id="baths"
             name="baths"
             required
-            // value={formData.baths}
+            value={formData.baths}
+            onChange={handleChange}
           />
         </div>
         <div className={styles.col}>
@@ -175,7 +250,8 @@ function PropertyAddForm() {
             id="square_feet"
             name="square_feet"
             required
-            // value={formData.square_feet}
+            value={formData.square_feet}
+            onChange={handleChange}
           />
         </div>
       </div>
@@ -189,8 +265,8 @@ function PropertyAddForm() {
               id="amenity_wifi"
               name="amenities"
               value="Wifi"
-
-              // checked={formData.amenities.includes('Wifi')}
+              checked={formData.amenities.includes('Wifi')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_wifi">Wifi</label>
           </div>
@@ -200,8 +276,8 @@ function PropertyAddForm() {
               id="amenity_kitchen"
               name="amenities"
               value="Full Kitchen"
-
-              // checked={formData.amenities.includes('Full Kitchen')}
+              checked={formData.amenities.includes('Full Kitchen')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_kitchen">Full Kitchen</label>
           </div>
@@ -211,8 +287,8 @@ function PropertyAddForm() {
               id="amenity_washer_dryer"
               name="amenities"
               value="Washer & Dryer"
-
-              // checked={formData.amenities.includes('Washer & Dryer')}
+              checked={formData.amenities.includes('Washer & Dryer')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_washer_dryer">Washer & Dryer</label>
           </div>
@@ -222,8 +298,8 @@ function PropertyAddForm() {
               id="amenity_free_parking"
               name="amenities"
               value="Free Parking"
-
-              // checked={formData.amenities.includes('Free Parking')}
+              checked={formData.amenities.includes('Free Parking')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_free_parking">Free Parking</label>
           </div>
@@ -233,8 +309,8 @@ function PropertyAddForm() {
               id="amenity_pool"
               name="amenities"
               value="Swimming Pool"
-
-              // checked={formData.amenities.includes('Swimming Pool')}
+              checked={formData.amenities.includes('Swimming Pool')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_pool">Swimming Pool</label>
           </div>
@@ -244,8 +320,8 @@ function PropertyAddForm() {
               id="amenity_playground"
               name="amenities"
               value="Playground"
-
-              // checked={formData.amenities.includes('Playground')}
+              checked={formData.amenities.includes('Playground')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_hot_tub">Playground</label>
           </div>
@@ -255,7 +331,8 @@ function PropertyAddForm() {
               id="amenity_24_7_security"
               name="amenities"
               value="24/7 Security"
-              // checked={formData.amenities.includes('24/7 Security')}
+              checked={formData.amenities.includes('24/7 Security')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_24_7_security">24/7 Security</label>
           </div>
@@ -266,8 +343,8 @@ function PropertyAddForm() {
               id="amenity_elevator_access"
               name="amenities"
               value="Elevator Access"
-
-              // checked={formData.amenities.includes('Elevator Access')}
+              checked={formData.amenities.includes('Elevator Access')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_elevator_access">Elevator Access</label>
           </div>
@@ -277,8 +354,8 @@ function PropertyAddForm() {
               id="amenity_dishwasher"
               name="amenities"
               value="Dishwasher"
-
-              // checked={formData.amenities.includes('Dishwasher')}
+              checked={formData.amenities.includes('Dishwasher')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_dishwasher">Dishwasher</label>
           </div>
@@ -289,8 +366,8 @@ function PropertyAddForm() {
               id="amenity_air_conditioning"
               name="amenities"
               value="Air Conditioning"
-
-              // checked={formData.amenities.includes('Air Conditioning')}
+              checked={formData.amenities.includes('Air Conditioning')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_air_conditioning">Air Conditioning</label>
           </div>
@@ -300,8 +377,8 @@ function PropertyAddForm() {
               id="amenity_balcony_patio"
               name="amenities"
               value="Balcony/Patio"
-
-              // checked={formData.amenities.includes('Balcony/Patio')}
+              checked={formData.amenities.includes('Balcony/Patio')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_balcony_patio">Balcony/Patio</label>
           </div>
@@ -311,8 +388,8 @@ function PropertyAddForm() {
               id="amenity_furniture"
               name="amenities"
               value="Furniture"
-
-              // checked={formData.amenities.includes('Furniture')}
+              checked={formData.amenities.includes('Furniture')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_furniture">Furniture</label>
           </div>
@@ -322,8 +399,8 @@ function PropertyAddForm() {
               id="amenity_gym_fitness_center"
               name="amenities"
               value="Gym/Fitness Center"
-
-              // checked={formData.amenities.includes('Gym/Fitness Center')}
+              checked={formData.amenities.includes('Gym/Fitness Center')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_gym_fitness_center">
               Gym/Fitness Center
@@ -335,8 +412,8 @@ function PropertyAddForm() {
               id="amenity_wheelchair_accessible"
               name="amenities"
               value="Wheelchair Accessible"
-
-              // checked={formData.amenities.includes('Wheelchair Accessible')}
+              checked={formData.amenities.includes('Wheelchair Accessible')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_wheelchair_accessible">
               Wheelchair Accessible
@@ -348,8 +425,8 @@ function PropertyAddForm() {
               id="amenity_garbage_collection"
               name="amenities"
               value="Garbage Collection"
-
-              // checked={formData.amenities.includes('Garbage Collection')}
+              checked={formData.amenities.includes('Garbage Collection')}
+              onChange={handleAmenitiesChange}
             />
             <label htmlFor="amenity_garbage_collection">
               Garbage Collection
@@ -359,7 +436,7 @@ function PropertyAddForm() {
       </div>
 
       <div className={styles.row}>
-        <label>Rates (Leave blank if not applicable)</label>
+        <label>Rates (Please fill in at least one rate.)</label>
         <div className={styles.rates}>
           <div className={styles.rate}>
             <label htmlFor="weekly_rate">Weekly</label>
@@ -367,8 +444,8 @@ function PropertyAddForm() {
               type="number"
               id="weekly_rate"
               name="rates.weekly"
-
-              // value={formData.rates.weekly}
+              value={formData.rates.weekly}
+              onChange={handleChange}
             />
           </div>
           <div className={styles.rate}>
@@ -377,8 +454,8 @@ function PropertyAddForm() {
               type="number"
               id="monthly_rate"
               name="rates.monthly"
-
-              // value={formData.rates.monthly}
+              value={formData.rates.monthly}
+              onChange={handleChange}
             />
           </div>
           <div className={styles.rate}>
@@ -387,43 +464,46 @@ function PropertyAddForm() {
               type="number"
               id="nightly_rate"
               name="rates.nightly"
-
-              // value={formData.rates.nightly}
+              value={formData.rates.nightly}
+              onChange={handleChange}
             />
           </div>
         </div>
       </div>
 
       <div className={styles.row}>
-        <label htmlFor="seller_name">Seller Name*</label>
+        <label htmlFor="seller_name">Seller's Name*</label>
         <input
           type="text"
           id="seller_name"
           name="seller_info.name"
           placeholder="Name"
           required
-          // value={formData.seller_info.name}
+          value={formData.seller_info.name}
+          onChange={handleChange}
         />
       </div>
       <div className={styles.row}>
-        <label htmlFor="seller_email">Seller Email*</label>
+        <label htmlFor="seller_email">Seller's Email*</label>
         <input
           type="email"
           id="seller_email"
           name="seller_info.email"
           placeholder="Email address"
           required
-          // value={formData.seller_info.email}
+          value={formData.seller_info.email}
+          onChange={handleChange}
         />
       </div>
       <div className={styles.row}>
-        <label htmlFor="seller_phone">Seller Phone</label>
+        <label htmlFor="seller_phone">Seller's Phone</label>
         <input
           type="tel"
           id="seller_phone"
           name="seller_info.phone"
           placeholder="Phone"
-          // value={formData.seller_info.phone}
+          value={formData.seller_info.phone}
+          onChange={handleChange}
         />
       </div>
 
@@ -436,16 +516,19 @@ function PropertyAddForm() {
           accept="image/*"
           multiple
           required
+          onChange={handleImagesChange}
         />
       </div>
 
       <div className={styles.bigBtn}>
-        <button className={`btn ${styles.btn}`} type="submit">
-          Add Property
+        <button
+          className={`btn ${styles.btn}`}
+          type="submit"
+          disabled={loading}
+        >
+          {loading ? <Bubbles /> : 'Add Property'}
         </button>
       </div>
     </form>
   );
 }
-
-export default PropertyAddForm;
