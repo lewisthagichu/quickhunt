@@ -26,7 +26,9 @@ const Listings = () => {
 
         if (res.status === 200) {
           const data = await res.json();
-          setHasProperties(true);
+          const hasProperties = data.length > 0;
+
+          setHasProperties(hasProperties);
           setProperties(data);
         }
       } catch (error) {
@@ -60,6 +62,9 @@ const Listings = () => {
           (property) => property._id !== propertyID
         );
 
+        const hasProperties = updatedProperties.length > 0;
+
+        setHasProperties(hasProperties);
         setProperties(updatedProperties);
 
         toast.success('Property Deleted');
@@ -71,8 +76,6 @@ const Listings = () => {
       toast.error('Failed to delete property');
     }
   };
-
-  const noListings = !loading && properties.length === 0;
 
   return loading ? (
     <Spinner />
