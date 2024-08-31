@@ -122,6 +122,9 @@
                 }
 
                 .email {
+                    h2 {
+                        display: none;
+                    }
                     order: 1;
                     .form {
                         .btn {

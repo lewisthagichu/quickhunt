@@ -40,7 +40,7 @@ function Contact() {
             </ul>
           </div>
           <div className={styles.email}>
-            <h2>Let's get in touch</h2>
+            <h2>Get in touch</h2>
             <form className={styles.form}>
               <input
                 type="text"
