@@ -4,11 +4,11 @@ const UserSchema = new Schema(
   {
     username: {
       type: String,
-      required: [true, 'Email is required'],
+      required: [true, 'Username is required'],
     },
     email: {
       type: String,
-      unique: [true, 'Enail already exists'],
+      unique: [true, 'Email already exists'],
       required: [true, 'Email is required'],
     },
     image: {
