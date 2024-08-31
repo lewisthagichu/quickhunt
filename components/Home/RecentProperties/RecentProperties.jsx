@@ -1,5 +1,5 @@
 import styles from './recentProperties.module.scss';
-import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
+import ServerPropertyCard from '@/components/Common/PropertyCard/ServerPropertyCard';
 import { fetchRecentProperties } from '@/utils/fetchProperties';
 
 export default async function RecentProperties() {
@@ -14,7 +14,8 @@ export default async function RecentProperties() {
         <div className={styles.cards}>
           {properties?.map((property, i) => (
             <div key={`r_${i}`} className={styles.item}>
-              <PropertyCard property={property} />
+              <ServerPropertyCard property={property} />
+              {/* <PropertyCard property={property} /> */}
             </div>
           ))}
         </div>
