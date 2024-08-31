@@ -26,7 +26,7 @@ export default function SideSection({ property }) {
           )}
         </div>
       </div>
-      <PropertyContactForm />
+      <PropertyContactForm property={property} />
     </div>
   );
 }
