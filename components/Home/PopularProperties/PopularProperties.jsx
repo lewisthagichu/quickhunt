@@ -5,9 +5,9 @@ import { fetchProperties } from '@/utils/fetchProperties';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import { toast } from 'react-toastify';
 import Card from './Card/Card';
-import Spinner from '@/components/Spinner';
+import PopularCardSkeleton from '@/components/Common/Skeletons/PopularCardSkeleton/PopularCardSkeleton';
 
-function Properties() {
+export default function PopularProperties() {
   const [loading, setLoading] = useState(true);
   const [properties, setProperties] = useState(null);
   const [cardIndex, setCardIndex] = useState(0);
@@ -43,47 +43,42 @@ function Properties() {
     });
   }
 
-  if (loading) {
-    return <Spinner />;
-  }
-  const hasProperties = !loading && properties?.length > 0;
-
   return (
     <section className={styles.container}>
-      {hasProperties ? (
-        <>
-          <div className={styles.title}>
-            <h2>
-              Popular <span>Properties</span>
-            </h2>
-            <div className={styles.btns}>
-              <button
-                disabled={cardIndex === 0}
-                onClick={showPrevCard}
-                className="btn"
-              >
-                <FaArrowLeft />
-              </button>
-              <button
-                disabled={cardIndex === properties.length - 2}
-                onClick={showNextCard}
-                className="btn"
-              >
-                <FaArrowRight />
-              </button>
-            </div>
-          </div>
-          <div className={styles.cards}>
-            {properties.map((property, i) => (
-              <Card key={i} cardIndex={cardIndex} property={property} />
-            ))}
-          </div>
-        </>
+      <div className={styles.title}>
+        <h2>
+          Popular <span>Properties</span>
+        </h2>
+        <div className={styles.btns}>
+          <button
+            disabled={cardIndex === 0}
+            onClick={showPrevCard}
+            className="btn"
+          >
+            <FaArrowLeft />
+          </button>
+          <button
+            disabled={cardIndex === properties?.length - 2}
+            onClick={showNextCard}
+            className="btn"
+          >
+            <FaArrowRight />
+          </button>
+        </div>
+      </div>
+      {loading ? (
+        <div className={styles.cards}>
+          {[...Array(3)].map((_, i) => (
+            <PopularCardSkeleton key={i} cardIndex={cardIndex} />
+          ))}
+        </div>
       ) : (
-        <></>
+        <div className={styles.cards}>
+          {properties.map((property, i) => (
+            <Card key={i} cardIndex={cardIndex} property={property} />
+          ))}
+        </div>
       )}
     </section>
   );
 }
-
-export default Properties;

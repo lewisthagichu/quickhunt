@@ -7,8 +7,10 @@ export default async function ImageBlur({
   sizes = '100vw',
   alt = 'image',
 }) {
-  const response = await fetch(src);
-  const buffer = Buffer.from(await response.arrayBuffer());
+  const buffer = await fetch(src).then(async (res) => {
+    return Buffer.from(await res.arrayBuffer());
+  });
+
   const { base64 } = await getPlaiceholder(buffer);
 
   return (
