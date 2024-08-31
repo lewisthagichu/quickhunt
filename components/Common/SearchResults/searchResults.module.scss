@@ -24,7 +24,7 @@
             h2 {
                 font-size: var(--regular-title-size);
                 font-weight: 700;
-                margin-bottom: 2rem;
+                margin: 1rem 0;
                 text-align: center;
             }
         }
@@ -63,13 +63,5 @@
 @media screen and (max-width: 540px) {
     .container {
         padding: 2rem var(--mobile-padding);
-
-        .wrapper {
-            .top {
-                h2 {
-                    text-align: left;
-                }
-            }
-        }
     }    
 }

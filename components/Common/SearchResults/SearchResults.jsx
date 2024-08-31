@@ -7,12 +7,12 @@ import PropertyCard from '../PropertyCard/PropertyCard';
 import PlaceholderCards from '../PlaceholderCards/PlaceholderCards';
 import Pagination from '../Pagination/Pagination';
 import Link from 'next/link';
-import Spinner from '@/components/Spinner';
+import Skeleton from 'react-loading-skeleton';
+import PropertyCardSkeleton from '../Skeletons/PropertyCardSkeleton/PropertyCardSkeleton';
 
 function SearchResults() {
   const [loading, setLoading] = useState(true);
   const [properties, setProperties] = useState([]);
-  const [hasProperties, setHasProperties] = useState(false);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(6);
   const [total, setTotal] = useState(0);
@@ -31,9 +31,7 @@ function SearchResults() {
 
         if (res.status === 200) {
           const { properties, total } = await res.json();
-          const hasProperties = total > 0;
 
-          setHasProperties(hasProperties);
           setProperties(properties);
           setTotal(total);
         } else {
@@ -52,46 +50,51 @@ function SearchResults() {
   const handlePageChange = (newPage) => {
     setPage(newPage);
   };
-  console.log(hasProperties);
-
-  if (loading) return <Spinner />;
 
   return (
     <section className={styles.container}>
-      {hasProperties ? (
-        <div className={styles.wrapper}>
-          <div className={styles.top}>
-            <Link href="/properties">
-              <FaArrowAltCircleLeft />
-              <span>Back To Properties</span>
-            </Link>
-            <h2>Search Results</h2>
-          </div>
+      <div className={styles.wrapper}>
+        <div className={styles.top}>
+          <Link href="/properties">
+            <FaArrowAltCircleLeft />
+            <span className="link-underline">Back to properties</span>
+          </Link>
+          <h2>Search Results</h2>
+        </div>
+
+        {loading ? (
           <div className={styles.cards}>
-            {properties.map((property, index) => (
-              <div key={property.id || `l_${index}`} className={styles.item}>
-                <PropertyCard property={property} />
+            {[...Array(pageSize)].map((_, index) => (
+              <div key={index} className={styles.item}>
+                <PropertyCardSkeleton />
               </div>
             ))}
           </div>
-        </div>
-      ) : (
-        <PlaceholderCards
-          heading="No properties found"
-          cta="Try searching for something else."
-          link="/properties"
-          linkText="View all properties"
-        />
-      )}
-      {hasProperties && (
-        <Pagination
-          page={page}
-          pageSize={pageSize}
-          total={total}
-          setPage={setPage}
-          onPageChange={handlePageChange}
-        />
-      )}
+        ) : properties.length ? (
+          <>
+            <div className={styles.cards}>
+              {properties.map((property) => (
+                <div key={property.id} className={styles.item}>
+                  <PropertyCard property={property} />
+                </div>
+              ))}
+            </div>
+            <Pagination
+              page={page}
+              pageSize={pageSize}
+              total={total}
+              onPageChange={handlePageChange}
+            />
+          </>
+        ) : (
+          <PlaceholderCards
+            heading="No properties found"
+            cta="Try searching for something else."
+            link="/properties"
+            linkText="View all properties"
+          />
+        )}
+      </div>
     </section>
   );
 }
