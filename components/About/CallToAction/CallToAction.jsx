@@ -7,7 +7,7 @@ import { FaArrowRight } from 'react-icons/fa';
 
 export default function CallToAction() {
   const { data: session } = useSession();
-  console.log(session);
+
   useEffect(() => {}, [session]);
   return (
     <section className={styles.container}>
