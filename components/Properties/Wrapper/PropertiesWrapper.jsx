@@ -36,6 +36,10 @@ function PropertiesWrapper() {
     fetchProperties();
   }, [page, pageSize]);
 
+  const handlePageChange = (newPage) => {
+    setPage(newPage);
+  };
+
   return (
     <section className={styles.container}>
       {loading ? (
@@ -59,7 +63,7 @@ function PropertiesWrapper() {
             page={page}
             pageSize={pageSize}
             total={total}
-            onPageChange={setPage}
+            onPageChange={handlePageChange}
           />
         </>
       ) : (
