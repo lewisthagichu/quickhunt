@@ -4,12 +4,12 @@ import Image from 'next/image';
 import heroImg from '@/public/images/hero2.webp';
 import PropertySearchForm from '../../Common/PropertySearchForm/PropertySearchForm';
 import gsap from 'gsap';
-import { useEffect, useRef } from 'react';
+import { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/dist/ScrollTrigger';
 import { useGlobalContext } from '@/context/GlobalContext';
 
-function Hero() {
+export default function Hero() {
   const container = useRef(null);
   const { setHeaderStyle } = useGlobalContext();
 
@@ -46,6 +46,3 @@ function Hero() {
     </section>
   );
 }
-
-export default Hero;
-``;
