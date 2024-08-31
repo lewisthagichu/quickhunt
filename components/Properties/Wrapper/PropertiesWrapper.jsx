@@ -1,14 +1,14 @@
 'use client';
-import styles from './wrapper.module.scss';
 import { useState, useEffect } from 'react';
+import styles from './wrapper.module.scss';
 import Pagination from '@/components/Common/Pagination/Pagination';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import Spinner from '@/components/Spinner';
+import PropertyCardSkeleton from '@/components/Common/Skeletons/PropertyCardSkeleton/PropertyCardSkeleton';
 
 function PropertiesWrapper() {
-  const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [properties, setProperties] = useState([]);
   const [page, setPage] = useState(1);
   const [pageSize, setPageSize] = useState(6);
   const [total, setTotal] = useState(0);
@@ -20,16 +20,13 @@ function PropertiesWrapper() {
           `/api/properties?page=${page}&pageSize=${pageSize}`
         );
 
-        if (res.status !== 200) {
-          throw new Error();
-        }
+        if (!res.ok) throw new Error('Failed to fetch properties');
 
         const { total, properties } = await res.json();
         setProperties(properties);
         setTotal(total);
       } catch (error) {
-        // Handle errors
-        console.log(error);
+        console.error(error);
         toast.error('Failed to fetch properties');
       } finally {
         setLoading(false);
@@ -39,39 +36,38 @@ function PropertiesWrapper() {
     fetchProperties();
   }, [page, pageSize]);
 
-  const handlePageChange = (newPage) => {
-    setPage(newPage);
-  };
-
-  const hasProperties = properties?.length > 0;
-
-  return loading ? (
-    <Spinner />
-  ) : (
+  return (
     <section className={styles.container}>
-      {hasProperties ? (
+      {loading ? (
         <div className={styles.cards}>
-          {properties.map((property, index) => (
-            <div key={property.id || `l_${index}`} className={styles.item}>
-              <PropertyCard property={property} />
+          {[...Array(pageSize)].map((_, index) => (
+            <div key={index} className={styles.item}>
+              <PropertyCardSkeleton />
             </div>
           ))}
         </div>
+      ) : properties.length ? (
+        <>
+          <div className={styles.cards}>
+            {properties.map((property) => (
+              <div key={property.id} className={styles.item}>
+                <PropertyCard property={property} />
+              </div>
+            ))}
+          </div>
+          <Pagination
+            page={page}
+            pageSize={pageSize}
+            total={total}
+            onPageChange={setPage}
+          />
+        </>
       ) : (
         <PlaceholderCards
           heading="No listings found"
           cta="Something went wrong. Try again later."
           link="/"
           linkText="Back to Home"
-        />
-      )}
-      {hasProperties && (
-        <Pagination
-          page={page}
-          pageSize={pageSize}
-          total={total}
-          setPage={setPage}
-          onPageChange={handlePageChange}
         />
       )}
     </section>
