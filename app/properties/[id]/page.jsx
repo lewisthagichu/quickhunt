@@ -39,7 +39,9 @@ function PropertyPage() {
   }, [id, property]);
 
   return loading ? (
-    <Spinner />
+    <div style={{ height: '100vh', display: 'flex', alignItems: 'center' }}>
+      <Spinner />
+    </div>
   ) : (
     <div className={inter.className}>
       {hasproperty ? (
