@@ -3,7 +3,7 @@ import styles from './similarProperties.module.scss';
 import { useState, useEffect } from 'react';
 import { FaArrowLeft, FaArrowRight } from 'react-icons/fa';
 import CardSimilarProperties from './CardSimilar/CardSimilarProperties';
-import Spinner from '@/components/Spinner';
+import SimilarCardSkeleton from '@/components/Common/Skeletons/SimilarCardSkeleton./SimilarCardSkeleton';
 
 export default function SimilarProperties({ property }) {
   const [loading, setLoading] = useState(true);
@@ -55,17 +55,15 @@ export default function SimilarProperties({ property }) {
     getProperties();
   }, [property._id]);
 
-  return loading ? (
-    <Spinner />
-  ) : (
+  return (
     <section className={styles.container}>
-      {hasProperties ? (
-        <>
-          <div className={styles.title}>
-            <h2>
-              Similar <span>Properties</span>
-            </h2>
-            <div className={styles.btns}>
+      <div className={styles.title}>
+        <h2>
+          Similar <span>Properties</span>
+        </h2>
+        <div className={styles.btns}>
+          {!loading && (
+            <>
               <button
                 disabled={cardIndex === 0}
                 onClick={showPrevCard}
@@ -74,28 +72,36 @@ export default function SimilarProperties({ property }) {
                 <FaArrowLeft />
               </button>
               <button
-                disabled={cardIndex === similarProperties.length - 3}
+                disabled={cardIndex === similarProperties?.length - 3}
                 onClick={showNextCard}
                 className="btn"
               >
                 <FaArrowRight />
               </button>
-            </div>
-          </div>
+            </>
+          )}
+        </div>
+      </div>
 
-          <div className={styles.cards}>
-            {similarProperties.map((property, i) => (
-              <div key={`s_${i}`} className={styles.item}>
-                <CardSimilarProperties
-                  cardIndex={cardIndex}
-                  property={property}
-                />
-              </div>
-            ))}
-          </div>
-        </>
+      {loading || !hasProperties ? (
+        <div className={styles.cards}>
+          {[...Array(3)].map((_, i) => (
+            <div key={`_${i}`} className={styles.item}>
+              <SimilarCardSkeleton cardIndex={cardIndex} />
+            </div>
+          ))}
+        </div>
       ) : (
-        <div style={{ display: 'none' }}></div>
+        <div className={styles.cards}>
+          {similarProperties.map((property, i) => (
+            <div key={`s_${i}`} className={styles.item}>
+              <CardSimilarProperties
+                cardIndex={cardIndex}
+                property={property}
+              />
+            </div>
+          ))}
+        </div>
       )}
     </section>
   );
