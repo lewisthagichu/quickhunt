@@ -41,7 +41,6 @@ export default function PropertyEditForm() {
   });
 
   useEffect(() => {
-    setMounted(true);
     // Fetch property for form
     const getPropertyData = async () => {
       try {
@@ -66,6 +65,7 @@ export default function PropertyEditForm() {
         toast.error(error.message);
       } finally {
         setLoading(false);
+        setMounted(true);
       }
     };
 
@@ -147,13 +147,13 @@ export default function PropertyEditForm() {
     } catch (error) {
       console.log(error);
       toast.error('Something went wrong');
-    } finally {
-      setLoading(false);
     }
   };
 
   return !mounted ? (
-    <Spinner />
+    <div style={{ height: '70vh', display: 'flex', alignItems: 'center' }}>
+      <Spinner />
+    </div>
   ) : (
     <form className={styles.container} onSubmit={handleSubmit}>
       <h2>Edit Property</h2>
