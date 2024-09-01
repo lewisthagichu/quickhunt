@@ -21,7 +21,7 @@ export const GET = async () => {
     // Retrieve all read messages
     const readMessages = await Message.find({ recipient: userID, read: true })
       .sort({ createdAt: -1 })
-      .populate('sender', 'username')
+      .populate('sender', 'username image email')
       .populate('property', 'name');
 
     // Retrieve all unread messages
