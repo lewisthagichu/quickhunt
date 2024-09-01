@@ -6,14 +6,13 @@ import { toast } from 'react-toastify';
 import styles from './listings.module.scss';
 import ListingCard from './ListingCard/ListingCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import Spinner from '@/components/Spinner';
+import Spinner from '@/components/Spinner/Spinner';
 
 const Listings = () => {
+  const { data: session } = useSession();
+
   const [loading, setLoading] = useState(true);
   const [properties, setProperties] = useState([]);
-  const [hasProperties, setHasProperties] = useState(false);
-
-  const { data: session } = useSession();
 
   useEffect(() => {
     const fetchProperties = async (userID) => {
@@ -26,9 +25,7 @@ const Listings = () => {
 
         if (res.status === 200) {
           const data = await res.json();
-          const hasProperties = data.length > 0;
 
-          setHasProperties(hasProperties);
           setProperties(data);
         }
       } catch (error) {
@@ -62,9 +59,6 @@ const Listings = () => {
           (property) => property._id !== propertyID
         );
 
-        const hasProperties = updatedProperties.length > 0;
-
-        setHasProperties(hasProperties);
         setProperties(updatedProperties);
 
         toast.success('Property Deleted');
@@ -81,7 +75,7 @@ const Listings = () => {
     <Spinner />
   ) : (
     <section className={` ${inter.className} ${styles.container}`}>
-      {hasProperties ? (
+      {properties.length ? (
         <div className={styles.cards}>
           {properties.map((property, index) => (
             <div key={property.id || `l_${index}`} className={styles.item}>

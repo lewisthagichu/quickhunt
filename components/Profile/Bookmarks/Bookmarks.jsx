@@ -6,13 +6,14 @@ import { toast } from 'react-toastify';
 import { useState, useEffect } from 'react';
 import PropertyCard from '@/components/Common/PropertyCard/PropertyCard';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import Spinner from '@/components/Spinner';
+import Spinner from '@/components/Spinner/Spinner';
 
 function Bookmarks() {
   const { data: session } = useSession();
 
-  const [properties, setProperties] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [properties, setProperties] = useState([]);
+
   useEffect(() => {
     if (!session) return;
 
@@ -38,13 +39,11 @@ function Bookmarks() {
     fetchBookmarkedProperties();
   }, [session]);
 
-  const hasBookmarks = !loading && properties.length > 0;
-
   return loading ? (
     <Spinner />
   ) : (
     <section className={` ${inter.className} ${styles.container}`}>
-      {hasBookmarks ? (
+      {properties.length ? (
         <div className={styles.cards}>
           {properties.map((property, index) => (
             <div key={property.id || `l_${index}`} className={styles.item}>
