@@ -9,7 +9,7 @@ import SimilarProperties from '@/components/SingleProperty/SimilarProperties/Sim
 import BigBtn from '@/components/Common/BigBtn/BigBtn';
 import Footer from '@/components/Common/Footer/Footer';
 import PlaceholderCards from '@/components/Common/PlaceholderCards/PlaceholderCards';
-import Spinner from '@/components/Spinner';
+import Spinner from '@/components/Spinner/Spinner';
 
 function PropertyPage() {
   const [loading, setLoading] = useState(true);
