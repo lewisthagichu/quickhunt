@@ -12,7 +12,7 @@ export default function MessageCard({
   setSelectedMsg,
   setIsDeleted,
 }) {
-  const [isRead, setIsRead] = useState(false);
+  const [isRead, setIsRead] = useState(message.read);
   const { setUnreadCount } = useGlobalContext();
   const messageDate = new Date(message.createdAt);
   const formattedDate = messageDate.toLocaleDateString('en-GB', {
@@ -25,23 +25,23 @@ export default function MessageCard({
     setIsDeleted(false);
     openChat();
 
-    // if (message.read) return;
+    if (message.read) return;
 
-    // try {
-    //     const res = await fetch(`/api/messages/${messageID}`, {
-    //       method: 'PUT',
-    //     });
+    try {
+      const res = await fetch(`/api/messages/${messageID}`, {
+        method: 'PUT',
+      });
 
-    //     if (res.status === 200) {
-    //       setIsRead(true);
-    // setUnreadCount((prevCount) => prevCount - 1);
-    //     } else {
-    //       toast.error('Something went wrong');
-    //     }
-    //   } catch (error) {
-    //     console.log(error);
-    //     toast.error('Something went wrong');
-    // }
+      if (res.status === 200) {
+        setIsRead(true);
+        setUnreadCount((prevCount) => prevCount - 1);
+      } else {
+        toast.error('Something went wrong');
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error('Something went wrong');
+    }
   };
 
   if (isDeleted) return null;

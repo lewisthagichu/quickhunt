@@ -55,11 +55,12 @@
     
                 .avatar {
                     position: relative;
-                    height: 4rem;
+                    height: 2em;
                     aspect-ratio: 1 / 1;
         
                     img {
                         object-fit: cover;
+                        border-radius: 50%;
                     }
                 }
     

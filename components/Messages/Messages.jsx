@@ -1,9 +1,8 @@
 'use client';
 import styles from './messages.module.scss';
 import { useState, useEffect } from 'react';
-import NoMessages from './NoMessages/NoMessages';
 import AllMessages from './AllMessages/AllMessages';
-import Chat from './IndividualMessages/Chat';
+import Chat from './Chat/Chat';
 import ClosedChat from './ClosedChat/ClosedChat';
 
 function Messages({ messages, setMessages }) {

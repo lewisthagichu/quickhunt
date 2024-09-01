@@ -83,7 +83,11 @@ export default function Chat({
           <div className={styles.buyerDetails}>
             <div className={styles.left}>
               <div className={styles.avatar}>
-                <Image src={profileDefault} fill alt="profile photo" />
+                <Image
+                  src={message.sender.image || profileDefault}
+                  fill
+                  alt="profile photo"
+                />
               </div>
               <div className={styles.contact}>
                 <h4>{message.sender.username}</h4>
