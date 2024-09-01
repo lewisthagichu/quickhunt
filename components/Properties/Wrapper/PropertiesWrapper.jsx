@@ -53,8 +53,8 @@ function PropertiesWrapper() {
       ) : properties.length ? (
         <>
           <div className={styles.cards}>
-            {properties.map((property) => (
-              <div key={property.id} className={styles.item}>
+            {properties.map((property, index) => (
+              <div key={`p_${index}`} className={styles.item}>
                 <PropertyCard property={property} />
               </div>
             ))}
