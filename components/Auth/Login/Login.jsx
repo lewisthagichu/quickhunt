@@ -18,7 +18,7 @@ export default function Login() {
         <div className={styles.logo}>
           <Image src={logo} fill alt="logo" />
         </div>
-        <h1>Welcome to QuickHunt</h1>
+        <h1>Login to QuickHunt</h1>
         <div className={styles.content}>
           <div className={styles.description}>
             QuickHunt simplifies the rental process by bringing together tenants
