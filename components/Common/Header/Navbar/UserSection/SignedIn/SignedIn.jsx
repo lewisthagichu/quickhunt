@@ -7,6 +7,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import profileDefault from '@/public/images/profile.png';
 import DropDownMenu from '../../../DropDownMenu/DropDownMenu';
+import UnreadMessagesCount from './UnreadMessagesCount';
 
 export default function SignedIn() {
   const { headerStyle } = useGlobalContext();
@@ -19,8 +20,8 @@ export default function SignedIn() {
       <Link href="/messages" className={styles.messages}>
         <div style={{ color }} type="button" className={styles.notificationBtn}>
           <IoIosNotificationsOutline />
+          <UnreadMessagesCount styles={styles.count} />
         </div>
-        {/* <UnreadMessagesCount loading={loading} /> */}
       </Link>
 
       <div className={styles.profile}>
