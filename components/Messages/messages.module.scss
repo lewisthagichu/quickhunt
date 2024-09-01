@@ -1,0 +1,25 @@
+.container {
+    padding: var(--nav-bar-height) var(--container-padding) 0;
+
+    .wrapper {
+        margin: 0 auto;
+        max-width: 1280px;
+        min-height: calc(100vh - var(--nav-bar-height));
+        display: grid;
+        grid-template-columns: 40% 60%; 
+        
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding: var(--nav-bar-height) var(--mobile-padding) 0;
+
+        .wrapper {
+            width: 100%;
+            display: flex;
+            overflow-x: hidden;
+        }
+    }
+    
+}

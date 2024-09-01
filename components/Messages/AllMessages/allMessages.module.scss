@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    border-left: 1px solid rgba(0, 0, 0, .04);
+    border-right: 1px solid rgba(0, 0, 0, .04);
+    padding-bottom: 3rem;
+
+    h2 {
+        margin: 2rem 1.5rem;
+        
+    }    
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        min-width: 100%;
+    }
+    
+}

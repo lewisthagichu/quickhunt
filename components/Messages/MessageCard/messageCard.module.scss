@@ -1,0 +1,77 @@
+.card {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, .04);
+    border-bottom: 1px solid rgba(0, 0, 0, .04);        
+    transition: all 100ms ease-in-out;
+    cursor: pointer;
+
+    .avatar {
+        position: relative;
+        height: 3rem;
+        aspect-ratio: 1 / 1;
+
+        img {
+            object-fit: cover;
+            border-radius: 50%;
+        }
+    }
+
+    .content {
+        width: calc(100% - 6rem);
+
+        .top, .middle {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 80% 20%;
+            gap: 1rem;
+
+            h4, h5 {
+                width: 100%;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                line-height: 1;
+            }
+
+            .name {
+                font-weight: 500;
+                margin-top: .5rem;
+            }
+
+            
+
+            small {
+                font-size: .65em;
+                display: flex;
+                justify-content: flex-end;
+            }
+        }
+
+        .middle {
+            .read {
+                padding: .2rem .4rem;
+                border-radius: 1rem;
+                background-color: var(--color-YG-back);
+                color: var(--color-dark);
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;              
+            }          
+        }
+
+        p {
+            opacity: .7;
+            font-size: .7em;
+            width: 80%;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+    }
+
+    &:hover {
+        background-color: var(--color-gray);
+    }
+}

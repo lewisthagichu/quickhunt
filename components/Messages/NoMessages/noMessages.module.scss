@@ -1,0 +1,49 @@
+.container {
+    margin: 0 auto;
+    max-width: 1280px;
+    padding-top: var(--nav-bar-height);
+    height: calc(100vh - var(--nav-bar-height));
+
+    h1 {
+        padding: 2rem 0rem;
+    }
+
+    .content {
+        margin-top: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        svg {
+            width: 2.2em;
+            height: 2.2em;
+        }
+
+        h2 {
+            font-size: 2.4rem;
+            font-weight: 500;
+            line-height: 49px;
+        }
+        p {
+            font-size: 1.4rem;
+        }
+    }
+
+}
+
+@media screen and (max-width: 1280px) {
+    .container {
+        padding-left: var(--container-padding);
+        padding-right: var(--container-padding);
+        h1 {
+            padding: 2rem 0;
+        }
+    }   
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        padding-left: var(--mobile-padding);
+        padding-right: var(--mobile-padding);
+    }   
+}

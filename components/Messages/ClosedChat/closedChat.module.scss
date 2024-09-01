@@ -1,0 +1,12 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-right: 1px solid rgba(0, 0, 0, .04); 
+}
+
+@media screen and (max-width: 540px) {
+    .container {
+        display: none;
+    }
+}
