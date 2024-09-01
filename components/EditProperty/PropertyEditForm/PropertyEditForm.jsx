@@ -5,7 +5,7 @@ import { useParams, useRouter } from 'next/navigation';
 import { fetchProperty } from '@/utils/fetchProperties';
 import { toast } from 'react-toastify';
 import Bubbles from '@/components/Common/Bubbles/Bubbles';
-import Spinner from '@/components/Spinner';
+import Spinner from '@/components/Spinner/Spinner';
 
 export default function PropertyEditForm() {
   const { id } = useParams();
