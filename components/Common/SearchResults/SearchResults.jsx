@@ -7,7 +7,6 @@ import PropertyCard from '../PropertyCard/PropertyCard';
 import PlaceholderCards from '../PlaceholderCards/PlaceholderCards';
 import Pagination from '../Pagination/Pagination';
 import Link from 'next/link';
-import Skeleton from 'react-loading-skeleton';
 import PropertyCardSkeleton from '../Skeletons/PropertyCardSkeleton/PropertyCardSkeleton';
 
 function SearchResults() {
