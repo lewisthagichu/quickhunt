@@ -31,7 +31,7 @@ async function fetchRecentProperties() {
     }
 
     const res = await fetch(`${apiDomain}/properties/recent`, {
-      cache: 'no-store',
+      next: { revalidate: 0 },
     });
 
     if (!res.ok) {
