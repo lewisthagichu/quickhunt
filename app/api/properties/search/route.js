@@ -3,11 +3,12 @@ import Property from '@/models/Property';
 
 // GET /api/properties/search
 export const GET = async (request) => {
+  const { searchParams } = new URL(request.url);
+
   try {
     await connectDB();
 
     // Get the search parameters
-    const { searchParams } = new URL(request.url);
     const page = searchParams.get('page');
     const pageSize = searchParams.get('pageSize');
     const location = searchParams.get('location');
