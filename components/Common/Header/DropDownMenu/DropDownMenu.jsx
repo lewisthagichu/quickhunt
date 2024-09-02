@@ -3,9 +3,11 @@ import styles from './dropDownMenu.module.scss';
 import Image from 'next/image';
 import Link from 'next/link';
 import profileDefault from '@/public/images/profile.png';
-import { signOut } from 'next-auth/react';
+import { signOut, useSession } from 'next-auth/react';
 
 function DropDownMenu({ setIsProfileOpen }) {
+  const { data: session } = useSession();
+  const profileImage = session.user.image;
   return (
     <div
       id="user-menu"
@@ -17,10 +19,14 @@ function DropDownMenu({ setIsProfileOpen }) {
     >
       <div className={styles.profile}>
         <div className={styles.avatar}>
-          <Image src={profileDefault} fill alt="profile image" />
+          <Image
+            src={profileImage || profileDefault}
+            fill
+            alt="profile image"
+          />
         </div>
         <div className={styles.content}>
-          <p>Lewis</p>
+          <p>{session.user.name}</p>
         </div>
       </div>
 
