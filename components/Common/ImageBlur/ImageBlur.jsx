@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import { getPlaiceholder } from 'plaiceholder';
+// import { getPlaiceholder } from 'plaiceholder';
 
 export default async function ImageBlur({
   src,
@@ -11,7 +11,7 @@ export default async function ImageBlur({
     return Buffer.from(await res.arrayBuffer());
   });
 
-  const { base64 } = await getPlaiceholder(buffer);
+  // const { base64 } = await getPlaiceholder(buffer);
 
   return (
     <Image

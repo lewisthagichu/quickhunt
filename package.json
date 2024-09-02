@@ -10,7 +10,6 @@
   },
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "@plaiceholder/next": "^3.0.0",
     "cloudinary": "^2.4.0",
     "gsap": "^3.12.5",
     "lenis": "^1.1.9",
@@ -21,7 +20,6 @@
     "next": "14.2.5",
     "next-auth": "^4.24.7",
     "photoswipe": "^5.4.4",
-    "plaiceholder": "^3.0.0",
     "radar-sdk-js": "^4.4.1",
     "react": "^18",
     "react-dom": "^18",
