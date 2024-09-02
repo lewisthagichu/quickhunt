@@ -6,7 +6,7 @@ import SignedOut from './SignedOut/SignedOut';
 function UserSection() {
   const { data: session } = useSession();
 
-  return session ? <SignedIn /> : <SignedOut />;
+  return session ? <SignedIn session={session} /> : <SignedOut />;
 }
 
 export default UserSection;

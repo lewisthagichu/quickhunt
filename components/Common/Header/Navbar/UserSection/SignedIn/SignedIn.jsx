@@ -9,11 +9,12 @@ import profileDefault from '@/public/images/profile.png';
 import DropDownMenu from '../../../DropDownMenu/DropDownMenu';
 import UnreadMessagesCount from './UnreadMessagesCount';
 
-export default function SignedIn() {
+export default function SignedIn({ session }) {
   const { headerStyle } = useGlobalContext();
   const { color } = headerStyle;
 
   const [isProfileOpen, setIsProfileOpen] = useState(false);
+  const profilePhoto = session?.user.image;
 
   return (
     <div className={styles.signedIn}>
@@ -34,7 +35,7 @@ export default function SignedIn() {
             onClick={() => setIsProfileOpen((prev) => !prev)}
           >
             <Image
-              src={profileDefault}
+              src={profilePhoto || profileDefault}
               sizes="10vw"
               fill
               alt="profile avatar"
