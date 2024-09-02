@@ -1,5 +1,6 @@
 import connectDB from '@/config/connectDB';
 import Property from '@/models/Property';
+export const dynamic = 'force-dynamic';
 
 // GET /api/properties/recent
 export const GET = async (request) => {
