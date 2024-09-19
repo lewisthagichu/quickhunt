@@ -18,7 +18,7 @@
     "maplibre-gl": "^4.6.0",
     "mongodb": "^6.8.0",
     "mongoose": "^8.5.4",
-    "next": "14.2.5",
+    "next": "14.2.12",
     "next-auth": "^4.24.7",
     "photoswipe": "^5.4.4",
     "radar-sdk-js": "^4.4.1",
